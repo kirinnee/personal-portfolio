@@ -1,0 +1,5 @@
+-r ts-node/register
+-r jsdom-global/register
+-r ignore-styles
+--recursive
+./test/unit/**/*.spec.ts

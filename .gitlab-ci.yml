@@ -1,0 +1,30 @@
+image: kirinnee/frontend-gitlab-runner:latest
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+Build:
+  stage: build
+  script:
+    - yarn install --prefer-offline
+    - yarn build
+  artifacts:
+    paths:
+      - dist/
+
+Deploy:
+  stage: deploy
+  script:
+    - cd config
+    - deployimage deploy --accessId=$AWS_ACCESS_ID --accessSecret=$AWS_SECRET --region=$AWS_REGION 
+    - cd ../dist
+    - netdeploy -I $SITE_ID -T $NETLIFY_TOKEN
+  only:
+    - prod
+    - stage
+    - master
