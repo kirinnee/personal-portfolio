@@ -19,10 +19,8 @@ let plugins: Plugin[] = pages.pages
 
 function GenerateConfig(entry: Entry, filename: string, mode: "development" | "production" | "none"): webpack.Configuration {
 	let outDir = path.resolve(__dirname, "../dist");
-	plugins = mode === "production" ? plugins : plugins.Add(new webpack.HotModuleReplacementPlugin()); 
-	plugins = plugins.Add(new webpack.DefinePlugin({
-		PRODUCTION: JSON.stringify(mode === "production")
-	}));
+	plugins = mode === "production" ? plugins : plugins.Add(new webpack.HotModuleReplacementPlugin());
+	plugins = plugins.Add(new webpack.DefinePlugin({PRODUCTION: JSON.stringify(mode === "production")}));
 	let config: webpack.Configuration = {
 		entry: entry,
 		output: {
@@ -33,7 +31,7 @@ function GenerateConfig(entry: Entry, filename: string, mode: "development" | "p
 		},
 		resolve: {
 			extensions: ['.ts', '.tsx', '.js', '.vue'],
-			alias: {'vue$': 'vue/dist/vue.esm.js'} 
+			alias: {'vue$': 'vue/dist/vue.esm.js'}
 		},
 		mode: mode,
 		module: {rules: rules(mode)},
@@ -44,7 +42,7 @@ function GenerateConfig(entry: Entry, filename: string, mode: "development" | "p
 	else if (mode === "development") {
 		config.devServer = {
 			contentBase: path.resolve(__dirname, '../dist'),
-			hot: true 
+			hot: true
 		}
 	}
 	return config;

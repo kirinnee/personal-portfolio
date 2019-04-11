@@ -1,19 +1,17 @@
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin'; 
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import {Options} from "webpack";
 
 
-let opti: Options.Optimization = {};
-
-opti = {
+let opti: Options.Optimization = {
 	minimizer: [
 		new UglifyJsPlugin({
 			uglifyOptions: {
 				compress: {
-					drop_console: false,
-					unsafe: true 
+					drop_console: true,
+					unsafe: true
 				},
 				output: {comments: false},
-				toplevel: true 
+				toplevel: true
 			}
 		})
 	]

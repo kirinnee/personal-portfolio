@@ -1,6 +1,20 @@
 import {RuleSetRule, RuleSetUseItem} from "webpack";
 import {prodFileOpts} from "./config.prod";
 import {devFileOpts} from "./config.dev";
+import * as path from "path";
+
+/*=====================
+ BABEL LOADER
+ ======================= */
+
+let babelUse: RuleSetUseItem[] = [
+	{loader: 'babel-loader', options: {configFile: path.resolve(__dirname, "./babel.config.js")}}
+];
+let babel: RuleSetRule = {
+	test: /\.jsx?$/,
+	use: babelUse
+};
+
 
 /*===================
  STYLE LOADER
@@ -53,9 +67,7 @@ function file(env: "production" | "development" | "none"): RuleSetRule {
 		loader: 'file-loader',
 		options: env === "production" ? prodFileOpts : devFileOpts
 	}
-};
-
-
+}
 /* ==============
  Combining
  ================= */
@@ -64,6 +76,7 @@ function rules(env: "production" | "development" | "none"): RuleSetRule[] {
 	return [
 		vue,
 		scripts,
+		babel,
 		cssRule, 
 		file(env)
 	];
