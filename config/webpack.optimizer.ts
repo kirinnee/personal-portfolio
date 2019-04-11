@@ -19,6 +19,7 @@ let opti: Options.Optimization = {
 
 opti.splitChunks = {
 	name: true,
+	maxSize: 550000,
 	cacheGroups: {
 		commons: {
 			test: /[\\/]node_modules[\\/]/,

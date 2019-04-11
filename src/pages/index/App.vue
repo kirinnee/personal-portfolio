@@ -1,16 +1,56 @@
 <template>
-    <HelloWorld />
+    <div class="parent">
+        <Background id="bkgd"></Background>
+        <Card :index="0" color="green" name="hi" :state="StateManager">
+            <div class="text">First Div</div>
+        </Card>
+        <div class="buffer"></div>
+        <Card :index="1" color="pink" name="hi" :state="StateManager">
+            <div class="text">Second Div</div>
+        </Card>
+        <div class="buffer"></div>
+        <Card :index="2" color="orange" name="hi" :state="StateManager">
+            <div class="text">Third Div</div>
+        </Card>
+        <div class="buffer"></div>
+        <Card :index="3" color="blue" name="hi" :state="StateManager">
+            <div class="text">Fourth Div</div>
+        </Card>
+        <div class="buffer"></div>
+    </div>
+
 </template>
 
+<style lang="scss" scoped>
+    .text {
+        height: 50vh;
+    }
+
+    .parent {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .buffer {
+        height: 120vh;
+    }
+</style>
+
 <script lang="ts">
-    import { Component, Vue } from 'vue-property-decorator';
-    import HelloWorld from './components/HelloWorld.vue';
+	import {Component, Vue} from 'vue-property-decorator';
+	import Background from "./components/Background.vue";
+	import Card from "./components/Card.vue";
+	import {stateManager} from "./init";
 
-    @Component({
-        components: {
-            HelloWorld
-        }
-    })
-
-    export default class App extends Vue { }
+	@Component({
+		components: {
+			Background,
+			Card
+		}
+	})
+	export default class App extends Vue {
+		get StateManager() {
+			return stateManager;
+		}
+	}
 </script>
