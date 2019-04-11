@@ -26,8 +26,6 @@ class StateManager {
 		const current = this.data[index];
 		const ele = document.getElementById("bkgd");
 		if (ele != null) {
-			console.log("data", this.data);
-			console.log("color", this.data[this.current], this.current);
 			this.asyncAnimator.BackgroundColor(ele, this.data[this.current].color, current.color, {duration: 200});
 		}
 		this.current = index;
@@ -35,6 +33,10 @@ class StateManager {
 	
 	get Current(): number {
 		return this.current;
+	}
+	
+	get CurrentState() {
+		return this.data[this.current];
 	}
 	
 	get Size(): number {

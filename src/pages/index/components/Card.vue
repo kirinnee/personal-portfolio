@@ -23,11 +23,13 @@
 			color: String,
 			index: Number,
 			name: String,
+			dotColor: String,
 			state: StateManager
 		}
 	})
 	export default class Card extends Vue {
 		private color?: string;
+		private dotColor?: string;
 		private index?: number;
 		private state?: StateManager;
 		private name?: string;
@@ -43,7 +45,8 @@
 			this.state!.register({
 				index: this.index!,
 				name: this.name!,
-				color: this.color!
+				color: this.color!,
+				circleColor: this.dotColor!
 			});
 		}
 	}

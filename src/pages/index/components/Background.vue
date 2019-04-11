@@ -21,8 +21,11 @@
     }
 
     .nav {
+        display: flex;
+        justify-content: center;
+        z-index: 2;
         position: absolute;
-        right: 20px;
+        right: 30px;
         top: 50%;
         transform: translateY(-50%);
     }

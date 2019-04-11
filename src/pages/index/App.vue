@@ -2,19 +2,19 @@
     <div class="parent">
         <Background id="bkgd" :state="StateManager"></Background>
         <div class='holder'>
-            <Card :index="0" color="green" name="hi" :state="StateManager">
+            <Card :index="0" color="green" name="introduction" dot-color="black" :state="StateManager">
                 <div class="text">First Div</div>
             </Card>
             <div class="buffer"></div>
-            <Card :index="1" color="pink" name="hi" :state="StateManager">
+            <Card :index="1" color="pink" name="about me" dot-color="white" :state="StateManager">
                 <div class="text">Second Div</div>
             </Card>
             <div class="buffer"></div>
-            <Card :index="2" color="orange" name="hi" :state="StateManager">
+            <Card :index="2" color="orange" name="timeline" dot-color="black" :state="StateManager">
                 <div class="text">Third Div</div>
             </Card>
             <div class="buffer"></div>
-            <Card :index="3" color="blue" name="hi" :state="StateManager">
+            <Card :index="3" color="blue" name="skill set" dot-color="white" :state="StateManager">
                 <div class="text">Fourth Div</div>
             </Card>
             <div class="buffer"></div>
