@@ -35,9 +35,7 @@
 		onReach({going}: { going: string, direction: string }): void {
 			if (going == "in") console.log("Entering: ", this.index!);
 			if (this.state!.Current != this.index && going == "in") {
-				// let child: any = this.$refs.child;
 				this.state!.trigger(this.index!);
-				// child.triggerReach();
 			}
 		}
 

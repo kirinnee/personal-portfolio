@@ -1,22 +1,25 @@
 <template>
     <div class="parent">
         <Background id="bkgd"></Background>
-        <Card :index="0" color="green" name="hi" :state="StateManager">
-            <div class="text">First Div</div>
-        </Card>
-        <div class="buffer"></div>
-        <Card :index="1" color="pink" name="hi" :state="StateManager">
-            <div class="text">Second Div</div>
-        </Card>
-        <div class="buffer"></div>
-        <Card :index="2" color="orange" name="hi" :state="StateManager">
-            <div class="text">Third Div</div>
-        </Card>
-        <div class="buffer"></div>
-        <Card :index="3" color="blue" name="hi" :state="StateManager">
-            <div class="text">Fourth Div</div>
-        </Card>
-        <div class="buffer"></div>
+        <div class='holder'>
+            <Card :index="0" color="green" name="hi" :state="StateManager">
+                <div class="text">First Div</div>
+            </Card>
+            <div class="buffer"></div>
+            <Card :index="1" color="pink" name="hi" :state="StateManager">
+                <div class="text">Second Div</div>
+            </Card>
+            <div class="buffer"></div>
+            <Card :index="2" color="orange" name="hi" :state="StateManager">
+                <div class="text">Third Div</div>
+            </Card>
+            <div class="buffer"></div>
+            <Card :index="3" color="blue" name="hi" :state="StateManager">
+                <div class="text">Fourth Div</div>
+            </Card>
+            <div class="buffer"></div>
+        </div>
+
     </div>
 
 </template>
@@ -29,6 +32,10 @@
     .parent {
         width: 100vw;
         overflow-x: hidden;
+    }
+
+    .holder {
+        position: absolute;
     }
 
     .buffer {
