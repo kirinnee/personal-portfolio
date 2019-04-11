@@ -1,6 +1,6 @@
 <template>
     <div class="parent">
-        <Background id="bkgd"></Background>
+        <Background id="bkgd" :state="StateManager"></Background>
         <div class='holder'>
             <Card :index="0" color="green" name="hi" :state="StateManager">
                 <div class="text">First Div</div>

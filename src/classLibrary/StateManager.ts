@@ -1,9 +1,10 @@
 import {States} from "./States";
 import {AsynchronousAnimator} from "@kirinnee/animate";
+import Vue from "vue";
 
 class StateManager {
 	
-	private readonly data: { [s: number]: States };
+	public readonly data: { [s: number]: States };
 	private size: number;
 	private current: number;
 	private asyncAnimator: AsynchronousAnimator;
@@ -16,14 +17,10 @@ class StateManager {
 	}
 	
 	register(values: States) {
-		this.data[values.index] = values;
+		Vue.set(this.data, values.index, values);
 		this.size++;
-		console.log(this.data);
 	}
 	
-	get Size(): number {
-		return this.size;
-	}
 	
 	trigger(index: number) {
 		const current = this.data[index];
@@ -40,7 +37,9 @@ class StateManager {
 		return this.current;
 	}
 	
-	
+	get Size(): number {
+		return this.size;
+	}
 }
 
 
