@@ -38,6 +38,10 @@
 			if (going == "in") console.log("Entering: ", this.index!);
 			if (this.state!.Current != this.index && going == "in") {
 				this.state!.trigger(this.index!);
+				const child: any = this.$refs.child;
+				if (child != null && child.trigger != null) {
+					child.trigger();
+				}
 			}
 		}
 

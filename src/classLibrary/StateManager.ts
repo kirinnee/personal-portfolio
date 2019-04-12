@@ -8,6 +8,7 @@ class StateManager {
 	private size: number;
 	private current: number;
 	private asyncAnimator: AsynchronousAnimator;
+	public readonly triggerTracker: { [s: number]: boolean }
 	
 	constructor(asyncAnimator: AsynchronousAnimator) {
 		this.data = {};
@@ -22,13 +23,21 @@ class StateManager {
 	}
 	
 	
-	trigger(index: number) {
+	trigger(index: number): void {
 		const current = this.data[index];
 		const ele = document.getElementById("bkgd");
 		if (ele != null) {
 			this.asyncAnimator.BackgroundColor(ele, this.data[this.current].color, current.color, {duration: 200});
 		}
 		this.current = index;
+	}
+	
+	markTriggered(index: number): void {
+		Vue.set(this.triggerTracker, index, true);
+	}
+	
+	checkTriggered(index: number): boolean {
+		return this.triggerTracker[index] || false;
 	}
 	
 	get Current(): number {

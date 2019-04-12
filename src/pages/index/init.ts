@@ -25,5 +25,6 @@ let stateManager: StateManager = new StateManager(asyncAnimator);
 export {
 	core,
 	asyncAnimator,
-	stateManager
+	stateManager,
+	eases
 }
