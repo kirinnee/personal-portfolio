@@ -20,7 +20,6 @@
     }
 
     .index {
-        opacity: 0.6;
         font-family: Raleway, sans-serif;
         font-size: 24px;
     }
@@ -75,13 +74,13 @@
 			const subtitle = this.$refs.subtitle as HTMLElement;
 			const easeOut = eases.EaseOut(EaseStrength.Quadratic);
 			await Promise.all([
-				index.Wait({duration: 150}).X(-30, 0, {duration: 500, ease: easeOut}).Promise,
-				index.Wait({duration: 150}).Opacity(0, 0.6, {duration: 300, ease: easeOut}).Promise,
-				title.Wait({duration: 350}).X(-30, 0, {duration: 500, ease: easeOut}).Promise,
-				title.Wait({duration: 350}).Opacity(0, 1, {duration: 300, ease: easeOut}).Promise,
+				index.Wait({duration: 50}).X(-30, 0, {duration: 400, ease: easeOut}).Promise,
+				index.Wait({duration: 50}).Opacity(0, 0.6, {duration: 200, ease: easeOut}).Promise,
+				title.Wait({duration: 200}).X(-30, 0, {duration: 400, ease: easeOut}).Promise,
+				title.Wait({duration: 200}).Opacity(0, 1, {duration: 200, ease: easeOut}).Promise,
 			]);
+			subtitle.Y(20, 0, {duration: 500, ease: easeOut});
 			await Promise.all([
-				subtitle.Y(20, 0, {duration: 500, ease: easeOut}).Promise,
 				subtitle.Opacity(0, 1, {duration: 200, ease: easeOut}).Promise
 			]);
 		}

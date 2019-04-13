@@ -1,12 +1,14 @@
 import logo from "./assets/logo.png"
-import {Rimage, Rimager} from "@kirinnee/rimage"; 
-import {SortType} from "@kirinnee/core"; 
-import {core} from "./init"; 
+import aboutme from "./assets/aboutme.png"
+import {Rimage, Rimager} from "@kirinnee/rimage";
+import {SortType} from "@kirinnee/core";
+import {core} from "./init";
 
 core.AssertExtend();
 
 let images: any = {
-	logo
+	logo,
+	aboutme,
 };
 
 declare var PRODUCTION: boolean;
@@ -25,5 +27,5 @@ images = rimager.RegisterImages(images);
 
 export {
 	images,
-	rimager 
+	rimager
 }

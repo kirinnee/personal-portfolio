@@ -39,7 +39,7 @@
     }
 
     .buffer {
-        height: 80vh;
+        height: 120vh;
     }
 </style>
 
