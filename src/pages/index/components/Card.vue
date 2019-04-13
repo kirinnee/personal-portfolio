@@ -1,5 +1,5 @@
 <template>
-    <div class="card" v-waypoint="{ active: true, callback: onReach }">
+    <div class="card">
         <slot></slot>
     </div>
 </template>
@@ -17,7 +17,7 @@
 <script lang="ts">
 	import {Component, Vue} from 'vue-property-decorator';
 	import {StateManager} from "../../../classLibrary/StateManager";
-	
+
 	@Component({
 		props: {
 			color: String,
@@ -34,14 +34,28 @@
 		private state?: StateManager;
 		private name?: string;
 
-		onReach({going}: { going: string, direction: string }): void {
-			if (going == "in") console.log("Entering: ", this.index!);
-			if (this.state!.Current != this.index && going == "in") {
+		beforeMount() {
+			this.state!.register({
+				index: this.index!,
+				name: this.name!,
+				color: this.color!,
+				circleColor: this.dotColor!
+			});
+		}
+
+		mounted() {
+			const element = this.$el as HTMLElement;
+			new (Waypoint as any).Inview({
+				element,
+				enter: this.onReach
+			});
+		}
+
+		onReach(): void {
+			if (this.state!.Current != this.index) {
 				this.state!.trigger(this.index!);
 				const child: any = this.getSlot();
-				console.log(child);
 				if (child != null && child.trigger != null) {
-					console.log("triggering child");
 					child.trigger();
 				}
 			}
@@ -55,14 +69,7 @@
 			}
 		}
 
-		beforeMount() {
-			this.state!.register({
-				index: this.index!,
-				name: this.name!,
-				color: this.color!,
-				circleColor: this.dotColor!
-			});
-		}
+
 	}
 </script>
 

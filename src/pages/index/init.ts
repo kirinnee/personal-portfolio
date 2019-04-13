@@ -1,3 +1,5 @@
+require("waypoints/lib/noframework.waypoints.min");
+require("waypoints/lib/shortcuts/inview");
 import {Core, Kore} from "@kirinnee/core";
 import {DOMEx, DOMExtend} from "@kirinnee/domex";
 import {EaseFactory, kEaseFactory} from "@kirinnee/kease";

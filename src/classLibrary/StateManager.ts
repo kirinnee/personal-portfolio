@@ -24,7 +24,6 @@ class StateManager {
 	
 	
 	trigger(index: number): void {
-		console.log("trigger fired");
 		const current = this.data[index];
 		const ele = document.querySelector("#bkgd .color");
 		if (ele != null) {

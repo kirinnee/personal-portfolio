@@ -868,6 +868,11 @@
   dependencies:
     "@types/webpack" "*"
 
+"@types/waypoints@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@types/waypoints/-/waypoints-4.0.1.tgz#1ca4d7c2a378898ef61b23cf30b12f9a61fde489"
+  integrity sha512-iGzJPnJ/kvs4NzcntS/ZqOn1uZNwSLumokFX7JVNDQxIBwQUPGmv9HgGQVeKGqvYsJ9mURRnXGilS8cRtf/0fg==
+
 "@types/webpack-dev-server@^3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-3.1.2.tgz#e3b18045a50fdd6c8e9a3b490f8fb191432b2b85"
@@ -6996,18 +7001,6 @@ vue-template-es2015-compiler@^1.8.2:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.8.2.tgz#dd73e80ba58bb65dd7a8aa2aeef6089cf6116f2a"
   integrity sha512-cliV19VHLJqFUYbz/XeWXe5CO6guzwd0yrrqqp0bmjlMP3ZZULY7fu8RTC4+3lmHwo6ESVDHFDsvjB15hcR5IA==
 
-vue-waypoint@^3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/vue-waypoint/-/vue-waypoint-3.2.2.tgz#9c35ca9c75ca8a7a03550eb1640ae1a0e5b8df10"
-  integrity sha512-T11nSEsmR19fc7zdRKc9YG55m4FGbQWeQY15qOdJGi80x9yAeritoTWo1sCJPoJ/S9ekkNC713z/n1r5zflOLA==
-  dependencies:
-    vue "^2.5.2"
-
-vue@^2.5.2:
-  version "2.6.10"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
-  integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
-
 vue@^2.6.5:
   version "2.6.6"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.6.tgz#dde41e483c11c46a7bf523909f4f2f816ab60d25"
@@ -7028,6 +7021,11 @@ watchpack@^1.5.0:
     chokidar "^2.0.2"
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
+
+waypoints@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/waypoints/-/waypoints-4.0.1.tgz#09979a0573810b29627cba4366a284a062ec69c8"
+  integrity sha1-CZeaBXOBCylifLpDZqKEoGLsacg=
 
 wbuf@^1.1.0, wbuf@^1.7.3:
   version "1.7.3"
