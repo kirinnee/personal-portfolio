@@ -46,6 +46,7 @@
     }
 
     .row {
+        opacity: 0;
         top: 50px;
     }
 

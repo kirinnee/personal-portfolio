@@ -6,7 +6,7 @@
         <div class="main">
             <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <table>
-                <tr>
+                <tr class="head" ref="head">
                     <th></th>
                     <th>Production Experience</th>
                     <th>Understand Landscape and Toolchain</th>
@@ -77,6 +77,11 @@
     .padding {
         height: 160px;
     }
+
+    .head {
+        opacity: 0;
+    }
+
 </style>
 
 <script lang='ts'>
@@ -112,7 +117,34 @@
 			if (!this.IsTriggered) {
 				this.state!.markTriggered(this.index!);
 				await header.trigger();
+				const ruby: HTMLElement = (this.$refs.ruby as Vue).$el as HTMLElement;
+				const cs: HTMLElement = (this.$refs.csharp as Vue).$el as HTMLElement;
+				const ts: HTMLElement = (this.$refs.ts as Vue).$el as HTMLElement;
+				const java: HTMLElement = (this.$refs.java as Vue).$el as HTMLElement;
+				const js: HTMLElement = (this.$refs.js as Vue).$el as HTMLElement;
+				const cpp: HTMLElement = (this.$refs.cpp as Vue).$el as HTMLElement;
+				const py: HTMLElement = (this.$refs.py as Vue).$el as HTMLElement;
+				const php: HTMLElement = (this.$refs.php as Vue).$el as HTMLElement;
+				const h: HTMLElement = (this.$refs.head) as HTMLElement;
+				await this.fadeIn(h);
+				await this.fadeIn(ruby);
+				await this.fadeIn(cs);
+				await this.fadeIn(ts);
+				await this.fadeIn(java);
+				await this.fadeIn(js);
+				await this.fadeIn(cpp);
+				await this.fadeIn(py);
+				await this.fadeIn(php);
 			}
+		}
+
+		async fadeIn(elements: HTMLElement): Promise<void> {
+			await Promise.all([
+				elements.Y(-20, 0, {duration: 200}).Promise,
+				elements.ScaleX(1.1, 1, {duration: 200}).Promise,
+				elements.ScaleY(1.1, 1, {duration: 200}).Promise,
+				elements.Opacity(0, 1, {duration: 200}).Promise,
+			]);
 		}
 
 		get IsTriggered(): boolean {
