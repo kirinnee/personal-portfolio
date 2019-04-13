@@ -21,6 +21,7 @@
 	"dependencies":    {
 		"@babel/polyfill":           "^7.0.0",
 		"@kirinnee/animate":         "^0.0.7",
+		"@kirinnee/animatex":        "^0.1.0",
 		"@kirinnee/core":            "^0.7.2",
 		"@kirinnee/domex":           "^0.0.11",
 		"@kirinnee/elefact":         "^0.0.3",

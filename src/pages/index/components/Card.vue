@@ -1,6 +1,6 @@
 <template>
     <div class="card" v-waypoint="{ active: true, callback: onReach }">
-        <slot ref="child"></slot>
+        <slot></slot>
     </div>
 </template>
 
@@ -38,10 +38,20 @@
 			if (going == "in") console.log("Entering: ", this.index!);
 			if (this.state!.Current != this.index && going == "in") {
 				this.state!.trigger(this.index!);
-				const child: any = this.$refs.child;
+				const child: any = this.getSlot();
+				console.log(child);
 				if (child != null && child.trigger != null) {
+					console.log("triggering child");
 					child.trigger();
 				}
+			}
+		}
+
+		getSlot(): any | null {
+			try {
+				return this.$slots.default![0]!.componentInstance;
+			} catch {
+				return null;
 			}
 		}
 

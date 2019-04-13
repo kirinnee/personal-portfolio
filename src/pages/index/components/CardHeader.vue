@@ -1,32 +1,39 @@
-import {EaseStrength} from "@kirinnee/kease";
-import {EaseStrength} from "@kirinnee/kease";
 <template>
     <div class="header">
-        <div class="invis index" :class="Theme" ref="index">{{index}}</div>
-        <div class="invis title" :class="Theme" ref="title">{{title}}</div>
-        <div class="invis subtitle" :class="Theme" ref="subtitle">{{subtitle}}</div>
+        <div class="index invis" :class="Classes" ref="index">{{index}}</div>
+        <div class="title invis" :class="Classes" ref="title">{{title}}</div>
+        <div class="subtitle invis" :class="Classes" ref="subtitle">{{subtitle}}</div>
     </div>
 </template>
 
 <style scoped lang="scss">
+    .header {
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .invis {
+        position: relative;
         opacity: 0;
     }
 
     .index {
+        opacity: 0.6;
         font-family: Raleway, sans-serif;
-        font-size: 16px;
+        font-size: 24px;
     }
 
     .title {
         font-family: Raleway, sans-serif;
-        font-size: 16px;
+        font-size: 24px;
         font-weight: 500;
         text-transform: uppercase;
     }
 
     .subtitle {
-        font-size: 30px;
+        font-size: 50px;
         font-family: Merriweather, serif;
         font-weight: 500;
     }
@@ -44,7 +51,7 @@ import {EaseStrength} from "@kirinnee/kease";
 
 <script lang="ts">
 	import {Component, Vue} from 'vue-property-decorator';
-	import {asyncAnimator, eases} from "../init";
+	import {eases} from "../init";
 	import {EaseStrength} from "@kirinnee/kease";
 	
 	@Component({
@@ -58,29 +65,25 @@ import {EaseStrength} from "@kirinnee/kease";
 	export default class CardHeader extends Vue {
 		private dark?: boolean;
 
-		get Theme() {
-			return this.dark! ? "dark" : "light"
+		get Classes() {
+			return (this.dark! ? "dark" : "light");
 		}
 
 		async trigger() {
-			console.log("animation starting");
 			const index = this.$refs.index as HTMLElement;
 			const title = this.$refs.title as HTMLElement;
 			const subtitle = this.$refs.subtitle as HTMLElement;
-			const easeIn = eases.EaseIn(EaseStrength.Linear);
+			const easeOut = eases.EaseOut(EaseStrength.Quadratic);
 			await Promise.all([
-				asyncAnimator.X(index, -20, 0, {duration: 200, ease: easeIn}),
-				asyncAnimator.Opacity(index, 0, 0.6, {duration: 200, ease: easeIn}),
-				asyncAnimator.X(title, -20, 0, {duration: 300, ease: easeIn}),
-				asyncAnimator.Opacity(title, 0, 1, {duration: 300, ease: easeIn}),
+				index.Wait({duration: 150}).X(-30, 0, {duration: 500, ease: easeOut}).Promise,
+				index.Wait({duration: 150}).Opacity(0, 0.6, {duration: 300, ease: easeOut}).Promise,
+				title.Wait({duration: 350}).X(-30, 0, {duration: 500, ease: easeOut}).Promise,
+				title.Wait({duration: 350}).Opacity(0, 1, {duration: 300, ease: easeOut}).Promise,
 			]);
 			await Promise.all([
-				asyncAnimator.Y(subtitle, -200, 0, {duration: 200, ease: easeIn}),
-				asyncAnimator.Opacity(subtitle, -200, 0, {duration: 200, ease: easeIn})
+				subtitle.Y(20, 0, {duration: 500, ease: easeOut}).Promise,
+				subtitle.Opacity(0, 1, {duration: 200, ease: easeOut}).Promise
 			]);
-			console.log("animation ended");
-
-
 		}
 
 	}

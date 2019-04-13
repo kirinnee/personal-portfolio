@@ -45,11 +45,15 @@
 			}
 		}
 
-		trigger() {
+		get IsTriggered(): boolean {
+			return this.state!.checkTriggered(this.index!)
+		}
+
+		async trigger() {
 			const header: any = this.$refs.header;
-			if (!this.state!.checkTriggered(this.index!)) {
+			if (!this.IsTriggered) {
 				this.state!.markTriggered(this.index!);
-				header.trigger();
+				await header.trigger();
 			}
 		}
 
