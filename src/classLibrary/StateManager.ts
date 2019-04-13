@@ -12,7 +12,7 @@ class StateManager {
 	constructor(asyncAnimator: AnimateX) {
 		this.data = {};
 		this.size = 0;
-		this.current = 0;
+		this.current = -1;
 		this.triggerTracker = {};
 		asyncAnimator.AssertExtend();
 	}
@@ -25,9 +25,9 @@ class StateManager {
 	
 	trigger(index: number): void {
 		const current = this.data[index];
-		const ele = document.getElementById("bkgd");
+		const ele = document.querySelector("#bkgd .color");
 		if (ele != null) {
-			ele.BackgroundColor(this.data[this.current].color, current.color, {duration: 200});
+			ele.BackgroundColor(this.CurrentState.color, current.color, {duration: 200});
 		}
 		this.current = index;
 	}
@@ -45,7 +45,7 @@ class StateManager {
 	}
 	
 	get CurrentState() {
-		return this.data[this.current];
+		return this.data[this.current] || this.data[0];
 	}
 	
 	get Size(): number {
