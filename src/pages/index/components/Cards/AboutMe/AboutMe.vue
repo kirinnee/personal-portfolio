@@ -1,4 +1,3 @@
-import {EaseStrength} from "@kirinnee/kease";
 <template>
     <div class="full">
         <div class="main">

@@ -1,5 +1,7 @@
-import aboutme from "./assets/aboutme.png"
-import introduction from "./assets/introduction.png"
+import aboutme from "./assets/aboutme.png";
+import languages from "./assets/languages.png";
+import introduction from "./assets/introduction.png";
+import tick from "./assets/tick.png"
 import {Rimage, Rimager} from "@kirinnee/rimage";
 import {SortType} from "@kirinnee/core";
 import {core} from "./init";
@@ -8,7 +10,9 @@ core.AssertExtend();
 
 let images: any = {
 	aboutme,
-	introduction
+	introduction,
+	languages,
+	tick,
 };
 
 declare var PRODUCTION: boolean;
