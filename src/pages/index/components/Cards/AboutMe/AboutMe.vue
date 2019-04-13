@@ -31,8 +31,8 @@ import {EaseStrength} from "@kirinnee/kease";
     .background {
         position: relative;
         opacity: 0.1;
-        width: 50%;
-        overflow: hidden;
+        width: 40%;
+        overflow: visible;
 
         img {
             width: 100%;
@@ -55,7 +55,6 @@ import {EaseStrength} from "@kirinnee/kease";
     }
 
     .full {
-        position: relative;
         width: 100vw;
     }
 
@@ -71,12 +70,12 @@ import {EaseStrength} from "@kirinnee/kease";
 
 <script lang="ts">
 	import {Component, Vue} from 'vue-property-decorator';
-	import CardHeader from "../CardHeader.vue";
-	import {eases, stateManager} from "../../init";
-	import {StateManager} from "../../../../classLibrary/StateManager";
-	import {States} from "../../../../classLibrary/States";
+	import CardHeader from "../../CardHeader.vue";
+	import {eases, stateManager} from "../../../init";
+	import {StateManager} from "../../../../../classLibrary/StateManager";
+	import {States} from "../../../../../classLibrary/States";
 	import {EaseStrength} from "@kirinnee/kease";
-	import {images} from '../../images';
+	import {images} from '../../../images';
 
 	@Component({
 		components: {CardHeader},
@@ -106,8 +105,8 @@ import {EaseStrength} from "@kirinnee/kease";
 				await header.trigger();
 				const description: HTMLElement = this.$refs.desc as HTMLElement;
 				await Promise.all([
-					description.ScaleX(1.1, 1, {duration: 500, ease: eases.EaseOut(EaseStrength.Quadratic)}),
-					description.ScaleY(1.1, 1, {duration: 500, ease: eases.EaseOut(EaseStrength.Quadratic)}),
+					description.ScaleX(1.05, 1, {duration: 500, ease: eases.EaseOut(EaseStrength.Quadratic)}),
+					description.ScaleY(1.05, 1, {duration: 500, ease: eases.EaseOut(EaseStrength.Quadratic)}),
 					description.Opacity(0, 1, {duration: 500, ease: eases.EaseOut(EaseStrength.Quadratic)})
 				])
 			}

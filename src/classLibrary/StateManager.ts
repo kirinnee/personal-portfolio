@@ -24,10 +24,11 @@ class StateManager {
 	
 	
 	trigger(index: number): void {
+		console.log("trigger fired");
 		const current = this.data[index];
 		const ele = document.querySelector("#bkgd .color");
 		if (ele != null) {
-			ele.BackgroundColor(this.CurrentState.color, current.color, {duration: 200});
+			ele.BackgroundColor(this.CurrentState.color, current.color, {duration: 400});
 		}
 		this.current = index;
 	}

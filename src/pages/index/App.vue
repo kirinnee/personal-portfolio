@@ -2,11 +2,11 @@
     <div class="parent">
         <Background id="bkgd" :state="StateManager"></Background>
         <div class='holder'>
-            <Card :index="0" color="green" name="introduction" dot-color="black" :state="StateManager">
-                <div class="text">First Div</div>
+            <Card :index="0" color="#0c346d" name="introduction" dot-color="white" :state="StateManager">
+                <Introduction></Introduction>
             </Card>
             <div class="buffer"></div>
-            <Card :index="1" color="pink" name="about me" dot-color="white" :state="StateManager">
+            <Card :index="1" color="pink" name="about me" dot-color="#263238" :state="StateManager">
                 <AboutMe :index="1"></AboutMe>
             </Card>
             <div class="buffer"></div>
@@ -39,7 +39,7 @@
     }
 
     .buffer {
-        height: 80vh;
+        height: 100vh;
     }
 </style>
 
@@ -48,10 +48,12 @@
 	import Background from "./components/Background.vue";
 	import Card from "./components/Card.vue";
 	import {stateManager} from "./init";
-	import AboutMe from "./components/Cards/AboutMe.vue";
+	import AboutMe from "./components/Cards/AboutMe/AboutMe.vue";
+	import Introduction from "./components/Cards/Introduction/Introduction.vue";
 
 	@Component({
 		components: {
+			Introduction,
 			AboutMe,
 			Background,
 			Card
