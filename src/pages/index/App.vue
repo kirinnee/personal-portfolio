@@ -7,7 +7,7 @@
             </Card>
             <div class="buffer"></div>
             <Card :index="1" color="pink" name="about me" dot-color="white" :state="StateManager">
-                <div class="text">Second Div</div>
+                <AboutMe :index="1"></AboutMe>
             </Card>
             <div class="buffer"></div>
             <Card :index="2" color="orange" name="timeline" dot-color="black" :state="StateManager">
@@ -39,7 +39,7 @@
     }
 
     .buffer {
-        height: 120vh;
+        height: 80vh;
     }
 </style>
 
@@ -48,9 +48,11 @@
 	import Background from "./components/Background.vue";
 	import Card from "./components/Card.vue";
 	import {stateManager} from "./init";
+	import AboutMe from "./components/Cards/AboutMe.vue";
 
 	@Component({
 		components: {
+			AboutMe,
 			Background,
 			Card
 		}

@@ -656,6 +656,15 @@
     "@kirinnee/kease" "^0.0.2"
     dom4 "^2.1.3"
 
+"@kirinnee/animatex@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@kirinnee/animatex/-/animatex-0.1.0.tgz#190a175c8f328cb1496625e8888446dbcfdaea02"
+  integrity sha512-CWQREpGk31Gw0Ryt5IAnmo1CwdNUoBnhiIZNy179h16HRT5NuJ13ONOfhy9nz2X66Snys8x6ziHgkktIrDB1Xg==
+  dependencies:
+    "@babel/polyfill" "^7.0.0"
+    "@kirinnee/core" "^0.7.5"
+    dom4 "^2.1.3"
+
 "@kirinnee/core@^0.7.2", "@kirinnee/core@^0.7.5":
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/@kirinnee/core/-/core-0.7.5.tgz#3f44e200c3487c188f8274a79ddb3c4ecdc70194"

@@ -1,6 +1,6 @@
 <template>
     <div class="nav-bar">
-        <NavElement v-for="value in Pages" :name="value.name" :index="value.index" :state="state">
+        <NavElement v-for="value in Pages" :key="value.index" :name="value.name" :index="value.index" :state="state">
             {{value.index}}
         </NavElement>
     </div>

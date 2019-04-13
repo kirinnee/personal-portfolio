@@ -1,19 +1,20 @@
 import {States} from "./States";
-import {AsynchronousAnimator} from "@kirinnee/animate";
 import Vue from "vue";
+import {AnimateX} from "@kirinnee/animatex";
 
 class StateManager {
 	
 	public readonly data: { [s: number]: States };
 	private size: number;
 	private current: number;
-	private asyncAnimator: AsynchronousAnimator;
+	public readonly triggerTracker: { [s: number]: boolean };
 	
-	constructor(asyncAnimator: AsynchronousAnimator) {
+	constructor(asyncAnimator: AnimateX) {
 		this.data = {};
 		this.size = 0;
 		this.current = 0;
-		this.asyncAnimator = asyncAnimator;
+		this.triggerTracker = {};
+		asyncAnimator.AssertExtend();
 	}
 	
 	register(values: States) {
@@ -22,13 +23,21 @@ class StateManager {
 	}
 	
 	
-	trigger(index: number) {
+	trigger(index: number): void {
 		const current = this.data[index];
 		const ele = document.getElementById("bkgd");
 		if (ele != null) {
-			this.asyncAnimator.BackgroundColor(ele, this.data[this.current].color, current.color, {duration: 200});
+			ele.BackgroundColor(this.data[this.current].color, current.color, {duration: 200});
 		}
 		this.current = index;
+	}
+	
+	markTriggered(index: number): void {
+		Vue.set(this.triggerTracker, index, true);
+	}
+	
+	checkTriggered(index: number): boolean {
+		return this.triggerTracker[index] || false;
 	}
 	
 	get Current(): number {

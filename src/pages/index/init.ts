@@ -6,6 +6,7 @@ import * as gsap from 'gsap';
 import {TweenLite} from 'gsap';
 import {AsynchronousAnimator, GSAPAsyncAnimator, GSAPSyncAnimator, SynchronousAnimator} from "@kirinnee/animate";
 import {StateManager} from "../../classLibrary/StateManager";
+import {AnimateX, AnimX} from "@kirinnee/animatex";
 
 let text = require('gsap/TextPlugin');
 
@@ -20,10 +21,14 @@ let eleFact: ElementFactory = new EleFact(domex, "k-space");
 let animator: SynchronousAnimator = new GSAPSyncAnimator(TweenLite, text, eases, eleFact, domex, core);
 let asyncAnimator: AsynchronousAnimator = new GSAPAsyncAnimator(animator);
 
-let stateManager: StateManager = new StateManager(asyncAnimator);
+let animX: AnimateX = new AnimX(asyncAnimator);
+animX.ExtendPrimitives();
+
+let stateManager: StateManager = new StateManager(animX);
 
 export {
 	core,
-	asyncAnimator,
-	stateManager
+	stateManager,
+	animX,
+	eases
 }
