@@ -57,6 +57,7 @@
 
     .full {
         position: relative;
+        overflow: hidden;
     }
 
     .background {

@@ -47,6 +47,7 @@
     .full {
         position: relative;
         height: 100vh;
+        overflow: hidden;
     }
 
 
