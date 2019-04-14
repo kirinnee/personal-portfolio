@@ -5,13 +5,29 @@
         </div>
         <div class="main">
             <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
-
+            <div></div>
+            <div class="groups">
+                <SkillGroup class='skill' :skills="FrontEnd"></SkillGroup>
+            </div>
 
         </div>
+
     </div>
 </template>
 
 <style lang='scss' scoped>
+    .groups {
+        margin-top: 40px;
+        position: relative;
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .main {
+        position: relative;
+    }
+
     .full {
         position: relative;
         height: 100vh;
@@ -35,17 +51,32 @@
 	import {Component, Vue} from 'vue-property-decorator';
 	import CardHeader from "../../CardHeader.vue";
 	import {StateManager} from "../../../../../classLibrary/StateManager";
-	import {images} from "../../../images";
+	import {images, skillMap} from "../../../images";
 	import {stateManager} from "../../../init";
 	import {States} from "../../../../../classLibrary/States";
+	import SkillGroup from "./SkillGroup.vue";
+	import {SkillData} from "../../../../../classLibrary/SkillData";
 	
 	@Component({
-		components: {CardHeader},
+		components: {SkillGroup, CardHeader},
 		props: {index: Number}
 	})
 	export default class Skill extends Vue {
 		private state?: StateManager;
 		private index?: number;
+
+		get FrontEnd(): SkillData[] {
+			const f = skillMap.fontend;
+			return [
+				f.babel,
+				f.bootstrap,
+				f.gulp,
+				f.jquery,
+				f.react,
+				f.sass,
+				f.vue
+			]
+		}
 
 		data() {
 			return {
