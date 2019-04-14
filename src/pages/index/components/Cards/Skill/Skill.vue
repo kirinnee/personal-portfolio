@@ -3,14 +3,17 @@
         <SkillBackground></SkillBackground>
         <div class="main">
             <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
-            <div class="nav-bar">
+            <div class="nav-bar" ref="nav">
                 <NavTab name="Backend" type="backend"></NavTab>
                 <NavTab name="Devops" type="devops"></NavTab>
                 <NavTab name="Frontend" type="frontend"></NavTab>
                 <NavTab name="Mobile & IoT" type="mobile"></NavTab>
             </div>
             <div class="groups">
-                <SkillGroup :skills="FrontEnd" ref="frontend"></SkillGroup>
+                <SkillGroup :skills="BackEnd" v-show="selected['backend']" ref="backend"></SkillGroup>
+                <SkillGroup :skills="FrontEnd" v-show="selected['frontend']" ref="frontend"></SkillGroup>
+                <SkillGroup :skills="DevOps" v-show="selected['devops']" ref="devops"></SkillGroup>
+                <SkillGroup :skills="MobileIot" v-show="selected['mobile']" ref="mobile"></SkillGroup>
             </div>
 
         </div>
@@ -28,8 +31,10 @@
 
     .nav-bar {
         @extend .center;
+        opacity: 0;
         margin-top: 50px;
         display: flex;
+        font-size: 20px;
         justify-content: center;
 
     }
@@ -66,19 +71,33 @@
 	export default class Skill extends Vue {
 		private state?: StateManager;
 		private index?: number;
-		private selected?: { [s: string]: boolean } = {};
+		private selected?: { [s: string]: boolean };
+		private triggered?: { [s: string]: boolean };
+
+		get MobileIot(): SkillData[] {
+			const m = skillMap.mobileIot;
+			return [m.android, m.arduino, m.ble, m.eeprom, m.flutter];
+		}
+
+		get DevOps(): SkillData[] {
+			const d = skillMap.devops;
+			return [d.docker, d.gitlab, d.aws, d.azureDevops,
+				d.azure, d.digitalOcean, d.firebase, d.heroku]
+		}
+
+		get BackEnd(): SkillData[] {
+			const b = skillMap.backend;
+			return [b.dotnet, b.rails, b.node, b.express,
+				b.swagger,
+				b.mongodb, b.mysql, b.postgres, b.redis,
+				b.nginx, b.apache, b.rabbitmq,];
+		}
 
 		get FrontEnd(): SkillData[] {
 			const f = skillMap.fontend;
-			return [
-				f.babel,
-				f.bootstrap,
-				f.gulp,
-				f.jquery,
-				f.react,
-				f.sass,
-				f.vue
-			]
+			return [f.vue, f.webpack, f.babel,
+				f.sass, f.yarn, f.react,
+				f.bootstrap, f.gulp, f.jquery]
 		}
 
 		data() {
@@ -88,6 +107,12 @@
 				selected: {
 					frontend: false,
 					backend: true,
+					devops: false,
+					mobile: false
+				},
+				triggered: {
+					backend: false,
+					frontend: false,
 					devops: false,
 					mobile: false
 				}
@@ -103,8 +128,20 @@
 			if (!this.IsTriggered) {
 				this.state!.markTriggered(this.index!);
 				await header.trigger();
-				const frontend: any = this.$refs.frontend as Vue;
-				frontend.trigger();
+				await (this.$refs.nav as HTMLElement).Opacity(0, 1, {duration: 200}).Promise;
+				await this.playAnimation("backend");
+			}
+		}
+
+		async playAnimation(s: string): Promise<void> {
+			console.log("playing", this.$refs);
+			const x: any = this.$refs[s] as Vue;
+			if (!this.triggered![s]) {
+				this.triggered![s] = true;
+				console.log(x);
+				await x.trigger();
+			} else {
+
 			}
 		}
 

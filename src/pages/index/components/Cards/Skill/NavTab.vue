@@ -40,6 +40,7 @@
 				parent.selected[v] = false;
 			}
 			parent.selected![s] = true;
+			parent.playAnimation(s);
 		}
 
 		Selected(s: string): string {

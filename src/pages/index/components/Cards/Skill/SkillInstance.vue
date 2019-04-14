@@ -20,13 +20,14 @@
     }
 
     .instance {
+        position: relative;
         display: flex;
         justify-content: space-evenly;
         align-content: center;
         align-items: center;
         flex-direction: column;
-        width: 11vw;
-        height: 11vw;
+        width: 9vw;
+        height: 9vw;
         box-sizing: border-box;
         border-radius: 10px;
 
@@ -39,15 +40,15 @@
             margin: 10px 0;
             font-family: Raleway, sans-serif;
             text-align: center;
-            width: 6vw;
+            width: 4vw;
             transition: top 0.3s;
         }
     }
 
     .holder {
         position: relative;
-        width: 6vw;
-        height: 6vw;
+        width: 4vw;
+        height: 4vw;
 
         img {
             position: absolute;

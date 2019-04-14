@@ -41,10 +41,12 @@
 				const ele = e.$el;
 				console.log(ele);
 				await Promise.all([
-					ele.Wait({duration: i * 200}).Opacity(0, 1, {duration: 400}).Promise,
-					ele.Wait({duration: i * 200}).X(-20, 0, {duration: 400}).Promise
+					ele.Wait({duration: i * 100}).Opacity(0, 1, {duration: 400}).Promise,
+					ele.Wait({duration: i * 100}).X(-10, 0, {duration: 200}).Promise,
+
 				]);
-				e.trigger();
+				e.trigger()
+
 			});
 		}
 	}
