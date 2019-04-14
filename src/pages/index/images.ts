@@ -2,7 +2,7 @@ import aboutme from "./assets/aboutme.png";
 import languages from "./assets/languages.png";
 import introduction from "./assets/introduction.png";
 import tick from "./assets/tick.png"
-import downarrow from "./assets/downarrow.png";
+import downarrow from "./assets/down-arrow.png";
 import {Rimage, Rimager} from "@kirinnee/rimage";
 import {SortType} from "@kirinnee/core";
 import {core} from "./init";

@@ -56,7 +56,7 @@
 	export default class ScrollForMore extends Vue {
 		data() {
 			return {
-				downarrow: images.downarow,
+				downarrow: images.downarrow,
 			}
 		}
 
