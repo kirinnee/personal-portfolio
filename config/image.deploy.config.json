@@ -3,9 +3,9 @@
 		"key":          "def",
 		"width":        2000,
 		"sizes":        {
-			"def":   80,
-			"med":   50,
-			"small": 30
+			"def":   100,
+			"med":   70,
+			"small": 50
 		},
 		"target":       "kirinnee.portfolio",
 		"input":        "../dist/pages/",
@@ -18,10 +18,8 @@
 		},
 		"compressions": {
 			"pngQuant":      {
-				"speed":       11,
-				"bit":         256,
-				"min-quality": 65,
-				"max-quality": 80
+				"speed": 11,
+				"bit":   256
 			},
 			"jpegOptim":     {
 				"quality":     75,

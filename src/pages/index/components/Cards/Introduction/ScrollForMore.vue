@@ -48,15 +48,15 @@
 
 <script lang='ts'>
 	import {Component, Vue} from 'vue-property-decorator';
-	import downarrow from "../../../assets/svg/down-arrow.svg";
 	import {eases} from "../../../init";
 	import {EaseStrength} from "@kirinnee/kease";
+	import {images} from "../../../images";
 	
 	@Component({})
 	export default class ScrollForMore extends Vue {
 		data() {
 			return {
-				downarrow,
+				downarrow: images.downarow,
 			}
 		}
 
