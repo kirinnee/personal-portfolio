@@ -73,7 +73,6 @@
 		private state?: StateManager;
 		private index?: number;
 		private selected?: { [s: string]: boolean };
-		private triggered?: { [s: string]: boolean };
 
 		get MobileIot(): SkillData[] {
 			const m = skillMap.mobileIot;
@@ -110,12 +109,6 @@
 					backend: true,
 					devops: false,
 					mobile: false
-				},
-				triggered: {
-					backend: false,
-					frontend: false,
-					devops: false,
-					mobile: false
 				}
 			}
 		}
@@ -135,15 +128,8 @@
 		}
 
 		async playAnimation(s: string): Promise<void> {
-			console.log("playing", this.$refs);
 			const x: any = this.$refs[s] as Vue;
-			if (!this.triggered![s]) {
-				this.triggered![s] = true;
-				console.log(x);
-				await x.trigger();
-			} else {
-
-			}
+			await x.trigger();
 		}
 
 		get State(): States {

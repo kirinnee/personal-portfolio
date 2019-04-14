@@ -37,6 +37,7 @@
 		async trigger() {
 			console.log("trigged");
 			const skillTable: any[] = this.$refs.skilltable as Vue[];
+			await skillTable.Each((e) => e.$el.Opacity(0, 0, {duration: 0}).Promise);
 			skillTable.Each(async (e, i) => {
 				const ele = e.$el;
 				console.log(ele);
