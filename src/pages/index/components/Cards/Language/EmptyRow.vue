@@ -14,6 +14,6 @@
 	
 	@Component({})
 	export default class EmptyRow extends Vue {
-		
+
 	}
 </script>

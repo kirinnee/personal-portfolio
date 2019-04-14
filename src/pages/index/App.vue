@@ -13,6 +13,10 @@
             <Card :index="2" color="#590909" name="languages" dot-color="white" :state="StateManager">
                 <Languages :index="2"></Languages>
             </Card>
+            <div class="buffer"></div>
+            <Card :index="3" color="#b3efec" name="skill" dot-color="#263238" :state="StateManager">
+                <Skill :index="3"></Skill>
+            </Card>
         </div>
 
     </div>
@@ -46,9 +50,11 @@
 	import AboutMe from "./components/Cards/AboutMe/AboutMe.vue";
 	import Introduction from "./components/Cards/Introduction/Introduction.vue";
 	import Languages from "./components/Cards/Language/Languages.vue";
+	import Skill from "./components/Cards/Skill/Skill.vue";
 
 	@Component({
 		components: {
+			Skill,
 			Languages,
 			Introduction,
 			AboutMe,
