@@ -95,7 +95,7 @@ const iFrontend = images.icons.frontend;
 const iBackend = images.icons.backend;
 const iDevops = images.icons.devops;
 const iMobileIoT = images.icons.mobileIot;
-console.log(images.icons.frontend, iFrontend);
+
 const skillMap = {
 	fontend: {
 		vue: new SkillData('Vue', 0.5, iFrontend.vue),

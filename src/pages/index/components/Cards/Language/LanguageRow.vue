@@ -94,7 +94,6 @@
 		}
 
 		data() {
-			console.log(this.image);
 			return {
 				isHovering: false,
 				tick: images.tick,

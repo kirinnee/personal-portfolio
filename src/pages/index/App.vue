@@ -17,6 +17,7 @@
             <Card :index="3" color="#b3efec" name="skill" dot-color="#263238" :state="StateManager">
                 <Skill :index="3"></Skill>
             </Card>
+            <div class="buffer"></div>
         </div>
 
     </div>

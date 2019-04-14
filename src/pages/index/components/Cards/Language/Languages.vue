@@ -33,8 +33,6 @@
 
             </table>
         </div>
-
-        <div class="padding"></div>
     </div>
 </template>
 
@@ -73,11 +71,6 @@
             width: 100%;
         }
     }
-
-    .padding {
-        height: 160px;
-    }
-
     .head {
         opacity: 0;
     }
