@@ -101,27 +101,27 @@
 				this.state!.markTriggered(this.index!);
 				const out = eases.EaseOut(EaseStrength.Quadratic);
 				await Promise.all([
-					d1.Opacity(0, 1, {duration: 500, ease: out}).Promise,
-					d1.Y(-30, 0, {duration: 500, ease: out}).Promise
+					d1.Opacity(0, 1, {duration: 300, ease: out}).Promise,
+					d1.Y(-30, 0, {duration: 300, ease: out}).Promise
 				]);
 				await Promise.all([
-					d2.Opacity(0, 1, {duration: 500, ease: out}).Promise,
-					d2.Y(20, 0, {duration: 500, ease: out}).Promise,
-					d2.ScaleX(1.1, 1, {duration: 400, ease: out}).Promise,
+					d2.Opacity(0, 1, {duration: 300, ease: out}).Promise,
+					d2.Y(20, 0, {duration: 300, ease: out}).Promise,
+					d2.ScaleX(1.1, 1, {duration: 200, ease: out}).Promise,
 				]);
 				await Promise.all([
-					d3.Opacity(0, 1, {duration: 500, ease: out}).Promise,
-					d3.Y(-30, 0, {duration: 500, ease: out}).Promise
+					d3.Opacity(0, 1, {duration: 300, ease: out}).Promise,
+					d3.Y(-30, 0, {duration: 300, ease: out}).Promise
 				]);
 				await Promise.all([
-					d4.Opacity(0, 1, {duration: 500, ease: out}).Promise,
-					d4.Y(20, 0, {duration: 500, ease: out}).Promise,
-					d4.ScaleX(1.1, 1, {duration: 400, ease: out}).Promise,
+					d4.Opacity(0, 1, {duration: 300, ease: out}).Promise,
+					d4.Y(20, 0, {duration: 300, ease: out}).Promise,
+					d4.ScaleX(1.1, 1, {duration: 200, ease: out}).Promise,
 				]);
 				await Promise.all([
-					d5.Opacity(0, 1, {duration: 500, ease: out}).Promise,
-					d5.ScaleX(1.2, 1, {duration: 400, ease: out}).Promise,
-					d5.ScaleY(1.2, 1, {duration: 400, ease: out}).Promise,
+					d5.Opacity(0, 1, {duration: 300, ease: out}).Promise,
+					d5.ScaleX(1.2, 1, {duration: 200, ease: out}).Promise,
+					d5.ScaleY(1.2, 1, {duration: 200, ease: out}).Promise,
 				]);
 				await (scroll as any).appear();
 			}
