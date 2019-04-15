@@ -49,6 +49,7 @@
 
     .row {
         top: 50px;
+        opacity: 0;
     }
 
     .ticks {
