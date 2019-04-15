@@ -16,8 +16,6 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        align-content: space-evenly;
-        justify-content: space-evenly;
     }
 </style>
 

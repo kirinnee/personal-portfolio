@@ -24,7 +24,8 @@
         opacity: 0.2;
 
         img {
-            height: 100%;
+            max-height: 100%;
+            width: auto;
         }
     }
 

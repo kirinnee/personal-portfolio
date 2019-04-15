@@ -14,7 +14,8 @@
         width: 40%;
 
         img {
-            width: 100%;
+            max-width: 100%;
+            height: auto;
         }
     }
 </style>

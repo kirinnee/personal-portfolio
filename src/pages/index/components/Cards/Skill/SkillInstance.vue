@@ -17,12 +17,12 @@
         width: 0;
         transition: width 0.5s ease-out;
         background: black;
+        margin-bottom: 15px;
     }
 
     .instance {
         position: relative;
         display: flex;
-        justify-content: space-evenly;
         align-content: center;
         align-items: center;
         flex-direction: column;
@@ -49,6 +49,8 @@
         position: relative;
         width: 4vw;
         height: 4vw;
+        margin-top: 10px;
+        margin-bottom: 15px;
 
         img {
             position: absolute;
