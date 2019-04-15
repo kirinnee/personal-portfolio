@@ -1,23 +1,40 @@
 <template>
+
     <div class="instance" @mouseover="hover=true" @mouseleave="hover=false">
-        <div class="holder">
-            <img :src="Plain" :style="HoverPlain" alt="Oops... Image cannot be found :<">
-            <img class='hover' :style="HoverOriginal" :src="Original" alt="Oops... Image cannot be found :<">
+        <div class="center-align">
+            <div class="holder">
+                <img :src="Plain" :style="HoverPlain" alt="Oops... Image cannot be found :<">
+                <img class='hover' :style="HoverOriginal" :src="Original" alt="Oops... Image cannot be found :<">
+            </div>
+            <div class="progress-bar" :style="Progress"></div>
+            <div class="name" :style="HoverName">{{Name}}</div>
         </div>
-        <div class="progress-bar" :style="Progress"></div>
-        <div class="name" :style="HoverName">{{Name}}</div>
+
     </div>
 
 </template>
 
 <style lang='scss' scoped>
+    .middle {
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
+    .center-align {
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+        display: inline-block;
+
+    }
     .progress-bar {
+        @extend .middle;
+        position: relative;
         height: 1px;
         width: 0;
         transition: width 0.5s ease-out;
         background: black;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
     }
 
     .instance {
@@ -26,8 +43,9 @@
         align-content: center;
         align-items: center;
         flex-direction: column;
-        width: 9vw;
-        height: 9vw;
+        width: 10vw;
+        height: 10vw;
+        margin: 1vw;
         box-sizing: border-box;
         border-radius: 10px;
 
@@ -40,12 +58,13 @@
             margin: 10px 0;
             font-family: Raleway, sans-serif;
             text-align: center;
-            width: 4vw;
+            width: 100%;
             transition: top 0.3s;
         }
     }
 
     .holder {
+        @extend .middle;
         position: relative;
         width: 4vw;
         height: 4vw;

@@ -7,13 +7,14 @@
 <style lang='scss' scoped>
     .skill {
         opacity: 0;
-        margin: 20px;
         box-sizing: border-box;
     }
 
     .holder {
         width: 100%;
         display: flex;
+        align-content: center;
+        align-items: center;
         flex-direction: row;
         flex-wrap: wrap;
     }
