@@ -22,6 +22,10 @@ function getImage(prepend: string, s: string): { o: string, p: string } {
 	}
 }
 
+function getBook(s: string): string {
+	return require(`./assets/books/${s}.jpg`);
+}
+
 const f = 'frontend';
 const b = 'backend';
 const d = 'devops';
@@ -81,8 +85,44 @@ let images: any = {
 			flutter: getImage(m, 'flutter'),
 			ble: getImage(m, 'ble')
 		}
+	},
+	books: {
+		csharp: {
+			agilePatterns: getBook("agile_patterns_practices"),
+			proCSharp: getBook("pro_csharp"),
+			modernApiDesign: getBook("modern_api_design"),
+			xunitTestPatterns: getBook("xunit_test_patterns"),
+		},
+		design: {
+			analysisPatterns: getBook("analysis_patterns"),
+			cleanArchitecture: getBook("clean_architecture"),
+			cleanCode: getBook("clean_code"),
+			cleanCoder: getBook("clean_coder"),
+			ddd: getBook("ddd"),
+			designPatterns: getBook("design_patterns"),
+			objectDesign: getBook("object_design"),
+			essentialDocker: getBook("essential_docker"),
+		},
+		ruby: {
+			eloquentRuby: getBook("eloquent_ruby"),
+			learnRails: getBook("learn_rails"),
+			metaprogrammingRuby: getBook("metaprogramming ruby"),
+			wellGroundedRubyist: getBook("wellgrounded_rubyist"),
+			rubyOnRailsTutorial: getBook("ruby_on_rails_tutorial"),
+		},
+		others: {
+			cracking: getBook("cracking"),
+			phoenixProject: getBook("phoenix_project"),
+			mythicalManMonth: getBook("mythical_man_month"),
+			proGit: getBook("progit"),
+			refactoring: getBook("refactoring"),
+			tdd: getBook("tdd"),
+			userStoriesApplied: getBook("user_stories_applied"),
+			userStoryMapping: getBook("user_story_mapping"),
+			usingDocker: getBook("using_docker"),
+		},
+		
 	}
-	
 };
 
 declare var PRODUCTION: boolean;

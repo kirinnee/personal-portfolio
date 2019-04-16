@@ -10,12 +10,20 @@
         padding: 5px 20px;
         cursor: pointer;
 
-        &.selected {
+        &.selected.black {
             border-bottom: 1px solid black;
         }
 
-        &:hover {
+        &.selected.white {
+            border-bottom: 1px solid white;
+        }
+
+        &:hover.black {
             border-bottom: 1px solid black;
+        }
+
+        &:hover.white {
+            border-bottom: 1px solid white;
         }
     }
 </style>
@@ -26,10 +34,13 @@
 	@Component({
 		props: {
 			name: String,
-			type: String
+			type: String,
+			dark: Boolean,
 		}
 	})
 	export default class NavTab extends Vue {
+		private dark?: boolean;
+
 		get Parent(): any {
 			return this.$parent;
 		}
@@ -43,8 +54,8 @@
 			parent.playAnimation(s);
 		}
 
-		Selected(s: string): string {
-			return this.Parent.selected![s] ? "selected" : "";
+		Selected(s: string): string[] {
+			return [this.Parent.selected![s] ? "selected" : "", this.dark! ? "black" : "white"];
 		}
 	}
 </script>

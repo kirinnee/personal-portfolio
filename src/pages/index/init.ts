@@ -32,7 +32,10 @@ animX.ExtendPrimitives();
 
 let stateManager: StateManager = new StateManager(animX);
 
+const $$ = (i: number): Promise<void> => new Promise<void>(r => setTimeout(r, i));
+
 export {
+	$$,
 	core,
 	stateManager,
 	animX,

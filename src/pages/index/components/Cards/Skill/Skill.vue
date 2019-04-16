@@ -4,10 +4,10 @@
         <div class="main">
             <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="nav-bar" ref="nav">
-                <NavTab name="Backend" type="backend"></NavTab>
-                <NavTab name="Devops" type="devops"></NavTab>
-                <NavTab name="Frontend" type="frontend"></NavTab>
-                <NavTab name="Mobile & IoT" type="mobile"></NavTab>
+                <NavTab name="Backend" type="backend" :dark="true"></NavTab>
+                <NavTab name="Devops" type="devops" :dark="true"></NavTab>
+                <NavTab name="Frontend" type="frontend" :dark="true"></NavTab>
+                <NavTab name="Mobile & IoT" type="mobile" :dark="true"></NavTab>
             </div>
             <div class="groups">
                 <SkillGroup :skills="BackEnd" v-show="selected['backend']" ref="backend"></SkillGroup>
@@ -61,7 +61,7 @@
 	import {States} from "../../../../../classLibrary/States";
 	import SkillGroup from "./SkillGroup.vue";
 	import {SkillData} from "../../../../../classLibrary/SkillData";
-	import NavTab from "./NavTab.vue";
+	import NavTab from "../../NavTab.vue";
 	import SkillBackground from "./SkillBackground.vue";
 	
 	@Component({
