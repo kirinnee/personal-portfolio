@@ -34,12 +34,10 @@
 	})
 	export default class SkillGroup extends Vue {
 		async trigger() {
-			console.log("trigged");
 			const skillTable: any[] = this.$refs.skilltable as Vue[];
 			await skillTable.Each((e) => e.$el.Opacity(0, 0, {duration: 0}).Promise);
 			skillTable.Each(async (e, i) => {
 				const ele = e.$el;
-				console.log(ele);
 				await Promise.all([
 					ele.Wait({duration: i * 100}).Opacity(0, 1, {duration: 400}).Promise,
 					ele.Wait({duration: i * 100}).X(-10, 0, {duration: 200}).Promise,

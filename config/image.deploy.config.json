@@ -3,9 +3,9 @@
 		"key":          "def",
 		"width":        2000,
 		"sizes":        {
-			"def":   100,
-			"med":   70,
-			"small": 50
+			"def":   80,
+			"med":   60,
+			"small": 40
 		},
 		"target":       "kirinnee.portfolio",
 		"input":        "../dist/pages/",

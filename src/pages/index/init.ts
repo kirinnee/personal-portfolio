@@ -23,6 +23,10 @@ let eleFact: ElementFactory = new EleFact(domex, "k-space");
 let animator: SynchronousAnimator = new GSAPSyncAnimator(TweenLite, text, eases, eleFact, domex, core);
 let asyncAnimator: AsynchronousAnimator = new GSAPAsyncAnimator(animator);
 
+const blank = eleFact.DIV({}).Style("display", "none");
+document.querySelector("body")!.Append(blank);
+
+
 let animX: AnimateX = new AnimX(asyncAnimator);
 animX.ExtendPrimitives();
 
@@ -32,5 +36,6 @@ export {
 	core,
 	stateManager,
 	animX,
-	eases
+	eases,
+	eleFact
 }

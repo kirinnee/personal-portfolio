@@ -18,6 +18,10 @@
                 <Skill :index="3"></Skill>
             </Card>
             <div class="buffer"></div>
+            <Card :index="4" color="#001b39" name="timeline" dot-color="white" :state="StateManager">
+                <Timeline :index="4"></Timeline>
+            </Card>
+            <div class="buffer"></div>
         </div>
 
     </div>
@@ -52,9 +56,11 @@
 	import Introduction from "./components/Cards/Introduction/Introduction.vue";
 	import Languages from "./components/Cards/Language/Languages.vue";
 	import Skill from "./components/Cards/Skill/Skill.vue";
+	import Timeline from "./components/Cards/Timeline/Timeline.vue";
 
 	@Component({
 		components: {
+			Timeline,
 			Skill,
 			Languages,
 			Introduction,

@@ -100,7 +100,6 @@
 		}
 
 		data() {
-			console.log(this.selected);
 			return {
 				state: stateManager,
 				selected: {
