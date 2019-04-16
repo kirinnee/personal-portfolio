@@ -3,12 +3,16 @@
         <TimelineBackground></TimelineBackground>
         <div class="main">
             <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
-            <TimelineInstance v-for="(t, index) in WorkInfo" :key="t.company" :left="index % 2 === 0" :info="t" ref="instances"></TimelineInstance>
+            <div class="margin"></div>
+            <TimelineInstance v-for="(t, index) in WorkInfo" :key="t.company" :left="index % 2 === 0" :last="index === WorkInfo.length -1" :info="t" ref="instances"></TimelineInstance>
         </div>
     </div>
 </template>
 
 <style lang='scss' scoped>
+    .margin {
+        height: 40px;
+    }
     .full {
         position: relative;
         overflow: hidden;
@@ -42,9 +46,18 @@
 
 		get WorkInfo(): TimelineData[] {
 			return [
-				new TimelineData("abc", "dev", "Lorem Ipsum", {month: "JAN", year: 2019}),
-				new TimelineData("abcd", "dev", "Lorem Ipsum", {month: "JAN", year: 2019}),
-				new TimelineData("abcde", "dev", "Lorem Ipsum", {month: "JAN", year: 2019}),
+				new TimelineData("Innosparks Lab, ST Engineering", "Software Developer", "Nulla sapien nunc, feugiat in bibendum eu, dignissim a sem. Praesent porttitor tristique cursus. Sed lorem ipsum, mattis ut porta at, viverra a nisl. Donec sem orci, dictum id purus vitae, placerat pharetra sem. Pellentesque quis auctor justo. Praesent non dictum erat. Sed condimentum laoreet lectus ut faucibus. Suspendisse sed hendrerit est. Pellentesque magna velit, ullamcorper nec ullamcorper id, commodo eget risus.", {
+					month: "JAN",
+					year: 2019
+				}),
+				new TimelineData("ChatInfinite, Axle", "Architect Consultant", "Nulla sapien nunc, feugiat in bibendum eu, dignissim a sem. Praesent porttitor tristique cursus. Sed lorem ipsum, mattis ut porta at, viverra a nisl. Donec sem orci, dictum id purus vitae, placerat pharetra sem. Pellentesque quis auctor justo. Praesent non dictum erat. Sed condimentum laoreet lectus ut faucibus. Suspendisse sed hendrerit est. Pellentesque magna velit, ullamcorper nec ullamcorper id, commodo eget risus.", {
+					month: "JAN",
+					year: 2019
+				}),
+				new TimelineData("DAB Technology", "Full-Stack Developer", "Nulla sapien nunc, feugiat in bibendum eu, dignissim a sem. Praesent porttitor tristique cursus. Sed lorem ipsum, mattis ut porta at, viverra a nisl. Donec sem orci, dictum id purus vitae, placerat pharetra sem. Pellentesque quis auctor justo. Praesent non dictum erat. Sed condimentum laoreet lectus ut faucibus. Suspendisse sed hendrerit est. Pellentesque magna velit, ullamcorper nec ullamcorper id, commodo eget risus.", {
+					month: "JAN",
+					year: 2019
+				}),
 			];
 		}
 

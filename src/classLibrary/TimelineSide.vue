@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="side-holder">
         <div class="company a" v-if="ShowCompany" ref="company">{{Info.Company}}</div>
         <div class="time a" v-if="ShowTime" ref="time">{{Info.Date}}</div>
         <div class="role a" v-if="ShowCompany" ref="role">{{Info.Role}}</div>
@@ -8,6 +8,37 @@
 </template>
 
 <style lang='scss' scoped>
+
+    .side-holder {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .company {
+        font-size: 25px;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    .role {
+        text-transform: uppercase;
+        font-size: 18px;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
+
+    .time {
+        height: 20px;
+        line-height: 26px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .desc {
+        font-size: 14px;
+
+    }
+
     .a {
         opacity: 0;
         position: relative;
@@ -45,15 +76,6 @@
 		async play(): Promise<void> {
 			if (!this.left! || this.mobile!) {
 				await Promise.all([
-					this.Refs.company.X(15, 0, {duration: 300}).Promise,
-					this.Refs.company.Opacity(0, 1, {duration: 200}).Promise
-				]);
-				await Promise.all([
-					this.Refs.time.X(15, 0, {duration: 300}).Promise,
-					this.Refs.time.Opacity(0, 1, {duration: 200}).Promise
-				]);
-			} else {
-				await Promise.all([
 					this.Refs.company.X(-15, 0, {duration: 300}).Promise,
 					this.Refs.company.Opacity(0, 1, {duration: 200}).Promise
 				]);
@@ -61,10 +83,19 @@
 					this.Refs.time.X(-15, 0, {duration: 300}).Promise,
 					this.Refs.time.Opacity(0, 1, {duration: 200}).Promise
 				]);
+			} else {
+				await Promise.all([
+					this.Refs.company.X(15, 0, {duration: 300}).Promise,
+					this.Refs.company.Opacity(0, 1, {duration: 200}).Promise
+				]);
+				await Promise.all([
+					this.Refs.time.X(15, 0, {duration: 300}).Promise,
+					this.Refs.time.Opacity(0, 1, {duration: 200}).Promise
+				]);
 			}
 			await Promise.all([
 				this.Refs.role.Y(10, 0, {duration: 300}).Promise,
-				this.Refs.role.Opacity(0, 1, {duration: 200}).Promise
+				this.Refs.role.Opacity(0, 0.7, {duration: 200}).Promise
 			]);
 			await Promise.all([
 				this.Refs.desc.Y(10, 0, {duration: 300}).Promise,

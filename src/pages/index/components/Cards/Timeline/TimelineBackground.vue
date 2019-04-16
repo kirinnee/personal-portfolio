@@ -1,6 +1,6 @@
 <template>
     <div class="background">
-        <img :src="skills" alt="Oops, image not found...">
+        <img :src="timeline" alt="Oops, image not found...">
     </div>
 </template>
 
@@ -9,13 +9,12 @@
         opacity: 0.2;
         position: absolute;
         top: 50%;
-        transform: translate(-50%, -50%);
-        left: 50%;
-        width: 80%;
+        transform: translate(0, -50%);
+        height: 100%;
 
         img {
-            max-width: 100%;
-            height: auto;
+            width: auto;
+            max-height: 100%;
         }
     }
 </style>
@@ -28,7 +27,7 @@
 	export default class SkillBackground extends Vue {
 		data() {
 			return {
-				skills: images.skill
+				timeline: images.timeline
 			}
 		}
 	}

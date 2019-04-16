@@ -1,7 +1,7 @@
 <template>
     <div class="timeline-instance">
 
-        <div class="holder right">
+        <div class="holder right" :style="Style">
             <TimelineSide ref="left" :left="true" :mobile="false" :company="left" :timeline="Info"></TimelineSide>
         </div>
         <div class="partition">
@@ -17,8 +17,9 @@
 <style lang='scss' scoped>
     $ds: 20px;
     .holder {
+        font-family: Raleway, sans-serif;
         box-sizing: border-box;
-        padding-bottom: 20px;
+        padding-bottom: 40px;
 
         &.right {
             text-align: right;
@@ -28,7 +29,7 @@
             text-align: left;
         }
 
-        width: 20%;
+        width: 400px;
         overflow: hidden;
         position: relative;
         float: left;
@@ -94,11 +95,13 @@
 		components: {TimelineSide},
 		props: {
 			info: TimelineData,
-			left: Boolean
+			left: Boolean,
+			last: Boolean,
 		}
 	})
 	export default class TimelineInstance extends Vue {
 		private info?: TimelineData;
+		private last?: boolean;
 
 		async play(): Promise<void> {
 			const left: any = this.$refs.left;
@@ -113,6 +116,12 @@
 				left.play(),
 				right.play()
 			])
+		}
+
+		get Style() {
+			return {
+				paddingBottom: this.last ? "0" : "40px"
+			}
 		}
 
 		get Info(): TimelineData {

@@ -4,6 +4,7 @@ import introduction from "./assets/introduction.png";
 import tick from "./assets/tick.png"
 import downarrow from "./assets/down-arrow.png";
 import skill from "./assets/skill.png";
+import timeline from "./assets/timeline.png"
 import {Rimage, Rimager} from "@kirinnee/rimage";
 import {SortType} from "@kirinnee/core";
 import {core} from "./init";
@@ -30,6 +31,7 @@ let images: any = {
 	tick,
 	downarrow,
 	skill,
+	timeline,
 	icons: {
 		frontend: {
 			babel: getImage(f, 'babel'), //
