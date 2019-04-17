@@ -43,6 +43,10 @@ let images: any = {
 	book,
 	project,
 	contact,
+	heart: {
+		w: require("./assets/heart_w.png"),
+		c: require("./assets/heart_c.png")
+	},
 	social: {
 		mail: {
 			under: require("./assets/social/mail-under.png"),

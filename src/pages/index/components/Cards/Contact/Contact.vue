@@ -10,7 +10,7 @@
             <div class="social">
                 <SocialMedia class="sm" v-for="(s,index) in Social" :social="s" :key="index" ref="sm"></SocialMedia>
             </div>
-            <div ref="resume1" class="subtitle">You can also grab a copy of my Résumé too!</div>
+            <div ref="resume1" class="subtitle">You can grab a copy of my Résumé too!</div>
             <a ref="resume2" class='resume-dl' href="https://s3-ap-southeast-1.amazonaws.com/kirin.resume/resume.pdf" target="_blank">Résumé</a>
         </div>
     </div>
@@ -123,10 +123,10 @@
 					this.Refs.sub1.Y(20, 0, {duration: 200}).Promise
 				]);
 				await Promise.all([
-					this.Refs.socialButtons.Each((e, i) => {
-						e.Wait({duration: i * 100}).ScaleX(1.1, 1, {duration: 200});
-						e.Wait({duration: i * 100}).ScaleY(1.1, 1, {duration: 200});
-						e.Wait({duration: i * 100}).Opacity(0, 1, {duration: 400});
+					this.Refs.socialButtons.Each(async (e, i) => {
+						e.Wait({duration: i * 200}).ScaleX(1.1, 1, {duration: 200});
+						e.Wait({duration: i * 200}).ScaleY(1.1, 1, {duration: 200});
+						return await e.Wait({duration: i * 200}).Opacity(0, 1, {duration: 400}).Promise;
 					})
 				]);
 				await Promise.all([

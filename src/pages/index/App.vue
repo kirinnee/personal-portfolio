@@ -33,6 +33,12 @@
             <Card :index="7" color="#2b454e" name="contact" dot-color="white" :state="StateManager">
                 <Contact :index="7"></Contact>
             </Card>
+            <footer>Made with
+                <img alt="Oops image not found.. :<" class="heart" @mouseover="heartRed=true" @mouseleave="heartRed=false" :src="Heart">
+                    by kirinnee
+                    (Ernest Ng) - Source Code @
+                <a class="gitlab" target="_blank" href="https://gitlab.com/kirin-frontend/personal-portfolio">GitLab</a>
+            </footer>
         </div>
 
     </div>
@@ -40,6 +46,29 @@
 </template>
 
 <style lang="scss" scoped>
+    .heart {
+        width: 10px;
+        height: 10px;
+    }
+
+    .gitlab {
+        color: white;
+
+        &:hover {
+            color: pink;
+        }
+    }
+
+    footer {
+        padding: 5px;
+        font-size: 12px;
+        color: white;
+        font-family: Raleway, sans-serif;
+        text-align: center;
+        width: 100%;
+
+    }
+
     .text {
         height: 50vh;
     }
@@ -71,6 +100,7 @@
 	import Project from "./components/Cards/Projects/Project.vue";
 	import Contact from "./components/Cards/Contact/Contact.vue";
 	import Book from "./components/Cards/Books/Book.vue";
+	import {images} from "./images";
 
 	@Component({
 		components: {
@@ -87,6 +117,18 @@
 		}
 	})
 	export default class App extends Vue {
+		private heartRed?: boolean;
+
+		data() {
+			return {
+				heartRed: false
+			}
+		}
+
+		get Heart(): string {
+			return !this.heartRed ? images.heart.w : images.heart.c;
+		}
+
 		get StateManager() {
 			return stateManager;
 		}
