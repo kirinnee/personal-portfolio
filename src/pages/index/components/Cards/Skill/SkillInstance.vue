@@ -15,6 +15,23 @@
 </template>
 
 <style lang='scss' scoped>
+
+    .mobile {
+        .instance {
+            width: 28vw;
+            height: 28vw;
+
+            .name {
+                font-size: 30px;
+            }
+        }
+
+        .holder {
+            width: 12vw;
+            height: 12vw;
+        }
+    }
+
     .middle {
         left: 50%;
         transform: translateX(-50%);

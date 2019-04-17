@@ -43,6 +43,28 @@
 
 <style lang='scss' scoped>
 
+    .mobile {
+        .background {
+            width: 100%;
+            left: 0;
+        }
+
+        .desc {
+            margin: 80px 0;
+            width: 95%;
+            font-size: 30px;
+        }
+
+        table {
+            width: 90%;
+
+            th {
+                font-size: 25px;
+            }
+        }
+
+    }
+
     $p: (100% / 6);
     .desc {
         opacity: 0;
@@ -66,7 +88,6 @@
         position: relative;
         left: 45%;
         transform: translateX(-50%);
-
         th {
             width: $p;
         }

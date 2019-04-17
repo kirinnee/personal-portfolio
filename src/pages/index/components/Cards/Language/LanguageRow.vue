@@ -19,6 +19,28 @@
 </template>
 
 <style lang='scss' scoped>
+    .mobile {
+        .ticks {
+            height: 90px;
+
+            .tick-holder {
+                img {
+                    height: 55px;
+                    width: 55px;
+                }
+            }
+        }
+
+        .right {
+            .carry {
+                i {
+                    font-size: 55px;
+                }
+            }
+
+        }
+    }
+
     $p: (100% / 6);
     td {
         width: $p;

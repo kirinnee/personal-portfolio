@@ -27,6 +27,19 @@
 </template>
 
 <style scoped lang="scss">
+
+    .mobile {
+        .background {
+            width: 100%;
+
+        }
+
+        .description {
+            width: 120%;
+            font-size: 35px;
+        }
+    }
+
     .background {
         position: relative;
         opacity: 0.1;

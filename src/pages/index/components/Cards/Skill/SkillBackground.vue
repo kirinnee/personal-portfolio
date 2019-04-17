@@ -5,6 +5,13 @@
 </template>
 
 <style lang='scss' scoped>
+
+    .mobile {
+        .background {
+            width: 100%;
+        }
+    }
+
     .background {
         opacity: 0.1;
         position: absolute;

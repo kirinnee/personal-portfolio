@@ -34,6 +34,25 @@ let stateManager: StateManager = new StateManager(animX);
 
 const $$ = (i: number): Promise<void> => new Promise<void>(r => setTimeout(r, i));
 
+const isMobile = (): boolean => window.innerHeight > window.innerWidth;
+
+function responsiveAdapter() {
+	if (isMobile()) {
+		document.querySelector("body")!.AddClass("mobile");
+		document.querySelector("body")!.RemoveClass("non-mobile");
+	} else {
+		document.querySelector("body")!.AddClass("non-mobile");
+		document.querySelector("body")!.RemoveClass("mobile");
+	}
+}
+
+responsiveAdapter();
+
+window.addEventListener("resize", () => {
+	console.log("resize");
+	responsiveAdapter();
+});
+
 export {
 	$$,
 	core,

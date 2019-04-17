@@ -46,6 +46,21 @@
     }
 
 
+    .mobile {
+
+        .index {
+            font-size: 35px;
+        }
+
+        .title {
+            font-size: 35px;
+        }
+
+        .subtitle {
+            font-size: 70px;
+        }
+    }
+
 </style>
 
 <script lang="ts">

@@ -27,6 +27,25 @@
 </template>
 
 <style lang='scss' scoped>
+
+    .mobile {
+        .desc {
+            margin-top: 80px;
+            width: 90%;
+            font-size: 35px;
+        }
+
+        .nav-bar {
+            margin-top: 80px;
+            width: 90%;
+
+        }
+
+        .groups {
+            margin-top: 40px;
+            width: 90%;
+        }
+    }
     .desc {
         opacity: 0;
         margin: 40px 0;
@@ -41,7 +60,6 @@
     }
 
     .center {
-        width: 50%;
         left: 50%;
         position: relative;
         transform: translateX(-50%);
@@ -49,6 +67,7 @@
 
     .nav-bar {
         @extend .center;
+        width: 50%;
         opacity: 0;
         margin-top: 50px;
         display: flex;
@@ -58,8 +77,9 @@
     }
 
     .groups {
-        margin-top: 40px;
         @extend .center;
+        margin-top: 40px;
+        width: 50%;
     }
 
     .full {

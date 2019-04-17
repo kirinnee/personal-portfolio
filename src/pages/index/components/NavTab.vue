@@ -1,11 +1,19 @@
 <template>
-    <div :class="Selected(type)" @click="Select(type)">
+    <div class="nt" :class="Selected(type)" @click="Select(type)">
         {{name}}
     </div>
 </template>
 
 <style lang='scss' scoped>
-    div {
+
+    .mobile {
+        .nt {
+            font-size: 35px;
+            margin: 40px 0;
+        }
+    }
+
+    .nt {
         font-family: Raleway, sans-serif;
         padding: 5px 20px;
         cursor: pointer;
