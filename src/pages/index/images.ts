@@ -12,6 +12,7 @@ import {Rimage, Rimager} from "@kirinnee/rimage";
 import {SortType} from "@kirinnee/core";
 import {core} from "./init";
 import {SkillData} from "../../classLibrary/SkillData";
+import {SocialData} from "../../classLibrary/SocialData";
 
 core.AssertExtend();
 
@@ -42,6 +43,20 @@ let images: any = {
 	book,
 	project,
 	contact,
+	social: {
+		mail: {
+			under: require("./assets/social/mail-under.png"),
+			over: require("./assets/social/mail-over.png"),
+		},
+		github: {
+			under: require("./assets/social/github-under.png"),
+			over: require("./assets/social/github-over.png"),
+		},
+		gitlab: {
+			under: require("./assets/social/gitlab-under.png"),
+			over: require("./assets/icon/devops/gitlab-original.png")
+		}
+	},
 	icons: {
 		frontend: {
 			babel: getImage(f, 'babel'), //
@@ -92,6 +107,7 @@ let images: any = {
 			proCSharp: getBook("pro_csharp"),
 			modernApiDesign: getBook("modern_api_design"),
 			xunitTestPatterns: getBook("xunit_test_patterns"),
+			essentialDocker: getBook("essential_docker"),
 		},
 		design: {
 			analysisPatterns: getBook("analysis_patterns"),
@@ -101,7 +117,6 @@ let images: any = {
 			ddd: getBook("ddd"),
 			designPatterns: getBook("design_patterns"),
 			objectDesign: getBook("object_design"),
-			essentialDocker: getBook("essential_docker"),
 		},
 		ruby: {
 			eloquentRuby: getBook("eloquent_ruby"),
@@ -190,8 +205,17 @@ const skillMap = {
 	}
 };
 
+const sIcon = images.social;
+
+const social: { [s: string]: SocialData } = {
+	github: new SocialData(sIcon.github.under, sIcon.github.over, "https://github.com/kirinnee"),
+	gitlab: new SocialData(sIcon.gitlab.under, sIcon.gitlab.over, "https://gitlab.com/kirinnee"),
+	email: new SocialData(sIcon.mail.under, sIcon.mail.over, "mailto:kirinnee97@gmail.com")
+};
+
 export {
 	images,
 	rimager,
-	skillMap
+	skillMap,
+	social
 }

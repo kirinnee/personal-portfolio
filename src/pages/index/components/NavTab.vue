@@ -47,6 +47,13 @@
 
 		Select(s: string) {
 			const parent = this.Parent;
+			let old = "";
+			for (const v in parent.selected) {
+				if (parent.selected[v]) {
+					old = v;
+				}
+			}
+			if (old === s) return;
 			for (const v in parent.selected) {
 				parent.selected[v] = false;
 			}

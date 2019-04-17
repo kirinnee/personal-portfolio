@@ -10,6 +10,9 @@ new Vue({
 	render: h => h(App)
 }).$mount('#app');
 
+const isMobile = (): boolean => window.innerHeight > window.innerWidth;
+
 export {
+	isMobile,
 	images
 }
