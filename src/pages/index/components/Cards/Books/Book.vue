@@ -24,6 +24,36 @@
 </template>
 
 <style lang='scss' scoped>
+
+
+    .mobile {
+        .description {
+            width: 85%;
+            font-family: Raleway, sans-serif;
+            font-size: 20px;
+
+        }
+
+        .books {
+            @extend .middle;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+
+            img {
+                position: relative;
+                opacity: 0;
+                height: 300px;
+                margin: 20px;
+            }
+        }
+
+    }
+
     .nav-bar {
         @extend .middle;
         opacity: 0;
@@ -99,6 +129,7 @@
 		private books?: string[];
 
 		data() {
+			console.log(this.selected!);
 			return {
 				state: stateManager,
 				selected: {

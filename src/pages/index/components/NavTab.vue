@@ -8,7 +8,7 @@
 
     .mobile {
         .nt {
-            font-size: 35px;
+            font-size: 30px;
             margin: 40px 0;
         }
     }
@@ -17,6 +17,7 @@
         font-family: Raleway, sans-serif;
         padding: 5px 20px;
         cursor: pointer;
+        text-align: center;
 
         &.selected.black {
             border-bottom: 1px solid black;
@@ -57,13 +58,17 @@
 			const parent = this.Parent;
 			let old = "";
 			for (const v in parent.selected) {
-				if (parent.selected[v]) {
-					old = v;
+				if (parent.selected.hasOwnProperty(v)) {
+					if (parent.selected[v]) {
+						old = v;
+					}
 				}
 			}
 			if (old === s) return;
 			for (const v in parent.selected) {
-				parent.selected[v] = false;
+				if (parent.selected.hasOwnProperty(v)) {
+					parent.selected[v] = false;
+				}
 			}
 			parent.selected![s] = true;
 			parent.playAnimation(s);
