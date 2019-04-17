@@ -5,6 +5,11 @@
         </div>
         <div class="main">
             <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
+            <div class="desc" ref="desc">
+                dolor sit amet, consectetur adipiscing elit. Nam ultricies neque sed justo
+                consequat, tristique laoreet mi aliquet. Sed nec posuere dolor, id sagittis
+                turpis. Aliquam odio magna, tincidunt in commodo vitae, tincidunt in mi.
+            </div>
             <table>
                 <tr class="head" ref="head">
                     <th></th>
@@ -39,6 +44,18 @@
 <style lang='scss' scoped>
 
     $p: (100% / 6);
+    .desc {
+        opacity: 0;
+        margin: 40px 0;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        font-family: Raleway, sans-serif;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+    }
 
     table {
         border-collapse: collapse;
@@ -73,6 +90,7 @@
             max-width: 100%;
         }
     }
+
     .head {
         opacity: 0;
     }
@@ -121,6 +139,11 @@
 				const py: HTMLElement = (this.$refs.py as Vue).$el as HTMLElement;
 				const php: HTMLElement = (this.$refs.php as Vue).$el as HTMLElement;
 				const h: HTMLElement = (this.$refs.head) as HTMLElement;
+				const desc: HTMLElement = (this.$refs.desc) as HTMLElement;
+				await Promise.all([
+					desc.Opacity(0, 1, {duration: 400}).Promise,
+					desc.Y(20, 0, {duration: 200}).Promise,
+				]);
 				await this.fadeIn(h);
 				await this.fadeIn(ruby);
 				await this.fadeIn(cs);

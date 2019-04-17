@@ -3,6 +3,11 @@
         <SkillBackground></SkillBackground>
         <div class="main">
             <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
+            <div class="desc" ref="desc">
+                dolor sit amet, consectetur adipiscing elit. Nam ultricies neque sed justo
+                consequat, tristique laoreet mi aliquet. Sed nec posuere dolor, id sagittis
+                turpis. Aliquam odio magna, tincidunt in commodo vitae, tincidunt in mi.
+            </div>
             <div class="nav-bar" ref="nav">
                 <NavTab name="Backend" type="backend" :dark="true"></NavTab>
                 <NavTab name="Devops" type="devops" :dark="true"></NavTab>
@@ -22,6 +27,19 @@
 </template>
 
 <style lang='scss' scoped>
+    .desc {
+        opacity: 0;
+        margin: 40px 0;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        font-family: Raleway, sans-serif;
+        font-size: 20px;
+        color: black;
+        text-align: center;
+    }
+
     .center {
         width: 50%;
         left: 50%;
@@ -100,6 +118,7 @@
 		}
 
 		data() {
+			console.log(this.selected);
 			return {
 				state: stateManager,
 				selected: {
@@ -120,6 +139,11 @@
 			if (!this.IsTriggered) {
 				this.state!.markTriggered(this.index!);
 				await header.trigger();
+				const desc: HTMLElement = (this.$refs.desc) as HTMLElement;
+				await Promise.all([
+					desc.Opacity(0, 1, {duration: 400}).Promise,
+					desc.Y(20, 0, {duration: 200}).Promise,
+				]);
 				await (this.$refs.nav as HTMLElement).Opacity(0, 1, {duration: 200}).Promise;
 				await this.playAnimation("backend");
 			}
