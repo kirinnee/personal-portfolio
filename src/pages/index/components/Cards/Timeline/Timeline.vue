@@ -10,6 +10,13 @@
 </template>
 
 <style lang='scss' scoped>
+
+    .mobile {
+        .full {
+            min-height: auto;
+        }
+    }
+
     .margin {
         height: 40px;
     }

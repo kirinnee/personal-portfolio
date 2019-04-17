@@ -5,6 +5,18 @@
 </template>
 
 <style lang='scss' scoped>
+
+    .mobile {
+        .background {
+            width: 100%;
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+
     .background {
         opacity: 0.2;
         position: absolute;

@@ -59,5 +59,6 @@ export {
 	stateManager,
 	animX,
 	eases,
-	eleFact
+	eleFact,
+	isMobile,
 }

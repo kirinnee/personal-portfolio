@@ -9,6 +9,41 @@
 
 <style lang='scss' scoped>
 
+    .mobile {
+        .side-holder {
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        .company {
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .role {
+            text-transform: uppercase;
+            font-size: 25px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .time {
+            height: 32px;
+            line-height: 32px;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .desc {
+            font-size: 20px;
+        }
+
+        .a {
+            opacity: 0;
+        }
+    }
+
     .side-holder {
         margin-right: 5px;
         margin-left: 5px;
@@ -47,8 +82,8 @@
 
 <script lang='ts'>
 	import {Component, Vue} from 'vue-property-decorator';
-	import {TimelineData} from "./TimelineData";
-	import {eleFact} from "../pages/index/init";
+	import {TimelineData} from "../../../../../classLibrary/TimelineData";
+	import {eleFact} from "../../../init";
 
 
 	interface TimelineRefs {

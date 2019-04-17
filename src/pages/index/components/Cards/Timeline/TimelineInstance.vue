@@ -1,20 +1,42 @@
 <template>
     <div class="timeline-instance">
 
-        <div class="holder right" :style="Style">
-            <TimelineSide ref="left" :left="true" :mobile="false" :company="left" :timeline="Info"></TimelineSide>
+        <div class="holder right" v-if="!Mobile" :style="Style">
+            <TimelineSide ref="left" :left="true" :mobile="Mobile" :company="left" :timeline="Info"></TimelineSide>
         </div>
         <div class="partition">
             <div class="bar" ref="bar"></div>
             <div class="dot" ref="dot"></div>
         </div>
         <div class="holder left">
-            <TimelineSide ref="right" :left="false" :mobile="false" :company="!left" :timeline="Info"></TimelineSide>
+            <TimelineSide ref="right" :left="false" :mobile="Mobile" :company="!left" :timeline="Info"></TimelineSide>
         </div>
     </div>
 </template>
 
 <style lang='scss' scoped>
+
+    .mobile {
+        .holder {
+            padding-bottom: 80px;
+            width: 80%;
+        }
+
+        .partition {
+            width: 60px;
+            position: relative;
+
+            .dot {
+                width: 40px;
+                height: 40px;
+            }
+
+            .bar {
+                width: 2px;
+            }
+        }
+    }
+
     $ds: 20px;
     .holder {
         font-family: Raleway, sans-serif;
@@ -87,9 +109,15 @@
 <script lang='ts'>
 	import {Component, Vue} from 'vue-property-decorator';
 	import {TimelineData} from "../../../../../classLibrary/TimelineData";
-	import TimelineSide from "../../../../../classLibrary/TimelineSide.vue";
-	import {eases} from "../../../init";
+	import TimelineSide from "./TimelineSide.vue";
+	import {$$, eases, isMobile} from "../../../init";
 	import {EaseStrength} from "@kirinnee/kease";
+
+	class Dud {
+		async play(): Promise<void> {
+			await $$(0);
+		}
+	}
 
 	@Component({
 		components: {TimelineSide},
@@ -104,7 +132,7 @@
 		private last?: boolean;
 
 		async play(): Promise<void> {
-			const left: any = this.$refs.left;
+			const left: any = this.$refs.left || new Dud();
 			const right: any = this.$refs.right;
 			const easeOut = eases.EaseOut(EaseStrength.Linear);
 			await (this.$refs.bar as HTMLElement).Opacity(0, 1, {duration: 50}).Promise;
@@ -126,6 +154,10 @@
 
 		get Info(): TimelineData {
 			return this.info!;
+		}
+
+		get Mobile(): boolean {
+			return isMobile();
 		}
 	}
 </script>
