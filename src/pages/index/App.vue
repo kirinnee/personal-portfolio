@@ -26,13 +26,14 @@
                 <Project :index="5"></Project>
             </Card>
             <div class="buffer"></div>
-            <Card :index="6" color="#007a6b" name="library" dot-color="white" :state="StateManager">
+            <Card :index="6" color="#007a6b" name="books" dot-color="white" :state="StateManager">
                 <Book :index="6"></Book>
             </Card>
             <div class="buffer"></div>
             <Card :index="7" color="#2b454e" name="contact" dot-color="white" :state="StateManager">
                 <Contact :index="7"></Contact>
             </Card>
+            <NavBar class="nav"></NavBar>
             <footer>Made with
                 <img alt="Oops image not found.. :<" class="heart" @mouseover="heartRed=true" @mouseleave="heartRed=false" :src="Heart">
                     by kirinnee
@@ -40,7 +41,6 @@
                 <a class="gitlab" target="_blank" href="https://gitlab.com/kirin-frontend/personal-portfolio">GitLab</a>
             </footer>
         </div>
-
     </div>
 
 </template>
@@ -57,6 +57,16 @@
             width: 16px;
             height: 16px;
         }
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        z-index: 100;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     .heart {
         width: 10px;
@@ -113,6 +123,7 @@
 	import Contact from "./components/Cards/Contact/Contact.vue";
 	import Book from "./components/Cards/Books/Book.vue";
 	import {images} from "./images";
+	import NavBar from "./components/NavBar.vue";
 
 	@Component({
 		components: {
@@ -125,7 +136,8 @@
 			Introduction,
 			AboutMe,
 			Background,
-			Card
+			Card,
+			NavBar
 		}
 	})
 	export default class App extends Vue {

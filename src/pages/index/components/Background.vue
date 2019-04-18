@@ -1,7 +1,6 @@
 <template>
     <div class="background">
         <div class="color"></div>
-        <NavBar class="nav"></NavBar>
     </div>
 </template>
 
@@ -17,16 +16,6 @@
         width: 100%;
         height: 100%;
         opacity: 1;
-    }
-
-    .nav {
-        display: flex;
-        justify-content: center;
-        z-index: 2;
-        position: absolute;
-        right: 30px;
-        top: 50%;
-        transform: translateY(-50%);
     }
 </style>
 

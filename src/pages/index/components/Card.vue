@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div :id="Id" class="card">
         <slot></slot>
     </div>
 </template>
@@ -41,6 +41,10 @@
 				color: this.color!,
 				circleColor: this.dotColor!
 			});
+		}
+
+		get Id(): string {
+			return `card-${this.index!}`;
 		}
 
 		mounted() {

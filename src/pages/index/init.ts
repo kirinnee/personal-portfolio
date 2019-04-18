@@ -10,7 +10,8 @@ import {AsynchronousAnimator, GSAPAsyncAnimator, GSAPSyncAnimator, SynchronousAn
 import {StateManager} from "../../classLibrary/StateManager";
 import {AnimateX, AnimX} from "@kirinnee/animatex";
 
-let text = require('gsap/TextPlugin');
+const text = require('gsap/TextPlugin');
+require('gsap/ScrollToPlugin');
 
 let core: Core = new Kore();
 core.ExtendPrimitives();
@@ -61,4 +62,5 @@ export {
 	eases,
 	eleFact,
 	isMobile,
+	TweenLite
 }
