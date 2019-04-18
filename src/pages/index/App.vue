@@ -46,6 +46,18 @@
 </template>
 
 <style lang="scss" scoped>
+
+    .mobile {
+        footer {
+            padding: 0;
+            font-size: 20px;
+        }
+
+        .heart {
+            width: 16px;
+            height: 16px;
+        }
+    }
     .heart {
         width: 10px;
         height: 10px;

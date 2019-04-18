@@ -13,6 +13,26 @@
 </template>
 
 <style lang='scss' scoped>
+    .mobile {
+        .scroll-more {
+            font-size: 40px;
+
+            .down-arrow-area {
+                position: relative;
+                height: 120px;
+
+                .down-arrow-holder {
+                    width: 60px;
+
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+
     .scroll-more {
         .parent {
             opacity: 0;

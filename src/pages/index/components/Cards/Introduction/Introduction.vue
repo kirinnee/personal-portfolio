@@ -15,6 +15,43 @@
 </template>
 
 <style lang='scss' scoped>
+
+    .mobile {
+        .background {
+
+            width: 100%;
+            height: auto;
+
+            img {
+                max-height: none;
+                max-width: 100%;
+                width: auto;
+                height: auto;
+            }
+        }
+
+        .introduction {
+
+            .intro-holder {
+                width: 100%;
+
+                .basic {
+                    font-size: 60px;
+                    margin: 60px;
+                }
+
+                .name {
+                    font-size: 120px;
+                }
+
+                .title {
+                    font-size: 100px;
+                }
+            }
+
+        }
+    }
+
     .background {
         position: absolute;
         height: 90%;
@@ -34,7 +71,7 @@
         color: white;
         position: relative;
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
         text-align: center;
 
         .intro-holder {
