@@ -3,9 +3,10 @@
         <ContactBackground></ContactBackground>
         <div class="main">
             <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
-            <div class="subtitle" ref="sub1">Sed id urna efficitur dolor maximus iaculis non et risus. Donec ornare
-                                             libero eu sem
-                                             tempus, vitae condimentum sem cursus. Nullam ornare faucibus sodales.
+            <div class="subtitle" ref="sub1">
+                Sed id urna efficitur dolor maximus iaculis non et risus. Donec ornare
+                libero eu sem
+                tempus, vitae condimentum sem cursus. Nullam ornare faucibus sodales.
             </div>
             <div class="social">
                 <SocialMedia class="sm" v-for="(s,index) in Social" :social="s" :key="index" ref="sm"></SocialMedia>
@@ -18,6 +19,30 @@
 
 <style lang='scss' scoped>
 
+    .mobile {
+        .resume-dl {
+            margin-top: 60px;
+            padding: 20px 80px;
+            font-size: 40px;
+            border-radius: 40px;
+        }
+
+        .social {
+            margin: 100px 0;
+
+            .sm {
+                margin: 50px;
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        .subtitle {
+            width: 90%;
+            margin-top: 120px;
+            font-size: 2.4rem;
+        }
+    }
 
     .resume-dl {
         opacity: 0;
