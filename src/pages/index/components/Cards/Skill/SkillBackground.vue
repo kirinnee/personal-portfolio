@@ -8,6 +8,7 @@
 
     .mobile {
         .background {
+            top: 500px;
             width: 100%;
         }
     }
@@ -15,10 +16,10 @@
     .background {
         opacity: 0.1;
         position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 0);
+        top: 100px;
         left: 50%;
-        width: 40%;
+        width: 50%;
 
         img {
             max-width: 100%;
