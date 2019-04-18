@@ -1,13 +1,9 @@
 <template>
-
     <tr class="row">
         <td class="right" :style="Style">
-            <div class="carry">
-                <i @mouseover="isHovering=true"
-                   @mouseout="isHovering=false"
-                   :class="image"
-                   :style="isHovering ?  Hover: ''"
-                ></i>
+            <div class="carry" @mouseover="isHovering=true" @mouseleave="isHovering=false">
+                <img :src="Under" :style="UnderStyle" alt="Oops.. Image cannot be found :<">
+                <img :src="Over" :style="OverStyle" alt="Oops.. Image cannot be found :<">
             </div>
         </td>
         <td class="ticks" v-for="t in Ticked" :style="Style">
@@ -20,25 +16,32 @@
 
 <style lang='scss' scoped>
     .mobile {
-        .ticks {
-            height: 90px;
-
-            .tick-holder {
-                img {
-                    height: 55px;
-                    width: 55px;
-                }
-            }
+        .row {
+            height: 100px;
         }
 
         .right {
+            border-top-left-radius: 80px;
+            border-bottom-left-radius: 80px;
             .carry {
-                i {
-                    font-size: 55px;
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        }
+
+        .ticks {
+            .tick-holder {
+                img {
+                    height: 60px;
+                    width: 60px;
                 }
             }
 
         }
+
+
     }
 
     $p: (100% / 6);
@@ -46,36 +49,41 @@
         width: $p;
     }
 
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .row {
+        opacity: 0;
+        height: 60px;
+    }
+
     .right {
         position: relative;
         border-top-left-radius: 40px;
-        border-bottom-left-radius: 40px;;
+        border-bottom-left-radius: 40px;
 
         .carry {
-            display: inline-block;
             position: relative;
-            left: 50%;
-            transform: translateX(-50%);
             height: 100%;
+            width: 100%;
 
-            i {
-                display: flex;
-                text-align: center;
-                font-size: 250%;
-                transition: color 0.3s;
-                cursor: default;
+            img {
+                @extend .center;
+                height: 40px;
+                width: 40px;
+                transition: opacity 0.3s;
             }
+
         }
 
     }
 
-    .row {
-        top: 50px;
-        opacity: 0;
-    }
 
     .ticks {
-        height: 60px;
         position: relative;
 
         .tick-holder {
@@ -85,12 +93,9 @@
             height: 100%;
 
             img {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                height: 40px;
-                width: 40px;
+                @extend .center;
+                height: 30px;
+                width: 30px;
             }
         }
 
@@ -100,43 +105,49 @@
 <script lang='ts'>
 	import {Component, Vue} from 'vue-property-decorator';
 	import {images} from "../../../images";
+	import {LangData} from "../../../../../classLibrary/LangData";
 	
 	@Component({
 		props: {
-			color: String,
-			ticks: Array,
-			image: String,
-			hoverColor: String,
+			langData: LangData
 		}
 	})
 	export default class LanguageRow extends Vue {
-		private ticks?: boolean[];
-		private color?: string;
-		private image?: boolean;
-		private hoverColor?: string;
+		private langData?: LangData;
+		private isHovering?: boolean;
 
 		get Style() {
 			return {
-
-				background: this.color!
+				background: this.langData!.color
 			};
 		}
 
-		get Hover() {
-			return {color: this.hoverColor!};
-		}
 
 		data() {
 			return {
 				isHovering: false,
 				tick: images.tick,
-				Image: this.image,
 			}
 		}
 
+		get UnderStyle() {
+			return {opacity: this.isHovering! ? 1 : 1}
+		}
+
+		get OverStyle() {
+			return {opacity: this.isHovering! ? 1 : 0}
+		}
+
+		get Under(): string {
+			return this.langData!.under;
+		}
+
+		get Over(): string {
+			return this.langData!.over;
+		}
 
 		get Ticked() {
-			return this.ticks!.Map(e => {
+			return this.langData!.ticks.Map(e => {
 				return {opacity: e ? 1 : 0}
 			})
 		}

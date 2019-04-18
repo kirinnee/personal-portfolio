@@ -27,6 +27,13 @@ function getBook(s: string): string {
 	return require(`./assets/books/${s}.jpg`);
 }
 
+function getLan(s: string): { o: string, p: string } {
+	return {
+		o: require(`./assets/lang/${s}-ori.png`),
+		p: require(`./assets/lang/${s}-plain.png`),
+	}
+}
+
 const f = 'frontend';
 const b = 'backend';
 const d = 'devops';
@@ -43,6 +50,15 @@ let images: any = {
 	book,
 	project,
 	contact,
+	lang: {
+		cpp: getLan('cpp'),
+		cs: getLan('cs'),
+		java: getLan('java'),
+		js: getLan('js'),
+		py: getLan('py'),
+		rb: getLan('rb'),
+		ts: getLan('ts')
+	},
 	heart: {
 		w: require("./assets/heart_w.png"),
 		c: require("./assets/heart_c.png")

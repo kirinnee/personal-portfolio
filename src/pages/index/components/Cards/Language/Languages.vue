@@ -19,22 +19,10 @@
                     <th>Side-Projects</th>
                     <th>Write without stack overflow</th>
                 </tr>
-                <EmptyRow></EmptyRow>
-                <LanguageRow ref='ruby' color="#60ba96" hoverColor="black" :ticks="[true, true, true, true, true]" image="devicon-ruby-plain"></LanguageRow>
-                <EmptyRow></EmptyRow>
-                <LanguageRow ref='csharp' color="#82b1ff" hoverColor="black" :ticks="[true, true, true, true, true]" image="devicon-csharp-plain"></LanguageRow>
-                <EmptyRow></EmptyRow>
-                <LanguageRow ref='ts' color="#e2b973" hoverColor="black" :ticks="[true, true, true, true, true]" image="devicon-typescript-plain"></LanguageRow>
-                <EmptyRow></EmptyRow>
-                <LanguageRow ref='java' color="#7389e2" hoverColor="black" :ticks="[true, false, true, true, false]" image="devicon-java-plain"></LanguageRow>
-                <EmptyRow></EmptyRow>
-                <LanguageRow ref='js' color="#e273a1" hoverColor="black" :ticks="[true, true, true, true, false]" image="devicon-javascript-plain"></LanguageRow>
-                <EmptyRow></EmptyRow>
-                <LanguageRow ref='cpp' color="#d573e2" hoverColor="black" :ticks="[true, false, false, false, false]" image="devicon-cplusplus-plain"></LanguageRow>
-                <EmptyRow></EmptyRow>
-                <LanguageRow ref='py' color="#9b73e2" hoverColor="black" :ticks="[false, false, true, true, false]" image="devicon-python-plain"></LanguageRow>
-                <EmptyRow></EmptyRow>
-                <LanguageRow ref='php' color="#e28573" hoverColor="black" :ticks="[true, false, true, false, false]" image="devicon-php-plain"></LanguageRow>
+                <template v-for="l in LanguageList">
+                    <EmptyRow></EmptyRow>
+                    <LanguageRow ref="lang" :lang-data="l"></LanguageRow>
+                </template>
 
             </table>
         </div>
@@ -88,6 +76,7 @@
         position: relative;
         left: 45%;
         transform: translateX(-50%);
+
         th {
             width: $p;
         }
@@ -127,6 +116,7 @@
 	import {images} from "../../../images";
 	import LanguageRow from "./LanguageRow.vue";
 	import EmptyRow from "./EmptyRow.vue";
+	import {LangData} from "../../../../../classLibrary/LangData";
 
 	
 	@Component({
@@ -151,14 +141,7 @@
 			if (!this.IsTriggered) {
 				this.state!.markTriggered(this.index!);
 				await header.trigger();
-				const ruby: HTMLElement = (this.$refs.ruby as Vue).$el as HTMLElement;
-				const cs: HTMLElement = (this.$refs.csharp as Vue).$el as HTMLElement;
-				const ts: HTMLElement = (this.$refs.ts as Vue).$el as HTMLElement;
-				const java: HTMLElement = (this.$refs.java as Vue).$el as HTMLElement;
-				const js: HTMLElement = (this.$refs.js as Vue).$el as HTMLElement;
-				const cpp: HTMLElement = (this.$refs.cpp as Vue).$el as HTMLElement;
-				const py: HTMLElement = (this.$refs.py as Vue).$el as HTMLElement;
-				const php: HTMLElement = (this.$refs.php as Vue).$el as HTMLElement;
+
 				const h: HTMLElement = (this.$refs.head) as HTMLElement;
 				const desc: HTMLElement = (this.$refs.desc) as HTMLElement;
 				await Promise.all([
@@ -166,23 +149,17 @@
 					desc.Y(20, 0, {duration: 200}).Promise,
 				]);
 				await this.fadeIn(h);
-				await this.fadeIn(ruby);
-				await this.fadeIn(cs);
-				await this.fadeIn(ts);
-				await this.fadeIn(java);
-				await this.fadeIn(js);
-				await this.fadeIn(cpp);
-				await this.fadeIn(py);
-				await this.fadeIn(php);
+				await Promise.all((this.$refs.lang as Vue[]).Map((e, i) => this.fadeIn(e.$el as HTMLElement, i * 100)));
 			}
 		}
 
-		async fadeIn(elements: HTMLElement): Promise<void> {
+		async fadeIn(elements: HTMLElement, wait: number = 0): Promise<void> {
+			const w = {duration: wait};
 			await Promise.all([
-				elements.Y(-20, 0, {duration: 200}).Promise,
-				elements.ScaleX(1.1, 1, {duration: 200}).Promise,
-				elements.ScaleY(1.1, 1, {duration: 200}).Promise,
-				elements.Opacity(0, 1, {duration: 200}).Promise,
+				elements.Wait(w).Y(-20, 0, {duration: 200}).Promise,
+				elements.Wait(w).ScaleX(1.1, 1, {duration: 200}).Promise,
+				elements.Wait(w).ScaleY(1.1, 1, {duration: 200}).Promise,
+				elements.Wait(w).Opacity(0, 1, {duration: 200}).Promise,
 			]);
 		}
 
@@ -206,6 +183,17 @@
 
 		get Subtitle(): string {
 			return "Lorem ipsum dolor";
+		}
+
+		get LanguageList(): LangData[] {
+			return [
+				new LangData([true, true, true, true, true], "#82b1ff", images.lang.rb),
+				new LangData([true, true, true, true, true], "#60ba96", images.lang.cs),
+				new LangData([true, true, true, true, true], "#e273a1", images.lang.ts),
+				new LangData([true, false, true, true, false], "#e2b973", images.lang.java),
+				new LangData([true, true, true, false, false], "#d573e2", images.lang.js),
+				new LangData([false, false, true, true, false], "#e28573", images.lang.py),
+			]
 		}
 	}
 </script>
