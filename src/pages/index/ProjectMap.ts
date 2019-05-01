@@ -7,9 +7,9 @@ const i = images.projects;
 const oh = i.onehealth;
 
 const projectMap = [
-	new ProjectData(oh.logo, ph, oh.ss, [images.lang.cpp, images.lang.js, images.lang.py]),
-	new ProjectData(oh.logo, ph, oh.ss, [images.lang.cpp, images.lang.js, images.lang.py]),
-	new ProjectData(oh.logo, ph, oh.ss, [images.lang.cpp, images.lang.js, images.lang.py]),
+	new ProjectData(oh.logo, ph, Object.values(oh.ss), [images.lang.cpp, images.lang.js, images.lang.py]),
+	new ProjectData(oh.logo, ph, Object.values(oh.ss), [images.lang.cpp, images.lang.js, images.lang.py]),
+	new ProjectData(oh.logo, ph, Object.values(oh.ss), [images.lang.cpp, images.lang.js, images.lang.py]),
 ];
 
 export {

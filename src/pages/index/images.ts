@@ -63,12 +63,12 @@ let images: any = {
 	projects: {
 		onehealth: {
 			logo: require("./assets/projects/oh2.png"),
-			ss: [
-				require("./assets/projects/onehealth/oh1.png"),
-				require("./assets/projects/onehealth/oh2.png"),
-				require("./assets/projects/onehealth/oh3.png"),
-				require("./assets/projects/onehealth/oh4.png"),
-			]
+			ss: {
+				ss1: require("./assets/projects/onehealth/oh1.png"),
+				ss2: require("./assets/projects/onehealth/oh2.png"),
+				ss3: require("./assets/projects/onehealth/oh3.png"),
+				ss4: require("./assets/projects/onehealth/oh4.png"),
+			},
 		}
 	},
 	lang: {
