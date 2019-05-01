@@ -1,8 +1,6 @@
 <template>
     <div class="full">
-        <div class="background">
-            <img :src="languages" alt="Oops, image not found...">
-        </div>
+        <Pic class="background" uncenter type="w" :src="languages"></Pic>
         <div class="main">
             <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="desc" ref="desc">
@@ -94,11 +92,6 @@
         transform: translateY(-50%);
         left: 40%;
         width: 60%;
-
-        img {
-            height: auto;
-            max-width: 100%;
-        }
     }
 
     .head {
@@ -117,10 +110,11 @@
 	import LanguageRow from "./LanguageRow.vue";
 	import EmptyRow from "./EmptyRow.vue";
 	import {LangData} from "../../../../../classLibrary/LangData";
+	import Pic from "../../Pic.vue";
 
 	
 	@Component({
-		components: {EmptyRow, LanguageRow, CardHeader},
+		components: {Pic, EmptyRow, LanguageRow, CardHeader},
 		props: {
 			index: Number
 		}

@@ -1,11 +1,7 @@
 <template>
     <a class="media" :href="Link" target="_blank" @mouseenter="hover=true" @mouseleave="hover=false">
-        <div class="nonhover f" :style="nhStyle">
-            <img :src="NonHover" alt="Oops, image cannot be found :<">
-        </div>
-        <div class="hover f" :style="hStyle">
-            <img :src="Hover" alt="Oops, image cannot be found :<">
-        </div>
+        <Pic :src="NonHover" class="nonhover f" :style="nhStyle" uncenter type="b"></Pic>
+        <Pic :src="Hover" class="hover f" :style="hStyle" uncenter type="b"></Pic>
     </a>
 </template>
 
@@ -14,11 +10,6 @@
         position: absolute;
         width: 100%;
         height: 100%;
-
-        img {
-            width: 100%;
-            height: 100%;
-        }
     }
 
     .media {
@@ -39,8 +30,10 @@
 <script lang='ts'>
 	import {Component, Vue} from 'vue-property-decorator';
 	import {SocialData} from "../../../../../classLibrary/SocialData";
+	import Pic from "../../Pic.vue";
 	
 	@Component({
+		components: {Pic},
 		props: {
 			social: SocialData
 		}

@@ -95,13 +95,13 @@
 	import {Component, Vue} from 'vue-property-decorator';
 	import CardHeader from "../../CardHeader.vue";
 	import {StateManager} from "../../../../../classLibrary/StateManager";
-	import {skillMap} from "../../../images";
 	import {stateManager} from "../../../init";
 	import {States} from "../../../../../classLibrary/States";
 	import SkillGroup from "./SkillGroup.vue";
 	import {SkillData} from "../../../../../classLibrary/SkillData";
 	import NavTab from "../../NavTab.vue";
 	import SkillBackground from "./SkillBackground.vue";
+	import {skillMap} from "../../../SkillMap";
 	
 	@Component({
 		components: {SkillBackground, NavTab, SkillGroup, CardHeader},

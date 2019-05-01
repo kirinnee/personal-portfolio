@@ -3,9 +3,7 @@
         <div ref="parent" class="parent">
             <div>Scroll more to learn more</div>
             <div class="down-arrow-area">
-                <div ref='downarrow' class="down-arrow-holder">
-                    <img :src="downarrow" alt="Oops... cannot be found :<">
-                </div>
+                <Pic ref="downarrow" class="down-arrow-holder" type="w" uncenter :src="downarrow"></Pic>
             </div>
         </div>
 
@@ -23,11 +21,6 @@
 
                 .down-arrow-holder {
                     width: 60px;
-
-                    img {
-                        max-width: 100%;
-                        height: auto;
-                    }
                 }
             }
         }
@@ -72,8 +65,11 @@
 	import {eases} from "../../../init";
 	import {EaseStrength} from "@kirinnee/kease";
 	import {images} from "../../../images";
+	import Pic from "../../Pic.vue";
 	
-	@Component({})
+	@Component({
+		components: {Pic}
+	})
 	export default class ScrollForMore extends Vue {
 		data() {
 			return {
@@ -85,7 +81,7 @@
 		async appear(): Promise<void> {
 			const parent: HTMLElement = this.$refs.parent as HTMLElement;
 			const out = eases.EaseOut(EaseStrength.Quadratic);
-			const down: HTMLElement = this.$refs.downarrow as HTMLElement;
+			const down: HTMLElement = (this.$refs.downarrow as Vue).$el as HTMLElement;
 			this.animate(down);
 			await Promise.all([
 				parent.Opacity(0, 1, {duration: 500, ease: out}).Promise,

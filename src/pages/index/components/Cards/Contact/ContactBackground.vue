@@ -1,7 +1,5 @@
 <template>
-    <div class="background">
-        <img :src="contact" alt="Oops, image not found...">
-    </div>
+    <Pic :src="contact" class="background" type="h"></Pic>
 </template>
 
 <style lang='scss' scoped>
@@ -12,19 +10,17 @@
         transform: translate(-50%, -50%);
         height: 100%;
         left: 50%;
-
-        img {
-            width: auto;
-            max-height: 100%;
-        }
     }
 </style>
 
 <script lang='ts'>
 	import {Component, Vue} from 'vue-property-decorator';
 	import {images} from "../../../images";
+	import Pic from "../../Pic.vue";
 	
-	@Component({})
+	@Component({
+		components: {Pic}
+	})
 	export default class ContactBackground extends Vue {
 		data() {
 			return {

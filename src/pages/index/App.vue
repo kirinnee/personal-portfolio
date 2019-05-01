@@ -35,7 +35,8 @@
             </Card>
             <NavBar class="nav"></NavBar>
             <footer>Made with
-                <img alt="Oops image not found.. :<" class="heart" @mouseover="heartRed=true" @mouseleave="heartRed=false" :src="Heart">
+
+                <Pic :src="Heart" class="heart" @mouseenter.native="Enter" @mouseleave.native="Leave" type="b"></Pic>
                     by kirinnee
                     (Ernest Ng) - Source Code @
                 <a class="gitlab" target="_blank" href="https://gitlab.com/kirin-frontend/personal-portfolio">GitLab</a>
@@ -68,7 +69,10 @@
         top: 50%;
         transform: translateY(-50%);
     }
+
     .heart {
+        position: relative;
+        display: inline-block;
         width: 10px;
         height: 10px;
     }
@@ -124,9 +128,11 @@
 	import Book from "./components/Cards/Books/Book.vue";
 	import {images} from "./images";
 	import NavBar from "./components/NavBar.vue";
+	import Pic from "./components/Pic.vue";
 
 	@Component({
 		components: {
+			Pic,
 			Book,
 			Contact,
 			Project,
@@ -141,16 +147,18 @@
 		}
 	})
 	export default class App extends Vue {
-		private heartRed?: boolean;
-
-		data() {
-			return {
-				heartRed: false
-			}
-		}
+		private heartRed: boolean = false;
 
 		get Heart(): string {
-			return !this.heartRed ? images.heart.w : images.heart.c;
+			return this.heartRed ? images.heart.c : images.heart.w;
+		}
+
+		Enter(): void {
+			this.heartRed = true;
+		}
+
+		Leave(): void {
+			this.heartRed = false;
 		}
 
 		get StateManager() {

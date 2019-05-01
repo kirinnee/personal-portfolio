@@ -1,7 +1,5 @@
 <template>
-    <div class="background">
-        <img :src="skills" alt="Oops, image not found...">
-    </div>
+    <Pic class="background" type="w" :src="skills" uncenter></Pic>
 </template>
 
 <style lang='scss' scoped>
@@ -20,19 +18,17 @@
         top: 100px;
         left: 50%;
         width: 50%;
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
     }
 </style>
 
 <script lang='ts'>
 	import {Component, Vue} from 'vue-property-decorator';
 	import {images} from "../../../images";
+	import Pic from "../../Pic.vue";
 	
-	@Component({})
+	@Component({
+		components: {Pic}
+	})
 	export default class SkillBackground extends Vue {
 		data() {
 			return {

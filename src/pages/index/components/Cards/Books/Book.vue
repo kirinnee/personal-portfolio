@@ -17,7 +17,8 @@
                 <NavTab name="Others" type="others"></NavTab>
             </div>
             <div class="books">
-                <img :src="s" v-for="(s, index) in Books" :key="index" alt="Oops, image not found.. :<" ref="books">
+                <Pic :src="s" v-for="(s, index) in Books" :key="index" class="rel" ref="books" type="h" uncenter></Pic>
+                <!--                <img :src="s" v-for="(s, index) in Books" :key="index" alt="Oops, image not found.. :<" ref="books">-->
             </div>
         </div>
     </div>
@@ -25,6 +26,12 @@
 
 <style lang='scss' scoped>
 
+    .rel {
+        position: relative;
+        opacity: 0;
+        height: 10vw;
+        margin: 1vw;
+    }
 
     .mobile {
         .description {
@@ -44,7 +51,7 @@
             align-content: center;
             justify-content: center;
 
-            img {
+            .rel {
                 position: relative;
                 opacity: 0;
                 height: 300px;
@@ -92,12 +99,6 @@
         align-content: center;
         justify-content: center;
 
-        img {
-            position: relative;
-            opacity: 0;
-            height: 10vw;
-            margin: 1vw;
-        }
     }
 
     .full {
@@ -117,9 +118,10 @@
 	import {$$, stateManager} from "../../../init";
 	import {images} from "../../../images";
 	import NavTab from "../../NavTab.vue";
+	import Pic from "../../Pic.vue";
 	
 	@Component({
-		components: {NavTab, BookBackground, CardHeader},
+		components: {Pic, NavTab, BookBackground, CardHeader},
 		props: {index: Number}
 	})
 	export default class Book extends Vue {
@@ -176,9 +178,9 @@
 		async playAnimation(s: string): Promise<void> {
 			this.books = images.books[s];
 			await $$(0);
-			(this.$refs.books as HTMLElement[]).Each((e, i) => {
-				e.Wait({duration: i * 100}).Opacity(0, 1, {duration: 500});
-				e.Wait({duration: i * 100}).Y(20, 0, {duration: 300});
+			(this.$refs.books as Vue[]).Each((e, i) => {
+				e.$el.Wait({duration: i * 100}).Opacity(0, 1, {duration: 500});
+				e.$el.Wait({duration: i * 100}).Y(20, 0, {duration: 300});
 			})
 		}
 	}

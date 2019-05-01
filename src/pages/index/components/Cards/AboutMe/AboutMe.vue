@@ -20,9 +20,7 @@
                 </p>
             </div>
         </div>
-        <div class="background">
-            <img :src="aboutme" alt="Oops, image not found...">
-        </div>
+        <Pic class="background" :src="aboutme" type="w" uncenter></Pic>
     </div>
 </template>
 
@@ -89,9 +87,10 @@
 	import {States} from "../../../../../classLibrary/States";
 	import {EaseStrength} from "@kirinnee/kease";
 	import {images} from '../../../images';
+	import Pic from "../../Pic.vue";
 
 	@Component({
-		components: {CardHeader},
+		components: {Pic, CardHeader},
 		props: {
 			index: Number
 		}

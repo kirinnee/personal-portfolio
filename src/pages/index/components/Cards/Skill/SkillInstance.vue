@@ -3,8 +3,8 @@
     <div class="instance" @mouseover="hover=true" @mouseleave="hover=false">
         <div class="center-align">
             <div class="holder">
-                <img :src="Plain" :style="HoverPlain" alt="Oops... Image cannot be found :<">
-                <img class='hover' :style="HoverOriginal" :src="Original" alt="Oops... Image cannot be found :<">
+                <Pic :src="Plain" :style="HoverPlain" type="b" uncenter class="i"></Pic>
+                <Pic :src="Original" :style="HoverOriginal" type="b" uncenter class='hover i'></Pic>
             </div>
             <div class="progress-bar" :style="Progress"></div>
             <div class="name" :style="HoverName">{{Name}}</div>
@@ -44,6 +44,7 @@
         display: inline-block;
 
     }
+
     .progress-bar {
         @extend .middle;
         position: relative;
@@ -65,6 +66,7 @@
         margin: 1vw;
         box-sizing: border-box;
         border-radius: 10px;
+
 
         &:hover {
             background: #FDFDFD66;
@@ -88,23 +90,24 @@
         margin-top: 10px;
         margin-bottom: 15px;
 
-        img {
+        .i {
             position: absolute;
-            width: 100%;
-            height: 100%;
-
-            &.hover {
-                opacity: 0;
-            }
         }
+
+        .hover {
+            opacity: 0;
+        }
+
     }
 </style>
 
 <script lang='ts'>
 	import {Component, Vue} from 'vue-property-decorator';
 	import {SkillData} from "../../../../../classLibrary/SkillData";
+	import Pic from "../../Pic.vue";
 	
 	@Component({
+		components: {Pic},
 		props: {
 			sd: SkillData
 		}

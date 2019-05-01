@@ -6,11 +6,14 @@
             <div class="project-holder">
                 <ProjectInstance v-for="(d,index) in Data" :key="index" :project-data="d"></ProjectInstance>
             </div>
+            <PictureModal v-if="ShowModal" :pictures="Pictures"></PictureModal>
         </div>
     </div>
 </template>
 
 <style lang='scss' scoped>
+
+
     .full {
         position: relative;
         overflow: hidden;
@@ -28,21 +31,18 @@
 	import {stateManager} from "../../../init";
 	import ProjectInstance from "./ProjectInstance.vue";
 	import {ProjectData} from "../../../../../classLibrary/ProjectData";
-	import {images} from "../../../images";
+	import PictureModal from "./PictureModal.vue";
+	import {projectMap} from "../../../ProjectMap";
 	
 	@Component({
-		components: {ProjectInstance, ProjectBackground, CardHeader},
+		components: {PictureModal, ProjectInstance, ProjectBackground, CardHeader},
 		props: {index: Number}
 	})
 	export default class Project extends Vue {
-		private state?: StateManager;
+		private showModal = false;
+		private state: StateManager = stateManager;
+		private screenshots: string[] = [];
 		private index?: number;
-
-		data() {
-			return {
-				state: stateManager,
-			}
-		}
 
 
 		get IsTriggered(): boolean {
@@ -58,13 +58,7 @@
 		}
 
 		get Data(): ProjectData[] {
-			const ph = "Nulla sapien nunc, feugiat in bibendum eu, dignissim a sem. Praesent porttitor tristique cursus. Sed lorem ipsum, mattis ut porta at, viverra a nisl. Donec sem orci, dictum id purus vitae, placerat pharetra sem. Pellentesque quis auctor justo. Praesent non dictum erat. Sed condimentum laoreet lectus ut faucibus. Suspendisse sed hendrerit est. Pellentesque magna velit, ullamcorper nec ullamcorper id, commodo eget risus.";
-			return [
-				new ProjectData("", images.projects.onehealth, ph, [images.lang.cpp, images.lang.js, images.lang.py]),
-				new ProjectData("", images.projects.onehealth, ph, [images.lang.cpp, images.lang.js, images.lang.py]),
-				new ProjectData("", images.projects.onehealth, ph, [images.lang.cpp, images.lang.js, images.lang.py]),
-				new ProjectData("", images.projects.onehealth, ph, [images.lang.cpp, images.lang.js, images.lang.py]),
-			]
+			return projectMap;
 		}
 
 		get State(): States {
@@ -82,6 +76,24 @@
 
 		get Subtitle(): string {
 			return "Lorem ipsum dolor";
+		}
+
+
+		get ShowModal(): boolean {
+			return this.showModal;
+		}
+
+		get Pictures(): string[] {
+			return this.screenshots;
+		}
+
+		public ShowScreenshots(screenshot: string[]): void {
+			this.screenshots = screenshot;
+			this.showModal = true;
+		}
+
+		public Close(): void {
+			this.showModal = false;
 		}
 	}
 </script>

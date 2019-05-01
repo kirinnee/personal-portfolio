@@ -120,7 +120,7 @@
 	import {stateManager} from "../../../init";
 	import SocialMedia from "./SocialMedia.vue";
 	import {SocialData} from "../../../../../classLibrary/SocialData";
-	import {social} from "../../../images";
+	import {socialMap} from "../../../SocialMap";
 
 	interface SocialMediaReferences {
 		sub1: HTMLElement;
@@ -166,7 +166,7 @@
 		}
 
 		get Social(): SocialData[] {
-			return Object.values(social);
+			return Object.values(socialMap);
 		}
 
 
