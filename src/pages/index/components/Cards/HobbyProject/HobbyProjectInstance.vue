@@ -80,6 +80,7 @@
     }
 
     .hobby-instance {
+        opacity: 0;
         border-radius: 10px;
         font-family: Raleway, sans-serif;
         text-align: justify;

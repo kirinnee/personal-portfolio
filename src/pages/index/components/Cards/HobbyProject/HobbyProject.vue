@@ -85,6 +85,10 @@
 					desc.Opacity(0, 1, {duration: 400}).Promise,
 					desc.Y(20, 0, {duration: 200}).Promise,
 				]);
+				const hobs = this.$refs.hob as Vue[];
+				await Promise.all(hobs.Map((e, i) =>
+					e.$el.Wait({duration: i * 200}).Opacity(0, 1, {duration: 500}).Promise
+				));
 			}
 		}
 
