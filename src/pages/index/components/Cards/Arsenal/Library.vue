@@ -34,6 +34,7 @@
     }
 
     .holder {
+        opacity: 0;
         margin: 20px;
         border: 1px solid white;
         width: 350px;
