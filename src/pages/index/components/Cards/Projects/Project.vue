@@ -4,7 +4,7 @@
         <div class="main">
             <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="project-holder">
-                <ProjectInstance v-for="(d,index) in Data" :key="index" :project-data="d"></ProjectInstance>
+                <ProjectInstance ref="proj" v-for="(d,index) in Data" :key="index" :project-data="d"></ProjectInstance>
             </div>
             <PictureModal v-if="ShowModal" :pictures="Pictures"></PictureModal>
         </div>
@@ -54,6 +54,10 @@
 			if (!this.IsTriggered) {
 				this.state!.markTriggered(this.index!);
 				await header.trigger();
+				const projects = this.$refs.proj as Vue[];
+				await Promise.all(projects.Map((e, i) =>
+					e.$el.Wait({duration: i * 200}).Opacity(0, 1, {duration: 500}).Promise
+				));
 			}
 		}
 

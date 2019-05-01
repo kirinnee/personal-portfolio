@@ -70,7 +70,7 @@
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-
+        opacity: 0;
     }
 
     .description {
