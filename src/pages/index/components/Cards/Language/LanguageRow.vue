@@ -114,7 +114,7 @@
 	})
 	export default class LanguageRow extends Vue {
 		private langData?: LangData;
-		private isHovering?: boolean;
+		private isHovering: boolean = false;
 
 		get Style() {
 			return {
@@ -125,17 +125,16 @@
 
 		data() {
 			return {
-				isHovering: false,
 				tick: images.tick,
 			}
 		}
 
 		get UnderStyle() {
-			return {opacity: this.isHovering! ? 1 : 1}
+			return {opacity: this.isHovering ? 1 : 1}
 		}
 
 		get OverStyle() {
-			return {opacity: this.isHovering! ? 1 : 0}
+			return {opacity: this.isHovering ? 1 : 0}
 		}
 
 		get Under(): string {

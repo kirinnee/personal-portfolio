@@ -97,24 +97,23 @@
 		}
 	})
 	export default class AboutMe extends Vue {
-		private state?: StateManager;
+		private state: StateManager = stateManager;
 		private index?: number;
 
 		data() {
 			return {
-				state: stateManager,
 				aboutme: images.aboutme,
 			}
 		}
 
 		get IsTriggered(): boolean {
-			return this.state!.checkTriggered(this.index!)
+			return this.state.checkTriggered(this.index!)
 		}
 
 		async trigger() {
 			const header: any = this.$refs.header;
 			if (!this.IsTriggered) {
-				this.state!.markTriggered(this.index!);
+				this.state.markTriggered(this.index!);
 				await header.trigger();
 				const description: HTMLElement = this.$refs.desc as HTMLElement;
 				await Promise.all([
@@ -126,7 +125,7 @@
 		}
 
 		get State(): States {
-			return this.state!.data[this.index!];
+			return this.state.data[this.index!];
 		}
 
 		get Title(): string {

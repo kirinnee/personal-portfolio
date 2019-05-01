@@ -23,14 +23,10 @@
 		components: {NavElement}
 	})
 	export default class NavBar extends Vue {
-		private state?: StateManager;
-
-		data() {
-			return {state: stateManager}
-		}
+		private state: StateManager = stateManager;
 
 		get Pages() {
-			return this.state!.data;
+			return this.state.data;
 		}
 	}
 </script>

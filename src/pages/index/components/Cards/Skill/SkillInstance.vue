@@ -111,15 +111,8 @@
 	})
 	export default class SkillInstance extends Vue {
 		private sd?: SkillData;
-		private hover?: boolean;
-		private progress?: any;
-
-		data() {
-			return {
-				hover: false,
-				progress: {}
-			}
-		}
+		private hover: boolean = false;
+		private progress: any = {};
 
 		get Plain(): string {
 			return this.sd!.plain;
@@ -145,18 +138,18 @@
 
 		get HoverName() {
 			return {
-				top: this.hover! ? "-15px" : 0,
-				color: this.hover! ? "black" : "black"
+				top: this.hover ? "-15px" : 0,
+				color: this.hover ? "black" : "black"
 			}
 		}
 
 		get HoverPlain() {
-			return {opacity: this.hover! ? 0 : 1}
+			return {opacity: this.hover ? 0 : 1}
 		}
 
 
 		get HoverOriginal() {
-			return {opacity: this.hover! ? 1 : 0}
+			return {opacity: this.hover ? 1 : 0}
 		}
 
 		get Progress() {

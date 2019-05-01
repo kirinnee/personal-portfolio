@@ -134,14 +134,14 @@
 		props: {index: Number}
 	})
 	export default class Contact extends Vue {
-		private state?: StateManager;
+		private state: StateManager = stateManager;
 		private index?: number;
 
 
 		async trigger() {
 			const header: any = this.$refs.header;
 			if (!this.IsTriggered) {
-				this.state!.markTriggered(this.index!);
+				this.state.markTriggered(this.index!);
 				await header.trigger();
 				await Promise.all([
 					this.Refs.sub1.Opacity(0, 1, {duration: 400}).Promise,
@@ -165,25 +165,18 @@
 			}
 		}
 
-
-		data() {
-			return {
-				state: stateManager,
-			}
-		}
-
 		get Social(): SocialData[] {
 			return Object.values(social);
 		}
 
 
 		get IsTriggered(): boolean {
-			return this.state!.checkTriggered(this.index!)
+			return this.state.checkTriggered(this.index!)
 		}
 
 
 		get State(): States {
-			return this.state!.data[this.index!];
+			return this.state.data[this.index!];
 		}
 
 		get Title(): string {

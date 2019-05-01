@@ -46,6 +46,7 @@
             width: 90%;
         }
     }
+
     .desc {
         opacity: 0;
         margin: 40px 0;
@@ -107,9 +108,14 @@
 		props: {index: Number}
 	})
 	export default class Skill extends Vue {
-		private state?: StateManager;
+		private state: StateManager = stateManager;
 		private index?: number;
-		private selected?: { [s: string]: boolean };
+		private selected: { [s: string]: boolean } = {
+			frontend: false,
+			backend: true,
+			devops: false,
+			mobile: false
+		};
 
 		get MobileIot(): SkillData[] {
 			const m = skillMap.mobileIot;
@@ -137,27 +143,14 @@
 				f.bootstrap, f.gulp, f.jquery]
 		}
 
-		data() {
-			console.log(this.selected);
-			return {
-				state: stateManager,
-				selected: {
-					frontend: false,
-					backend: true,
-					devops: false,
-					mobile: false
-				}
-			}
-		}
-
 		get IsTriggered(): boolean {
-			return this.state!.checkTriggered(this.index!)
+			return this.state.checkTriggered(this.index!)
 		}
 
 		async trigger() {
 			const header: any = this.$refs.header;
 			if (!this.IsTriggered) {
-				this.state!.markTriggered(this.index!);
+				this.state.markTriggered(this.index!);
 				await header.trigger();
 				const desc: HTMLElement = (this.$refs.desc) as HTMLElement;
 				await Promise.all([
@@ -175,7 +168,7 @@
 		}
 
 		get State(): States {
-			return this.state!.data[this.index!];
+			return this.state.data[this.index!];
 		}
 
 		get Title(): string {

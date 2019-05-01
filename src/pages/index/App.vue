@@ -14,7 +14,7 @@
                 <Languages :index="2"></Languages>
             </Card>
             <div class="buffer"></div>
-            <Card :index="3" color="#ffe0e0" name="skill" dot-color="#263238" :state="StateManager">
+            <Card :index="3" color="#ebebeb" name="skill" dot-color="#263238" :state="StateManager">
                 <Skill :index="3"></Skill>
             </Card>
             <div class="buffer"></div>
@@ -22,7 +22,7 @@
                 <Timeline :index="4"></Timeline>
             </Card>
             <div class="buffer"></div>
-            <Card :index="5" color="#ebebeb" name="portfolio" dot-color="#263238" :state="StateManager">
+            <Card :index="5" color="#8c84bf" name="portfolio" dot-color="white" :state="StateManager">
                 <Project :index="5"></Project>
             </Card>
             <div class="buffer"></div>

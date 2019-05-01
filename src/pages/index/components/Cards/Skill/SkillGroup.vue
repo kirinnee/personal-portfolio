@@ -41,7 +41,6 @@
 				await Promise.all([
 					ele.Wait({duration: i * 100}).Opacity(0, 1, {duration: 400}).Promise,
 					ele.Wait({duration: i * 100}).X(-10, 0, {duration: 200}).Promise,
-
 				]);
 				e.trigger()
 

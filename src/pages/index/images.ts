@@ -50,6 +50,9 @@ let images: any = {
 	book,
 	project,
 	contact,
+	projects: {
+		onehealth: require("./assets/projects/onehealth.png"),
+	},
 	lang: {
 		cpp: getLan('cpp'),
 		cs: getLan('cs'),

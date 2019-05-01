@@ -46,14 +46,9 @@
 		}
 	})
 	export default class SocialMedia extends Vue {
-		private hover?: boolean;
+		private hover: boolean = false;
 		private social?: SocialData;
 
-		data() {
-			return {
-				hover: false,
-			}
-		}
 
 		get Link(): string {
 			return this.social!.link;
@@ -69,13 +64,13 @@
 
 		get hStyle() {
 			return {
-				opacity: this.hover! ? 1 : 0
+				opacity: this.hover ? 1 : 0
 			}
 		}
 
 		get nhStyle() {
 			return {
-				opacity: this.hover! ? 0 : 1
+				opacity: this.hover ? 0 : 1
 			}
 
 		}

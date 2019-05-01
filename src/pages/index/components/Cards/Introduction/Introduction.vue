@@ -124,7 +124,7 @@
 		}
 	})
 	export default class Introduction extends Vue {
-		private state?: StateManager;
+		private state: StateManager = stateManager;
 		private index?: number;
 
 		async trigger() {
@@ -166,13 +166,12 @@
 
 		data() {
 			return {
-				state: stateManager,
 				introduction: images.introduction,
 			}
 		}
 
 		get IsTriggered(): boolean {
-			return this.state!.checkTriggered(this.index!)
+			return this.state.checkTriggered(this.index!)
 		}
 
 

@@ -42,14 +42,9 @@
 		props: {index: Number}
 	})
 	export default class Timeline extends Vue {
-		private state?: StateManager;
+		private state: StateManager = stateManager;
 		private index?: number;
 
-		data() {
-			return {
-				state: stateManager
-			}
-		}
 
 		get WorkInfo(): TimelineData[] {
 			return [
@@ -69,13 +64,13 @@
 		}
 
 		get IsTriggered(): boolean {
-			return this.state!.checkTriggered(this.index!)
+			return this.state.checkTriggered(this.index!)
 		}
 
 		async trigger() {
 			const header: any = this.$refs.header;
 			if (!this.IsTriggered) {
-				this.state!.markTriggered(this.index!);
+				this.state.markTriggered(this.index!);
 				await header.trigger();
 				const timelineInstances: any[] = this.$refs.instances as Vue[];
 				await timelineInstances.Each(e => e.play());
@@ -83,7 +78,7 @@
 		}
 
 		get State(): States {
-			return this.state!.data[this.index!];
+			return this.state.data[this.index!];
 		}
 
 		get Title(): string {

@@ -126,12 +126,11 @@
 		}
 	})
 	export default class Languages extends Vue {
-		private state?: StateManager;
+		private state: StateManager = stateManager;
 		private index?: number;
 
 		data() {
 			return {
-				state: stateManager,
 				languages: images.languages,
 			}
 		}
@@ -139,7 +138,7 @@
 		async trigger() {
 			const header: any = this.$refs.header;
 			if (!this.IsTriggered) {
-				this.state!.markTriggered(this.index!);
+				this.state.markTriggered(this.index!);
 				await header.trigger();
 
 				const h: HTMLElement = (this.$refs.head) as HTMLElement;
@@ -164,12 +163,12 @@
 		}
 
 		get IsTriggered(): boolean {
-			return this.state!.checkTriggered(this.index!)
+			return this.state.checkTriggered(this.index!)
 		}
 
 
 		get State(): States {
-			return this.state!.data[this.index!];
+			return this.state.data[this.index!];
 		}
 
 		get Title(): string {

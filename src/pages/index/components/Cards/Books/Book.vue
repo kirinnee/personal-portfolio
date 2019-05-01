@@ -123,37 +123,28 @@
 		props: {index: Number}
 	})
 	export default class Book extends Vue {
-		private state?: StateManager;
 		private index?: number;
-		private selected?: { [s: string]: boolean };
-		private books?: string[];
-
-		data() {
-			console.log(this.selected!);
-			return {
-				state: stateManager,
-				selected: {
-					ruby: true,
-					design: false,
-					csharp: false,
-					others: false
-				},
-				books: [],
-			}
-		}
+		private state: StateManager = stateManager;
+		private selected: { [s: string]: boolean } = {
+			ruby: true,
+			design: false,
+			csharp: false,
+			others: false
+		};
+		private books: string[] = [];
 
 		get Books(): string[] {
-			return this.books!;
+			return this.books;
 		}
 
 		get IsTriggered(): boolean {
-			return this.state!.checkTriggered(this.index!)
+			return this.state.checkTriggered(this.index!)
 		}
 
 		async trigger() {
 			const header: any = this.$refs.header;
 			if (!this.IsTriggered) {
-				this.state!.markTriggered(this.index!);
+				this.state.markTriggered(this.index!);
 				await header.trigger();
 				const desc: HTMLElement = this.$refs.desc as HTMLElement;
 				await Promise.all([
@@ -166,7 +157,7 @@
 		}
 
 		get State(): States {
-			return this.state!.data[this.index!];
+			return this.state.data[this.index!];
 		}
 
 		get Title(): string {
