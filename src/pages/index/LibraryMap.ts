@@ -1,0 +1,17 @@
+import {LibraryData} from "../../classLibrary/LibraryData";
+
+const libraryMap: LibraryData[] = [
+	
+	new LibraryData("green", "Kirinnee Core", "https://gitlab.com", "Nulla sapien nunc, feugiat in bibendum eu, dignissim a sem. Praesent porttitor tristique cursus. Sed lorem ipsum, mattis ut porta at, viverra a nisl. Donec sem orci, dictum id purus vitae, placerat pharetra sem. Pellentesque quis auctor justo. Praesent non dictum erat. Sed condimentum laoreet lectus ut faucibus. Suspendisse sed hendrerit est. Pellentesque magna velit, ullamcorper nec ullamcorper id, commodo eget risus."),
+	new LibraryData("blue", "Kirinnee Core", "https://gitlab.com", "Nulla sapien nunc, feugiat in bibendum eu, dignissim a sem. Praesent porttitor tristique cursus. Sed lorem ipsum, mattis ut porta at, viverra a nisl. Donec sem orci, dictum id purus vitae, placerat pharetra sem. Pellentesque quis auctor justo. Praesent non dictum erat. Sed condimentum laoreet lectus ut faucibus. Suspendisse sed hendrerit est. Pellentesque magna velit, ullamcorper nec ullamcorper id, commodo eget risus."),
+	new LibraryData("cyan", "Kirinnee Core", "https://gitlab.com", "Nulla sapien nunc, feugiat in bibendum eu, dignissim a sem. Praesent porttitor tristique cursus. Sed lorem ipsum, mattis ut porta at, viverra a nisl. Donec sem orci, dictum id purus vitae, placerat pharetra sem. Pellentesque quis auctor justo. Praesent non dictum erat. Sed condimentum laoreet lectus ut faucibus. Suspendisse sed hendrerit est. Pellentesque magna velit, ullamcorper nec ullamcorper id, commodo eget risus."),
+	new LibraryData("blue", "Kirinnee Core", "https://gitlab.com", "Nulla sapien nunc, feugiat in bibendum eu, dignissim a sem. Praesent porttitor tristique cursus. Sed lorem ipsum, mattis ut porta at, viverra a nisl. Donec sem orci, dictum id purus vitae, placerat pharetra sem. Pellentesque quis auctor justo. Praesent non dictum erat. Sed condimentum laoreet lectus ut faucibus. Suspendisse sed hendrerit est. Pellentesque magna velit, ullamcorper nec ullamcorper id, commodo eget risus."),
+	new LibraryData("blue", "Kirinnee Core", "https://gitlab.com", "Nulla sapien nunc, feugiat in bibendum eu, dignissim a sem. Praesent porttitor tristique cursus. Sed lorem ipsum, mattis ut porta at, viverra a nisl. Donec sem orci, dictum id purus vitae, placerat pharetra sem. Pellentesque quis auctor justo. Praesent non dictum erat. Sed condimentum laoreet lectus ut faucibus. Suspendisse sed hendrerit est. Pellentesque magna velit, ullamcorper nec ullamcorper id, commodo eget risus."),
+	new LibraryData("blue", "Kirinnee Core", "https://gitlab.com", "Nulla sapien nunc, feugiat in bibendum eu, dignissim a sem. Praesent porttitor tristique cursus. Sed lorem ipsum, mattis ut porta at, viverra a nisl. Donec sem orci, dictum id purus vitae, placerat pharetra sem. Pellentesque quis auctor justo. Praesent non dictum erat. Sed condimentum laoreet lectus ut faucibus. Suspendisse sed hendrerit est. Pellentesque magna velit, ullamcorper nec ullamcorper id, commodo eget risus."),
+	new LibraryData("blue", "Kirinnee Core", "https://gitlab.com", "Nulla sapien nunc, feugiat in bibendum eu, dignissim a sem. Praesent porttitor tristique cursus. Sed lorem ipsum, mattis ut porta at, viverra a nisl. Donec sem orci, dictum id purus vitae, placerat pharetra sem. Pellentesque quis auctor justo. Praesent non dictum erat. Sed condimentum laoreet lectus ut faucibus. Suspendisse sed hendrerit est. Pellentesque magna velit, ullamcorper nec ullamcorper id, commodo eget risus."),
+];
+
+
+export {
+	libraryMap
+}

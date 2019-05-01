@@ -8,6 +8,9 @@
                 mi aliquet. Sed nec posuere dolor, id sagittis turpis. Aliquam odio magna, tincidunt in commodo vitae,
                 tincidunt in mi.
             </div>
+            <div class="library-holder">
+                <Library v-for="(l, index) in Libraries" :key="index" :lib="l" ref="lib"></Library>
+            </div>
         </div>
     </div>
 </template>
@@ -20,6 +23,21 @@
             width: 95%;
             font-size: 30px;
         }
+
+        .library-holder {
+            width: 95%;
+            justify-content: center;
+        }
+    }
+
+
+    .library-holder {
+        position: relative;
+        width: 1200px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .desc {
@@ -50,9 +68,12 @@
 	import {StateManager} from "../../../../../classLibrary/StateManager";
 	import {stateManager} from "../../../init";
 	import ArsenalBackground from "./ArsenalBackground.vue";
+	import {LibraryData} from "../../../../../classLibrary/LibraryData";
+	import {libraryMap} from "../../../LibraryMap";
+	import Library from "./Library.vue";
 	
 	@Component({
-		components: {ArsenalBackground, CardHeader},
+		components: {Library, ArsenalBackground, CardHeader},
 		props: {index: Number}
 	})
 	export default class Project extends Vue {
@@ -92,6 +113,10 @@
 
 		get Subtitle(): string {
 			return "Lorem ipsum dolor";
+		}
+
+		get Libraries(): LibraryData[] {
+			return libraryMap;
 		}
 
 	}
