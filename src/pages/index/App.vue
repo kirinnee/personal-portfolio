@@ -26,12 +26,20 @@
                 <Project :index="5"></Project>
             </Card>
             <div class="buffer"></div>
-            <Card :index="6" color="#007a6b" name="books" dot-color="white" :state="StateManager">
-                <Book :index="6"></Book>
+            <Card :index="6" color="#ffacc8" name="projects" dot-color="#263238" :state="StateManager">
+                <HobbyProject :index="6"></HobbyProject>
             </Card>
             <div class="buffer"></div>
-            <Card :index="7" color="#2b454e" name="contact" dot-color="white" :state="StateManager">
-                <Contact :index="7"></Contact>
+            <Card :index="7" color="#65a4c7" name="arsenal" dot-color="white" :state="StateManager">
+                <Arsenal :index="7"></Arsenal>
+            </Card>
+            <div class="buffer"></div>
+            <Card :index="8" color="#007a6b" name="books" dot-color="white" :state="StateManager">
+                <Book :index="8"></Book>
+            </Card>
+            <div class="buffer"></div>
+            <Card :index="9" color="#2b454e" name="contact" dot-color="white" :state="StateManager">
+                <Contact :index="9"></Contact>
             </Card>
             <NavBar class="nav"></NavBar>
             <footer>Made with
@@ -129,9 +137,13 @@
 	import {images} from "./images";
 	import NavBar from "./components/NavBar.vue";
 	import Pic from "./components/Pic.vue";
+	import HobbyProject from "./components/Cards/HobbyProject/HobbyProject.vue";
+	import Arsenal from "./components/Cards/Arsenal/Arsenal.vue";
 
 	@Component({
 		components: {
+			Arsenal,
+			HobbyProject,
 			Pic,
 			Book,
 			Contact,

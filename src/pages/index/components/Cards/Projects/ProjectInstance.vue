@@ -150,10 +150,6 @@
 			return this.projectData!;
 		}
 
-		get Link(): string {
-			return this.Project.relativePath;
-		}
-
 		get Logo(): string {
 			return this.Project.logo;
 		}

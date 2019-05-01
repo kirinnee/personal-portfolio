@@ -8,6 +8,9 @@ import timeline from "./assets/timeline.png"
 import book from "./assets/book.png";
 import contact from "./assets/contact.png";
 import project from "./assets/project.png";
+import hobby from "./assets/hobby.png";
+import arsenal from "./assets/arsenal.png";
+import link from "./assets/link.png";
 import {Rimage, Rimager} from "@kirinnee/rimage";
 import {SortType} from "@kirinnee/core";
 import {core} from "./init";
@@ -38,6 +41,7 @@ const d = 'devops';
 const m = 'mobile_iot';
 
 let images: any = {
+	link,
 	aboutme,
 	introduction,
 	languages,
@@ -47,7 +51,15 @@ let images: any = {
 	timeline,
 	book,
 	project,
+	hobby,
+	arsenal,
 	contact,
+	sideProject: {
+		cyanprint: require("./assets/sideproj/cyanprint.png"),
+		anime: require("./assets/sideproj/anime.png"),
+		nephia: require("./assets/sideproj/nephia.png"),
+		sophie: require("./assets/sideproj/sophie.png"),
+	},
 	projects: {
 		onehealth: {
 			logo: require("./assets/projects/oh2.png"),
