@@ -4,9 +4,8 @@
         <div class="main">
             <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div ref="desc" class="desc">
-                dolor sit amet, consectetur adipiscing elit. Nam ultricies neque sed justo consequat, tristique laoreet
-                mi aliquet. Sed nec posuere dolor, id sagittis turpis. Aliquam odio magna, tincidunt in commodo vitae,
-                tincidunt in mi.
+                These are some project I did the little free time I have with my friend with the same passion. I take
+                pride in delivering enterprise-grade applications - even if they are hobby projects.
             </div>
             <div class="hobbies">
                 <HobbyProjectInstance ref="hob" v-for="(h,index) in Projects" :key="index" :hobby="h"></HobbyProjectInstance>
@@ -106,7 +105,7 @@
 		}
 
 		get Subtitle(): string {
-			return "Lorem ipsum dolor";
+			return "Personal Side Projects";
 		}
 
 		get Projects(): HobbyData[] {

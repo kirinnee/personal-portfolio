@@ -79,7 +79,7 @@
 		}
 
 		get Subtitle(): string {
-			return "Lorem ipsum dolor";
+			return "Professional Projects";
 		}
 
 

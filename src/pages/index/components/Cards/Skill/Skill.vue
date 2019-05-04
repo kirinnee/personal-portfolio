@@ -4,9 +4,11 @@
         <div class="main">
             <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="desc" ref="desc">
-                dolor sit amet, consectetur adipiscing elit. Nam ultricies neque sed justo
-                consequat, tristique laoreet mi aliquet. Sed nec posuere dolor, id sagittis
-                turpis. Aliquam odio magna, tincidunt in commodo vitae, tincidunt in mi.
+                Although I specialise mainly in backend and infrastructure development, I've spent much time exploring
+                frontend tooling and frameworks too! Below are skillsets I have used in production projects or person
+                side projects. The little bar shows the experience I have using the tool relative to the rest of the
+                list!
+
             </div>
             <div class="nav-bar" ref="nav">
                 <NavTab name="Backend" type="backend" :dark="true"></NavTab>
@@ -181,7 +183,7 @@
 		}
 
 		get Subtitle(): string {
-			return "Lorem ipsum dolor";
+			return "Tools of the trade";
 		}
 	}
 </script>

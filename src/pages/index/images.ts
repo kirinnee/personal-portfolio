@@ -17,6 +17,12 @@ import {core} from "./init";
 
 core.AssertExtend();
 
+function getImageW(prepend: string, s: string): { o: string, p: string } {
+	return {
+		o: require(`./assets/icon/${prepend}/${s}-original.png`),
+		p: require(`./assets/icon/${prepend}/${s}-white.png`)
+	}
+}
 function getImage(prepend: string, s: string): { o: string, p: string } {
 	return {
 		o: require(`./assets/icon/${prepend}/${s}-original.png`),
@@ -28,6 +34,12 @@ function getBook(s: string): string {
 	return require(`./assets/books/${s}.jpg`);
 }
 
+function getLanB(s: string): { o: string, p: string } {
+	return {
+		o: require(`./assets/lang/${s}-ori.png`),
+		p: require(`./assets/lang/${s}-black.png`),
+	}
+}
 function getLan(s: string): { o: string, p: string } {
 	return {
 		o: require(`./assets/lang/${s}-ori.png`),
@@ -69,6 +81,48 @@ let images: any = {
 				ss3: require("./assets/projects/onehealth/oh3.png"),
 				ss4: require("./assets/projects/onehealth/oh4.png"),
 			},
+		},
+		airbitat: {
+			logo: require("./assets/projects/logo2.png"),
+			ss: {
+				ss1: require("./assets/projects/airbitat/ss1.png"),
+				ss2: require("./assets/projects/airbitat/ss2.png"),
+				ss3: require("./assets/projects/airbitat/ss3.png"),
+				ss4: require("./assets/projects/airbitat/ss4.png"),
+				ss5: require("./assets/projects/airbitat/ss5.png"),
+			}
+		},
+		asiabeau: {
+			logo: require("./assets/projects/asiabeau.png"),
+			ss: {
+				ss1: require("./assets/projects/asiabeau/ss1.png"),
+			}
+		},
+		dab: {
+			logo: require("./assets/projects/dab.png"),
+			ss: {
+				ss1: require("./assets/projects/dab/ss1.png"),
+				ss2: require("./assets/projects/dab/ss2.png"),
+				ss3: require("./assets/projects/dab/ss3.png"),
+				ss4: require("./assets/projects/dab/ss4.png"),
+			}
+		},
+		hov: {
+			logo: require("./assets/projects/hovmand.png"),
+			ss: {
+				ss1: require("./assets/projects/hovmand/ss1.png"),
+				ss2: require("./assets/projects/hovmand/ss2.png"),
+				ss3: require("./assets/projects/hovmand/ss3.png"),
+				ss4: require("./assets/projects/hovmand/ss4.png"),
+			}
+		},
+		hydra: {
+			logo: require("./assets/projects/hydrax.png"),
+			ss: {
+				ss1: require("./assets/projects/hydrax/ss1.png"),
+				ss2: require("./assets/projects/hydrax/ss2.png"),
+				ss3: require("./assets/projects/hydrax/ss3.png"),
+			}
 		}
 	},
 	lang: {
@@ -79,6 +133,15 @@ let images: any = {
 		py: getLan('py'),
 		rb: getLan('rb'),
 		ts: getLan('ts')
+	},
+	black: {
+		cpp: getLanB('cpp'),
+		cs: getLanB('cs'),
+		java: getLanB('java'),
+		js: getLanB('js'),
+		py: getLanB('py'),
+		rb: getLanB('rb'),
+		ts: getLanB('ts')
 	},
 	heart: {
 		w: require("./assets/heart_w.png"),
@@ -96,6 +159,50 @@ let images: any = {
 		gitlab: {
 			under: require("./assets/social/gitlab-under.png"),
 			over: require("./assets/icon/devops/gitlab-original.png")
+		}
+	},
+	white: {
+		frontend: {
+			babel: getImageW(f, 'babel'), //
+			bootstrap: getImageW(f, 'bootstrap'),
+			gulp: getImageW(f, 'gulp'), //
+			jquery: getImageW(f, 'jquery'), //
+			react: getImageW(f, 'react'), //
+			vue: getImageW(f, 'vuejs'), //
+			sass: getImageW(f, 'sass'), //
+			webpack: getImageW(f, 'webpack'), //
+			yarn: getImageW(f, 'yarn') //
+		},
+		devops: {
+			aws: getImageW(d, 'amazonwebservices'), //
+			azure: getImageW(d, 'azure'),//
+			azureDevops: getImageW(d, 'azurepipelines'), //
+			digitalOcean: getImageW(d, 'digitalocean'),
+			docker: getImageW(d, 'docker'), //
+			firebase: getImageW(d, 'firebase'), //
+			gitlab: getImageW(d, 'gitlab'), //
+			heroku: getImageW(d, 'heroku') //
+		},
+		backend: {
+			apache: getImageW(b, 'apache'),
+			dotnet: getImageW(b, 'dotnet'),
+			express: getImageW(b, 'express'),
+			mongodb: getImageW(b, 'mongodb'),
+			mysql: getImageW(b, 'mysql'),
+			nginx: getImageW(b, 'nginx'),
+			nodejs: getImageW(b, 'nodejs'),
+			postgresql: getImageW(b, 'postgresql'),
+			rabbitmq: getImageW(b, 'rabbitmq'),
+			rails: getImageW(b, 'rails'),
+			redis: getImageW(b, 'redis'),
+			swagger: getImageW(b, 'swagger')
+		},
+		mobileIot: {
+			android: getImageW(m, 'android'),
+			arduino: getImageW(m, 'arduino'),
+			eeprom: getImageW(m, 'eeprom'),
+			flutter: getImageW(m, 'flutter'),
+			ble: getImageW(m, 'ble')
 		}
 	},
 	icons: {

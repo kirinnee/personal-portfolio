@@ -6,8 +6,8 @@
         <div class="detail">
             <Pic class="ss" type="w" :src="Hob.screenshot" :uncenter="Uncenter"></Pic>
             <div class="right">
-                <div class="desc">
-                    {{Hob.description}}
+                <div class="desc" v-html="Hob.description">
+
                 </div>
                 <div class="stack">
                     <div class="stack-holder" v-for="(s, index) in Hob.stack" :key="index">
@@ -112,6 +112,8 @@
         .detail {
             display: flex;
             position: relative;
+            align-items: center;
+            justify-content: center;
 
             .right {
                 box-sizing: border-box;
@@ -123,6 +125,7 @@
             .stack {
                 display: flex;
                 justify-content: center;
+                flex-wrap: wrap;
             }
 
             .stack-holder {

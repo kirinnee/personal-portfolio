@@ -4,19 +4,23 @@
             <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="description" ref="desc">
                 <p>
-                    Lorem ipsum dolor sit <b>amet</b>, consectetur adipiscing elit. Nam ultricies neque sed justo
-                    consequat, tristique laoreet mi aliquet. Sed nec posuere dolor, id sagittis turpis.
-                    Aliquam <b>odio magna</b>, tincidunt in
-                    commodo vitae, tincidunt in mi. </p>
+                    Hello, I am <b>Ernest</b> from Singapore - Garden City!
+                    I am a software developer specialising in <b>backend and infrastructure architecture</b>.
+                </p>
                 <p>
-                    Nam ac nisl metus. <b>Sed id urna efficitur</b> dolor maximus iaculis non et risus. Donec ornare
-                    libero eu
-                    sem tempus, vitae <b>condimentum sem cursus.</b> Nullam ornare faucibus sodales. Pellentesque
-                    feugiat ipsum
-                    vitae metus elementum, nec porttitor sem consectetur. Fusce convallis consectetur metus
-                    scelerisque posuere. Cras ut ex ac <b>tortor</b> convallis congue vel eu lectus. Integer condimentum
-                    urna a
-                    ornare convallis. Donec ut pretium est.
+                    Enchanted by the ability to craft new things since 10, I picked up the basics of software
+                    development rapidly. From there, my small ventures quickly grew to multiple side projects in
+                    giga-mods from Minecraft to large scale templating ecosystem, which I find myself obsessed over in
+                    my free time.
+                </p>
+
+                <p>
+                    I am also a <b>passionate about open-source.</b> The open-source community has significantly
+                    contributed to my growth as a software engineer by publicly showing their discussions and code.
+                    While I have yet to commit to a significant open-source project, all my toolings, libraries and side
+                    projects are <b>fully open-sourced on GitLab</b>. I am aiming to contribute significantly to an
+                    open-source
+                    code-base in the coming year!
                 </p>
             </div>
         </div>
@@ -137,7 +141,7 @@
 		}
 
 		get Subtitle(): string {
-			return "Lorem ipsum dolor";
+			return "Short Intro of Myself";
 		}
 	}
 </script>

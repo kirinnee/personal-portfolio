@@ -4,9 +4,10 @@
         <div class="main">
             <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="desc" ref="desc">
-                dolor sit amet, consectetur adipiscing elit. Nam ultricies neque sed justo
-                consequat, tristique laoreet mi aliquet. Sed nec posuere dolor, id sagittis
-                turpis. Aliquam odio magna, tincidunt in commodo vitae, tincidunt in mi.
+                Over the years and working different organisations and project, I have experience over a large variety
+                of languages.
+                The selected languages below are those I am confident with since I have had to spend significant time
+                coding in them - in a production environment or as a personal project!
             </div>
             <table>
                 <tr class="head" ref="head">
@@ -175,7 +176,7 @@
 		}
 
 		get Subtitle(): string {
-			return "Lorem ipsum dolor";
+			return "The bridge between me & machines";
 		}
 
 		get LanguageList(): LangData[] {

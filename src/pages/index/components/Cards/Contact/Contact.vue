@@ -4,9 +4,8 @@
         <div class="main">
             <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="subtitle" ref="sub1">
-                Sed id urna efficitur dolor maximus iaculis non et risus. Donec ornare
-                libero eu sem
-                tempus, vitae condimentum sem cursus. Nullam ornare faucibus sodales.
+                Interested in me or my tools? If you are looking for a backend engineer, or want to know me more,
+                contact me, and I will be happy to talk with you!
             </div>
             <div class="social">
                 <SocialMedia class="sm" v-for="(s,index) in Social" :social="s" :key="index" ref="sm"></SocialMedia>
@@ -189,7 +188,7 @@
 		}
 
 		get Subtitle(): string {
-			return "Lorem ipsum dolor";
+			return "Let's talk!";
 		}
 
 		get Refs(): SocialMediaReferences {

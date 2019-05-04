@@ -4,11 +4,9 @@
         <div class="main">
             <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="description" ref="desc">
-                Sed id urna efficitur dolor maximus iaculis non et risus. Donec ornare libero eu sem tempus, vitae
-                condimentum sem cursus. Nullam ornare faucibus sodales. Pellentesque feugiat ipsum vitae metus
-                elementum, nec porttitor sem consectetur. Fusce convallis consectetur metus scelerisque posuere. Cras ut
-                ex ac tortor convallis congue vel eu lectus. Integer condimentum urna a ornare convallis. Donec ut
-                pretium est.
+                As an avid reader, I have read many programming, development books which mainly revolves around the 4
+                topics below. Below is the list of books I have read and highly recommend it to people who are
+                interested in the development world like me!
             </div>
             <div class="nav-bar" ref="nav">
                 <NavTab name="Ruby" type="ruby"></NavTab>
@@ -172,7 +170,7 @@
 		}
 
 		get Subtitle(): string {
-			return "Lorem ipsum dolor";
+			return "Source of Knowledge";
 		}
 
 		async playAnimation(s: string): Promise<void> {

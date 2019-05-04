@@ -7,7 +7,7 @@
                 <template v-for="stack in Stack">
                     <div class="stack">
                         <Pic class='i' :src="stack[0]" type="b" uncenter></Pic>
-                        <!--                        <Pic class='i' :src="stack[1]" type="b" uncenter></Pic>-->
+                        <Pic class='i hidden' :src="stack[1]" type="b" uncenter></Pic>
                     </div>
                 </template>
             </div>
@@ -124,6 +124,14 @@
 
                 .i {
                     position: absolute;
+
+                    &.hidden {
+                        opacity: 0;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
                 }
             }
         }
