@@ -8,19 +8,16 @@
                     I am a software developer specialising in <b>backend and infrastructure architecture</b>.
                 </p>
                 <p>
-                    Enchanted by the ability to craft new things since 10, I picked up the basics of software
-                    development rapidly. From there, my small ventures quickly grew to multiple side projects in
-                    giga-mods from Minecraft to large scale templating ecosystem, which I find myself obsessed over in
-                    my free time.
-                </p>
+                    Since the age of ten, I have been enchanted by the process of crafting new things. I quickly picked
+                    up the basics of software development. From there, my small ventures quickly grew to multiple side
+                    projects in Minecraft giga-mods and large-scale templating ecosystem, which I obsess over in my free
+                    time.
 
                 <p>
-                    I am also a <b>passionate about open-source.</b> The open-source community has significantly
-                    contributed to my growth as a software engineer by publicly showing their discussions and code.
-                    While I have yet to commit to a significant open-source project, all my toolings, libraries and side
-                    projects are <b>fully open-sourced on GitLab</b>. I am aiming to contribute significantly to an
-                    open-source
-                    code-base in the coming year!
+                    I am also <b>passionate about open-source.</b> By making their discussions and code publicly
+                    available, the open-source community has significantly contributed to my growth as a software
+                    engineer. All of my toolings, libraries and side projects are <b>fully open-sourced on GitLab</b>. I
+                    am aiming to contribute significantly to an open-source codebase in the coming year!
                 </p>
             </div>
         </div>
@@ -141,7 +138,7 @@
 		}
 
 		get Subtitle(): string {
-			return "Short Intro of Myself";
+			return "A Short Introduction";
 		}
 	}
 </script>

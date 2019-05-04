@@ -4,10 +4,11 @@
         <div class="main">
             <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="desc" ref="desc">
-                Over the years and working different organisations and project, I have experience over a large variety
-                of languages.
-                The selected languages below are those I am confident with since I have had to spend significant time
-                coding in them - in a production environment or as a personal project!
+                Over my years of working with different organisations on various projects, I have gained experience with
+                many languages.
+                The languages below are those in which I am most confident, as I have spent a large amount of time
+                professionally and personally coding in them.
+
             </div>
             <table>
                 <tr class="head" ref="head">
@@ -176,7 +177,7 @@
 		}
 
 		get Subtitle(): string {
-			return "The bridge between me & machines";
+			return "The Bridge Between Machines and Me";
 		}
 
 		get LanguageList(): LangData[] {

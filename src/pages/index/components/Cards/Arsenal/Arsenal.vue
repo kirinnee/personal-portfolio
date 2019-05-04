@@ -4,11 +4,10 @@
         <div class="main">
             <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div ref="desc" class="desc">
-                Often, my friends and colleagues ask me how I can create many side-projects and products in a short time
-                despite working full-time. Partly, this is due to CyanPrint, allowing me to template projects and
-                quickly create set up ready-to-deploy projects within minutes and get to coding; but mainly, the speed
-                comes from my own set of libraries.
-
+                My friends and colleagues often ask me how I can create many side-projects and products in a short time
+                despite working full-time. This speed is partly due to the use of CyanPrint, which allows me to template
+                projects, create ready-to-deploy projects within minutes, but the primary source speed boost comes from
+                my personal set of libraries.
             </div>
             <div class="library-holder">
                 <Library v-for="(l, index) in Libraries" :key="index" :lib="l" ref="lib"></Library>

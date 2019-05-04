@@ -4,10 +4,10 @@
         <div class="main">
             <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="desc" ref="desc">
-                Although I specialise mainly in backend and infrastructure development, I've spent much time exploring
-                frontend tooling and frameworks too! Below are skillsets I have used in production projects or person
-                side projects. The little bar shows the experience I have using the tool relative to the rest of the
-                list!
+                Although I specialise mainly in backend and infrastructure development, I've also spent much time
+                exploring frontend tooling and frameworks. Given below are the skillsets I have used in production
+                projects or personal side projects. The little bar shows the experience I have in using the tool
+                relative to the rest of the list.
 
             </div>
             <div class="nav-bar" ref="nav">
@@ -183,7 +183,7 @@
 		}
 
 		get Subtitle(): string {
-			return "Tools of the trade";
+			return "Tools of the Trade";
 		}
 	}
 </script>
