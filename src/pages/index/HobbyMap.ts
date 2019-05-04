@@ -33,7 +33,7 @@ const hobbyMap = [
 			images.icons.frontend.vue,
 			images.icons.backend.dotnet,
 			images.icons.backend.postgresql,
-			
+		
 		]),
 	
 	new HobbyData("Project Nephia", images.sideProject.nephia,

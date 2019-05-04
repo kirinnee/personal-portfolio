@@ -1,0 +1,8 @@
+require "kirinnee_core"
+require "fileutils"
+
+files = Dir.glob("**/*.png").filter{|x| x.end_with?("plain.png")}
+
+files.each do |f|
+	FileUtils.cp(f, f.replace_all("plain", "black"))
+end
