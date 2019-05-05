@@ -4,11 +4,10 @@
         <div class="main">
             <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="desc" ref="desc">
-                Although I specialise mainly in backend and infrastructure development, I've also spent much time
+                Although I specialise mainly in backend and infrastructure development, I have also spent much time
                 exploring frontend tooling and frameworks. Given below are the skillsets I have used in production
                 projects or personal side projects. The little bar shows the experience I have in using the tool
                 relative to the rest of the list.
-
             </div>
             <div class="nav-bar" ref="nav">
                 <NavTab name="Backend" type="backend" :dark="true"></NavTab>

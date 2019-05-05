@@ -6,8 +6,9 @@
             <div class="desc" ref="desc">
                 Over my years of working with different organisations on various projects, I have gained experience with
                 many languages.
-                The languages below are those in which I am most confident, as I have spent a large amount of time
-                professionally and personally coding in them.
+                Below languages are those in which I am most confident, as I have spent a large amount of time coding in
+                them, both professionally and personally.
+
 
             </div>
             <table>
@@ -177,7 +178,7 @@
 		}
 
 		get Subtitle(): string {
-			return "The Bridge Between Machines and Me";
+			return "The Bridge between Machines and Me";
 		}
 
 		get LanguageList(): LangData[] {

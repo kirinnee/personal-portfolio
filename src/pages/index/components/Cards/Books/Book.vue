@@ -4,9 +4,9 @@
         <div class="main">
             <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="description" ref="desc">
-                As an avid reader, I have read many programming and development books mainly revolving around the four
-                topics below. Below is the list of books I have read. I highly recommend it to people who are interested
-                in the development world like me!
+                As an avid reader, I have read many programming and development books mainly about below four topics.
+                Below is the list of books I have read. I highly recommend it to people who are as interested in the
+                development world as I am!
             </div>
             <div class="nav-bar" ref="nav">
                 <NavTab name="Ruby" type="ruby"></NavTab>

@@ -4,20 +4,21 @@
             <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="description" ref="desc">
                 <p>
-                    Hello, I am <b>Ernest</b> from Singapore - Garden City!
+                    Hello! I am <b>Ernest</b> from Singapore - The Garden City.
                     I am a software developer specialising in <b>backend and infrastructure architecture</b>.
                 </p>
                 <p>
-                    Since the age of ten, I have been enchanted by the process of crafting new things. I quickly picked
-                    up the basics of software development. From there, my small ventures quickly grew to multiple side
-                    projects in Minecraft giga-mods and large-scale templating ecosystem, which I obsess over in my free
-                    time.
-
+                    Since the age of 10, I have been captivated with the process of crafting new things. I quickly
+                    picked up the basics of software development. From there, my small ventures quickly grew to multiple
+                    side projects in Minecraft giga mods and the large-scale templating ecosystem, which I obsess over
+                    during my free time.
+                </p>
                 <p>
-                    I am also <b>passionate about open-source.</b> By making their discussions and code publicly
-                    available, the open-source community has significantly contributed to my growth as a software
-                    engineer. All of my toolings, libraries and side projects are <b>fully open-sourced on GitLab</b>. I
-                    am aiming to contribute significantly to an open-source codebase in the coming year!
+                    I am also <b>passionate about open source</b>. By making its discussions and code publicly
+                    available, the
+                    open-source community has significantly contributed to my growth as a software engineer. All of my
+                    toolings, libraries and side projects are open sourced on GitLab. I am aiming to contribute
+                    significantly to an open-source codebase in the coming year!
                 </p>
             </div>
         </div>
