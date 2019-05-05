@@ -1,8 +1,8 @@
 import {RuleSetQuery} from "webpack";
 
 let prodFileOpts: RuleSetQuery = {
-	name: '[path][name].[ext]',
-	publicPath: 'https://s3-ap-southeast-1.amazonaws.com/kirinnee.portfolio/',
+	name: '[path][name].[hash].[ext]',
+	publicPath: 'https://d1w2hran25a477.cloudfront.net/',
 	context: './src'
 };
 

@@ -3,8 +3,8 @@
 		"key":          "def",
 		"width":        2000,
 		"sizes":        {
-			"def":   80,
-			"med":   60,
+			"def":   60,
+			"med":   50,
 			"small": 40
 		},
 		"target":       "kirinnee.portfolio",
