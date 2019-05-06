@@ -67,61 +67,61 @@ let images: any = {
 	arsenal,
 	contact,
 	sideProject: {
-		cyanprint: require("./assets/sideproj/cyanprint.png"),
-		anime: require("./assets/sideproj/anime.png"),
-		nephia: require("./assets/sideproj/nephia.png"),
-		sophie: require("./assets/sideproj/sophie.png"),
+		cyanprint: require("./assets/sideproj/cyanprint.jpg"),
+		anime: require("./assets/sideproj/anime.jpg"),
+		nephia: require("./assets/sideproj/nephia.jpg"),
+		sophie: require("./assets/sideproj/sophie.jpg"),
 	},
 	projects: {
 		onehealth: {
 			logo: require("./assets/projects/oh2.png"),
 			ss: {
-				ss1: require("./assets/projects/onehealth/oh1.png"),
-				ss2: require("./assets/projects/onehealth/oh2.png"),
-				ss3: require("./assets/projects/onehealth/oh3.png"),
-				ss4: require("./assets/projects/onehealth/oh4.png"),
+				ss1: require("./assets/projects/onehealth/oh1.jpg"),
+				ss2: require("./assets/projects/onehealth/oh2.jpg"),
+				ss3: require("./assets/projects/onehealth/oh3.jpg"),
+				ss4: require("./assets/projects/onehealth/oh4.jpg"),
 			},
 		},
 		airbitat: {
 			logo: require("./assets/projects/logo2.png"),
 			ss: {
-				ss1: require("./assets/projects/airbitat/ss1.png"),
-				ss2: require("./assets/projects/airbitat/ss2.png"),
-				ss3: require("./assets/projects/airbitat/ss3.png"),
-				ss4: require("./assets/projects/airbitat/ss4.png"),
-				ss5: require("./assets/projects/airbitat/ss5.png"),
+				ss1: require("./assets/projects/airbitat/ss1.jpg"),
+				ss2: require("./assets/projects/airbitat/ss2.jpg"),
+				ss3: require("./assets/projects/airbitat/ss3.jpg"),
+				ss4: require("./assets/projects/airbitat/ss4.jpg"),
+				ss5: require("./assets/projects/airbitat/ss5.jpg"),
 			}
 		},
 		asiabeau: {
 			logo: require("./assets/projects/asiabeau.png"),
 			ss: {
-				ss1: require("./assets/projects/asiabeau/ss1.png"),
+				ss1: require("./assets/projects/asiabeau/ss1.jpg"),
 			}
 		},
 		dab: {
 			logo: require("./assets/projects/dab.png"),
 			ss: {
-				ss1: require("./assets/projects/dab/ss1.png"),
-				ss2: require("./assets/projects/dab/ss2.png"),
-				ss3: require("./assets/projects/dab/ss3.png"),
-				ss4: require("./assets/projects/dab/ss4.png"),
+				ss1: require("./assets/projects/dab/ss1.jpg"),
+				ss2: require("./assets/projects/dab/ss2.jpg"),
+				ss3: require("./assets/projects/dab/ss3.jpg"),
+				ss4: require("./assets/projects/dab/ss4.jpg"),
 			}
 		},
 		hov: {
 			logo: require("./assets/projects/hovmand.png"),
 			ss: {
-				ss1: require("./assets/projects/hovmand/ss1.png"),
-				ss2: require("./assets/projects/hovmand/ss2.png"),
-				ss3: require("./assets/projects/hovmand/ss3.png"),
-				ss4: require("./assets/projects/hovmand/ss4.png"),
+				ss1: require("./assets/projects/hovmand/ss1.jpg"),
+				ss2: require("./assets/projects/hovmand/ss2.jpg"),
+				ss3: require("./assets/projects/hovmand/ss3.jpg"),
+				ss4: require("./assets/projects/hovmand/ss4.jpg"),
 			}
 		},
 		hydra: {
 			logo: require("./assets/projects/hydrax.png"),
 			ss: {
-				ss1: require("./assets/projects/hydrax/ss1.png"),
-				ss2: require("./assets/projects/hydrax/ss2.png"),
-				ss3: require("./assets/projects/hydrax/ss3.png"),
+				ss1: require("./assets/projects/hydrax/ss1.jpg"),
+				ss2: require("./assets/projects/hydrax/ss2.jpg"),
+				ss3: require("./assets/projects/hydrax/ss3.jpg"),
 			}
 		}
 	},

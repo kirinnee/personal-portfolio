@@ -22,7 +22,7 @@
 				"bit":   256
 			},
 			"jpegOptim":     {
-				"quality":     75,
+				"quality":     65,
 				"strip":       true,
 				"progressive": true
 			},
