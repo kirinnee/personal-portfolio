@@ -3,9 +3,9 @@
 		"key":          "def",
 		"width":        2000,
 		"sizes":        {
-			"def":   60,
-			"med":   50,
-			"small": 40
+			"def":   65,
+			"med":   55,
+			"small": 45
 		},
 		"target":       "kirinnee.portfolio",
 		"input":        "../dist/pages/",
@@ -22,7 +22,7 @@
 				"bit":   256
 			},
 			"jpegOptim":     {
-				"quality":     65,
+				"quality":     75,
 				"strip":       true,
 				"progressive": true
 			},
