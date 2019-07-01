@@ -9,14 +9,14 @@
                 development world as I am!
             </div>
             <div class="nav-bar" ref="nav">
+                <NavTab name="Go" type="go"></NavTab>
+                <NavTab name="C#" type="csharp"></NavTab>
                 <NavTab name="Ruby" type="ruby"></NavTab>
                 <NavTab name="Software Design" type="design"></NavTab>
-                <NavTab name="C#" type="csharp"></NavTab>
                 <NavTab name="Others" type="others"></NavTab>
             </div>
             <div class="books">
                 <Pic :src="s" v-for="(s, index) in Books" :key="index" class="rel" ref="books" type="h" uncenter></Pic>
-                <!--                <img :src="s" v-for="(s, index) in Books" :key="index" alt="Oops, image not found.. :<" ref="books">-->
             </div>
         </div>
     </div>
@@ -117,7 +117,7 @@
 	import {images} from "../../../images";
 	import NavTab from "../../NavTab.vue";
 	import Pic from "../../Pic.vue";
-	
+
 	@Component({
 		components: {Pic, NavTab, BookBackground, CardHeader},
 		props: {index: Number}
@@ -126,7 +126,8 @@
 		private index?: number;
 		private state: StateManager = stateManager;
 		private selected: { [s: string]: boolean } = {
-			ruby: true,
+			go: true,
+			ruby: false,
 			design: false,
 			csharp: false,
 			others: false
@@ -135,6 +136,15 @@
 
 		get Books(): string[] {
 			return this.books;
+		}
+
+		get Selected(): string {
+			for (const x: string in this.selected) {
+				if (this.selected[x]) {
+					return x;
+				}
+			}
+			return "";
 		}
 
 		get IsTriggered(): boolean {
@@ -152,7 +162,7 @@
 					desc.Wait({duration: 200}).Y(20, 0, {duration: 200}).Promise,
 				]);
 				await (this.$refs.nav as HTMLElement).Wait({duration: 200}).Opacity(0, 1, {duration: 500}).Promise;
-				this.playAnimation("ruby");
+				this.playAnimation(this.Selected);
 			}
 		}
 

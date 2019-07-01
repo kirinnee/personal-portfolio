@@ -23,6 +23,7 @@ function getImageW(prepend: string, s: string): { o: string, p: string } {
 		p: require(`./assets/icon/${prepend}/${s}-white.png`)
 	}
 }
+
 function getImage(prepend: string, s: string): { o: string, p: string } {
 	return {
 		o: require(`./assets/icon/${prepend}/${s}-original.png`),
@@ -40,6 +41,7 @@ function getLanB(s: string): { o: string, p: string } {
 		p: require(`./assets/lang/${s}-black.png`),
 	}
 }
+
 function getLan(s: string): { o: string, p: string } {
 	return {
 		o: require(`./assets/lang/${s}-ori.png`),
@@ -251,6 +253,13 @@ let images: any = {
 		}
 	},
 	books: {
+		go: {
+			concurrencyInGo: getBook("concurrency_in_go"),
+			goInPractice: getBook("go_in_practice"),
+			goProgrammingBlueprints: getBook("go_programming_blueprints"),
+			goWebProgramming: getBook("go_web_programming"),
+			theGoProgrammingLanguage: getBook("the_go_programming_language"),
+		},
 		csharp: {
 			agilePatterns: getBook("agile_patterns_practices"),
 			proCSharp: getBook("pro_csharp"),
