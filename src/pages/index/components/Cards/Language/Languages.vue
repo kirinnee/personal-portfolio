@@ -115,7 +115,7 @@
 	import {LangData} from "../../../../../classLibrary/LangData";
 	import Pic from "../../Pic.vue";
 
-	
+
 	@Component({
 		components: {Pic, EmptyRow, LanguageRow, CardHeader},
 		props: {
@@ -183,9 +183,10 @@
 
 		get LanguageList(): LangData[] {
 			return [
-				new LangData([true, true, true, true, true], "#82b1ff", images.lang.rb),
 				new LangData([true, true, true, true, true], "#60ba96", images.lang.cs),
 				new LangData([true, true, true, true, true], "#e273a1", images.lang.ts),
+				new LangData([true, true, true, true, true], "#82b1ff", images.lang.rb),
+				new LangData([false, false, true, true, true], "#e273a1", images.lang.go),
 				new LangData([true, false, true, true, false], "#e2b973", images.lang.java),
 				new LangData([true, true, true, false, false], "#d573e2", images.lang.js),
 				new LangData([false, false, true, true, false], "#e28573", images.lang.py),

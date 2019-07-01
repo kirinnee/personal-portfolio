@@ -132,7 +132,8 @@ let images: any = {
 		js: getLan('js'),
 		py: getLan('py'),
 		rb: getLan('rb'),
-		ts: getLan('ts')
+		ts: getLan('ts'),
+		go: getLan('go'),
 	},
 	black: {
 		cpp: getLanB('cpp'),
