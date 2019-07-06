@@ -162,6 +162,10 @@ let images: any = {
 		gitlab: {
 			under: require("./assets/social/gitlab-under.png"),
 			over: require("./assets/icon/devops/gitlab-original.png")
+		},
+		linkedin: {
+			over: require("./assets/social/linkedin-over.png"),
+			under: require("./assets/social/linkedin-under.png"),
 		}
 	},
 	white: {
