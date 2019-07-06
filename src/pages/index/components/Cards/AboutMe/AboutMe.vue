@@ -4,21 +4,28 @@
             <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
             <div class="description" ref="desc">
                 <p>
-                    Hello! I am <b>Ernest</b> from Singapore - The Garden City.
+                    Hello! I am <b>Ernest</b> from Singapore.
                     I am a software developer specialising in <b>backend and infrastructure architecture</b>.
                 </p>
                 <p>
-                    Since the age of 10, I have been captivated with the process of crafting new things. I quickly
-                    picked up the basics of software development. From there, my small ventures quickly grew to multiple
-                    side projects in Minecraft giga mods and the large-scale templating ecosystem, which I obsess over
-                    during my free time.
+                    I have been captivated with the process of crafting new things - I quickly picked up the basics of
+                    software development. At the age of 12, I had my first production application, a Chinese game in
+                    Singapore's BiCultural Exhibition representing my school!
+                </p>
+                <p>
+                    Several years, projects and books later, this exploration has led to an interest in <b>backend
+                                                                                                           development</b>,
+                    coupled tightly with a passion for <b>object modelling</b>, <b>software and infrastructure
+                                                                                   architecture</b>, and <b>testing
+                                                                                                            strategies</b>.
+                    I am also an avid book reader and a geek who spends the weekends developing tools or learning new
+                    technology.
                 </p>
                 <p>
                     I am also <b>passionate about open source</b>. By making its discussions and code publicly
                     available, the
-                    open-source community has significantly contributed to my growth as a software engineer. All of my
-                    toolings, libraries and side projects are open sourced on GitLab. I am aiming to contribute
-                    significantly to an open-source codebase in the coming year!
+                    open-source community has significantly contributed to my growth. My
+                    libraries and side projects are open sourced on GitLab.
                 </p>
             </div>
         </div>
