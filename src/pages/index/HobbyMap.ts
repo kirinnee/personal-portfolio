@@ -28,12 +28,12 @@ const hobbyMap = [
 		"<p>I am a fan of Japanese anime culture. However, procuring or buying disks or services to view the seasonal series that are currently airing, much less subbed series, is difficult. As a little side project for my fellow anime friends and myself, I developed Anime Capital, which is a website that streams the newest anime scrapped from various sites. </p>"
 		+ "<p>Anime Capital uses a Ruby-based program to scrape the web for English-subbed anime and encode the subtitle into an MP4 file with multiple bitrates. After this, it splits the file into three-second binaries containing a .mpd manifest that is pushed to a .NET core server whilst the binaries are pushed to a bucket. The frontend website, running on Vue.js, would then query the API server for the links to these binaries, automatically allowing streaming and continuous updating of anime. This project is fully open sourced at GitLab.</p>"
 		,
-		"https://anime.capital", [
+		"https://anicap.net", [
 			images.black.rb,
 			images.icons.frontend.vue,
 			images.icons.backend.dotnet,
 			images.icons.backend.postgresql,
-		
+
 		]),
 	
 	new HobbyData("Project Nephia", images.sideProject.nephia,
