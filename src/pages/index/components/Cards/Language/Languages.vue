@@ -32,10 +32,6 @@
 
 <style lang='scss' scoped>
 
-    .header {
-        width: 80%;
-    }
-
     .mobile {
         .background {
             width: 100%;

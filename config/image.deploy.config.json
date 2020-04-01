@@ -3,9 +3,9 @@
     "key": "def",
     "width": 2000,
     "sizes": {
-      "def": 65,
-      "med": 55,
-      "small": 25
+      "def": 100,
+      "med": 60,
+      "small": 45
     },
     "target": "../dist/pages/",
     "input": "../dist/pages/",
