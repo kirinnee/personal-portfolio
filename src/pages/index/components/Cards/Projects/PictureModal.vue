@@ -2,7 +2,7 @@
     <div class="modal" @click="MobileClose">
         <div class="close" @click="Close">X</div>
         <vueCustomScrollbar class="scroll-area" :settings="Settings">
-            <Pic v-for="(s,index) in pictures" :key="index" :src="s" type="h" class="pic" uncenter></Pic>
+            <Pic v-for="(s,index) in pictures" :key="index" :src="s" type="h" class="pic" uncenter/>
             <div ref="tip" class="tutorial">
                 <div>
                     {{Tip}}
@@ -131,22 +131,22 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import Pic from "../../Pic.vue";
-	import vueCustomScrollbar from 'vue-custom-scrollbar';
-	import Project from "./Project.vue";
-	import {images} from "../../../images";
-	import {$$, isMobile} from "../../../init";
+    import {Component, Vue} from 'vue-property-decorator';
+    import Pic from "../../Pic.vue";
+    import vueCustomScrollbar from 'vue-custom-scrollbar';
+    import Project from "./Project.vue";
+    import {images} from "../../../images";
+    import {$$, isMobile} from "../../../init";
 
-	@Component({
-		props: {
-			pictures: Array
-		},
-		components: {Pic, vueCustomScrollbar}
-	})
-	export default class PictureModal extends Vue {
-		get Settings() {
-			return {
+    @Component({
+        props: {
+            pictures: Array
+        },
+        components: {Pic, vueCustomScrollbar}
+    })
+    export default class PictureModal extends Vue {
+        get Settings() {
+            return {
 				suppressScrollX: false,
 				suppressScrollY: true
 			}

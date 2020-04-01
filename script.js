@@ -39,7 +39,8 @@ async function run(command) {
     let v = command;
 
     let env = process.env;
-    env.BROWSERSLIST_CONFIG= "./config/.browserslistrc";
+    env.BROWSERSLIST_CONFIG = "./config/.browserslistrc";
+    env.TS_NODE_PROJECT = "./config/tsconfig.json";
 
 
     return new Promise((resolve) => spawn(c, v,

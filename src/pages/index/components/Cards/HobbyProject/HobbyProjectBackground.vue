@@ -1,5 +1,5 @@
 <template>
-    <Pic :src="project" class="background" uncenter type="w"></Pic>
+    <Pic :src="project" class="background" uncenter type="w"/>
 </template>
 
 <style lang='scss' scoped>
@@ -21,16 +21,16 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import {images} from "../../../images";
-	import Pic from "../../Pic.vue";
-	
-	@Component({
-		components: {Pic}
-	})
-	export default class HobbyProjectBackground extends Vue {
-		data() {
-			return {project: images.hobby}
-		}
-	}
+    import {Component, Vue} from 'vue-property-decorator';
+    import {images} from "../../../images";
+    import Pic from "../../Pic.vue";
+
+    @Component({
+        components: {Pic}
+    })
+    export default class HobbyProjectBackground extends Vue {
+        data() {
+            return {project: images.hobby}
+        }
+    }
 </script>

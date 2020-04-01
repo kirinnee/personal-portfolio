@@ -1,12 +1,12 @@
 <template>
     <div class="full">
-        <ProjectBackground></ProjectBackground>
+        <ProjectBackground/>
         <div class="main">
-            <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
+            <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"/>
             <div class="project-holder">
-                <ProjectInstance ref="proj" v-for="(d,index) in Data" :key="index" :project-data="d"></ProjectInstance>
+                <ProjectInstance ref="proj" v-for="(d,index) in Data" :key="index" :project-data="d"/>
             </div>
-            <PictureModal v-if="ShowModal" :pictures="Pictures"></PictureModal>
+            <PictureModal v-if="ShowModal" :pictures="Pictures"/>
         </div>
     </div>
 </template>
@@ -23,26 +23,26 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import ProjectBackground from "./ProjectBackground.vue";
-	import CardHeader from "../../CardHeader.vue";
-	import {States} from "../../../../../classLibrary/States";
-	import {StateManager} from "../../../../../classLibrary/StateManager";
-	import {stateManager} from "../../../init";
-	import ProjectInstance from "./ProjectInstance.vue";
-	import {ProjectData} from "../../../../../classLibrary/ProjectData";
-	import PictureModal from "./PictureModal.vue";
-	import {projectMap} from "../../../ProjectMap";
-	
-	@Component({
-		components: {PictureModal, ProjectInstance, ProjectBackground, CardHeader},
-		props: {index: Number}
-	})
-	export default class Project extends Vue {
-		private showModal = false;
-		private state: StateManager = stateManager;
-		private screenshots: string[] = [];
-		private index?: number;
+    import {Component, Vue} from 'vue-property-decorator';
+    import ProjectBackground from "./ProjectBackground.vue";
+    import CardHeader from "../../CardHeader.vue";
+    import {States} from "../../../../../classLibrary/States";
+    import {StateManager} from "../../../../../classLibrary/StateManager";
+    import {stateManager} from "../../../init";
+    import ProjectInstance from "./ProjectInstance.vue";
+    import {ProjectData} from "../../../../../classLibrary/ProjectData";
+    import PictureModal from "./PictureModal.vue";
+    import {projectMap} from "../../../ProjectMap";
+
+    @Component({
+        components: {PictureModal, ProjectInstance, ProjectBackground, CardHeader},
+        props: {index: Number}
+    })
+    export default class Project extends Vue {
+        private showModal = false;
+        private state: StateManager = stateManager;
+        private screenshots: string[] = [];
+        private index?: number;
 
 
 		get IsTriggered(): boolean {

@@ -36,31 +36,30 @@ let stateManager: StateManager = new StateManager(animX);
 const $$ = (i: number): Promise<void> => new Promise<void>(r => setTimeout(r, i));
 
 const isMobile = (): boolean => window.innerHeight > window.innerWidth;
+const isPWA = (): boolean => window.matchMedia('(display-mode: standalone)').matches;
 
 function responsiveAdapter() {
-	if (isMobile()) {
-		document.querySelector("body")!.AddClass("mobile");
-		document.querySelector("body")!.RemoveClass("non-mobile");
-	} else {
-		document.querySelector("body")!.AddClass("non-mobile");
-		document.querySelector("body")!.RemoveClass("mobile");
-	}
+    if (isMobile()) {
+        document.querySelector("body")!.AddClass("mobile");
+        document.querySelector("body")!.RemoveClass("non-mobile");
+    } else {
+        document.querySelector("body")!.AddClass("non-mobile");
+        document.querySelector("body")!.RemoveClass("mobile");
+    }
 }
 
 responsiveAdapter();
 
-window.addEventListener("resize", () => {
-	console.log("resize");
-	responsiveAdapter();
-});
+window.addEventListener("resize", responsiveAdapter);
 
 export {
-	$$,
-	core,
-	stateManager,
-	animX,
-	eases,
-	eleFact,
-	isMobile,
-	TweenLite
+    $$,
+    core,
+    stateManager,
+    animX,
+    eases,
+    eleFact,
+    isMobile,
+    TweenLite,
+    isPWA,
 }

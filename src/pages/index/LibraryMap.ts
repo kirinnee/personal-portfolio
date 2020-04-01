@@ -23,6 +23,9 @@ const libraryMap: LibraryData[] = [
 		"This is a pipeline-based interface that allows multiple plugins to configure and transform binaries. Typical use cases are image resizing, compression and manipulation."),
 	new LibraryData("#ca0000", "bucket client", "https://gitlab.com/ruby-gem/bucket_client",
 		"This is an alternative to the Rails’ ActiveStorage engine within both Bucket and Blob CRUD. On top of that, it allows for access policies and CORS policy with support for Azure Blob Storage, Amazon S3 Bucket, Digital Ocean Spaces and GCP Cloud Storage."),
+	new LibraryData("#ff20dd", "narwhal", "https://gitlab.com/kiringo/narwhal",
+		"A Golang Library and CLI that allows saving and loading volumes as zip files."),
+
 ];
 
 

@@ -1,18 +1,18 @@
 <template>
     <div class="hobby-instance">
         <a :href="Hob.link" class="header" target="_blank">{{Hob.name}}
-            <Pic :src="link" type="b" class="l"></Pic>
+            <Pic :src="link" type="b" class="l"/>
         </a>
         <div class="detail">
-            <Pic class="ss" type="w" :src="Hob.screenshot" :uncenter="Uncenter"></Pic>
+            <Pic class="ss" type="w" :src="Hob.screenshot" :uncenter="Uncenter"/>
             <div class="right">
                 <div class="desc" v-html="Hob.description">
 
                 </div>
                 <div class="stack">
                     <div class="stack-holder" v-for="(s, index) in Hob.stack" :key="index">
-                        <Pic :src="s[0]" uncenter type="b"></Pic>
-                        <Pic :src="s[1]" uncenter type="b" class="over"></Pic>
+                        <Pic :src="s[0]" uncenter type="b"/>
+                        <Pic :src="s[1]" uncenter type="b" class="over"/>
                     </div>
                 </div>
             </div>
@@ -159,23 +159,23 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import {HobbyData} from "../../../../../classLibrary/HobbyData";
-	import Pic from "../../Pic.vue";
-	import {images} from "../../../images";
-	import {isMobile} from "../../../init";
-	
-	@Component({
-		components: {Pic},
-		props: {
-			hobby: HobbyData
-		}
-	})
-	export default class HobbyProjectInstance extends Vue {
-		private hobby?: HobbyData;
+    import {Component, Vue} from 'vue-property-decorator';
+    import {HobbyData} from "../../../../../classLibrary/HobbyData";
+    import Pic from "../../Pic.vue";
+    import {images} from "../../../images";
+    import {isMobile} from "../../../init";
 
-		data() {
-			return {
+    @Component({
+        components: {Pic},
+        props: {
+            hobby: HobbyData
+        }
+    })
+    export default class HobbyProjectInstance extends Vue {
+        private hobby?: HobbyData;
+
+        data() {
+            return {
 				link: images.link
 			}
 		}

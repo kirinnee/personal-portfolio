@@ -73,6 +73,7 @@ let images: any = {
 		anime: require("./assets/sideproj/anime.jpg"),
 		nephia: require("./assets/sideproj/nephia.jpg"),
 		sophie: require("./assets/sideproj/sophie.jpg"),
+		tele: require("./assets/sideproj/tele.jpg"),
 	},
 	projects: {
 		onehealth: {

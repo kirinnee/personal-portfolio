@@ -1,32 +1,25 @@
 [
-	{
-		"key":          "def",
-		"width":        2000,
-		"sizes":        {
-			"def":   65,
-			"med":   55,
-			"small": 45
-		},
-		"target":       "kirinnee.portfolio",
-		"input":        "../dist/pages/",
-		"bucket":       {
-			"provider":   "aws",
-			"check-hash": true,
-			"public":     true,
-			"get-cors":   ["*"],
-			"prepend":    "pages"
-		},
-		"compressions": {
-			"pngQuant":      {
-				"speed": 11,
-				"bit":   256
-			},
-			"jpegOptim":     {
-				"quality":     75,
-				"strip":       true,
-				"progressive": true
-			},
-			"useless-field": true
-		}
-	}
+  {
+    "key": "def",
+    "width": 2000,
+    "sizes": {
+      "def": 65,
+      "med": 55,
+      "small": 45
+    },
+    "target": "../dist/pages/",
+    "input": "../dist/pages/",
+    "delete": true,
+    "compressions": {
+      "pngQuant": {
+        "speed": 11,
+        "bit": 256
+      },
+      "jpegOptim": {
+        "quality": 75,
+        "strip": true,
+        "progressive": true
+      }
+    }
+  }
 ]

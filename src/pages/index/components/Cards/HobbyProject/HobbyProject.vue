@@ -1,14 +1,14 @@
 <template>
     <div class="full">
-        <HobbyProjectBackground></HobbyProjectBackground>
+        <HobbyProjectBackground/>
         <div class="main">
-            <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
+            <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"/>
             <div ref="desc" class="desc">
                 These are some project I did the little free time I have with my friend with the same passion. I take
                 pride in delivering enterprise-grade applications - even if they are hobby projects.
             </div>
             <div class="hobbies">
-                <HobbyProjectInstance ref="hob" v-for="(h,index) in Projects" :key="index" :hobby="h"></HobbyProjectInstance>
+                <HobbyProjectInstance ref="hob" v-for="(h,index) in Projects" :key="index" :hobby="h"/>
             </div>
         </div>
     </div>
@@ -51,27 +51,27 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import HobbyProjectBackground from "./HobbyProjectBackground.vue";
-	import CardHeader from "../../CardHeader.vue";
-	import {States} from "../../../../../classLibrary/States";
-	import {StateManager} from "../../../../../classLibrary/StateManager";
-	import {stateManager} from "../../../init";
-	import HobbyProjectInstance from "./HobbyProjectInstance.vue";
-	import {HobbyData} from "../../../../../classLibrary/HobbyData";
-	import {hobbyMap} from "../../../HobbyMap";
-	
-	@Component({
-		components: {HobbyProjectInstance, HobbyProjectBackground, CardHeader},
-		props: {index: Number}
-	})
-	export default class Project extends Vue {
-		private state: StateManager = stateManager;
-		private index?: number;
+    import {Component, Vue} from 'vue-property-decorator';
+    import HobbyProjectBackground from "./HobbyProjectBackground.vue";
+    import CardHeader from "../../CardHeader.vue";
+    import {States} from "../../../../../classLibrary/States";
+    import {StateManager} from "../../../../../classLibrary/StateManager";
+    import {stateManager} from "../../../init";
+    import HobbyProjectInstance from "./HobbyProjectInstance.vue";
+    import {HobbyData} from "../../../../../classLibrary/HobbyData";
+    import {hobbyMap} from "../../../HobbyMap";
+
+    @Component({
+        components: {HobbyProjectInstance, HobbyProjectBackground, CardHeader},
+        props: {index: Number}
+    })
+    export default class Project extends Vue {
+        private state: StateManager = stateManager;
+        private index?: number;
 
 
-		get IsTriggered(): boolean {
-			return this.state!.checkTriggered(this.index!)
+        get IsTriggered(): boolean {
+            return this.state!.checkTriggered(this.index!)
 		}
 
 		async trigger() {
