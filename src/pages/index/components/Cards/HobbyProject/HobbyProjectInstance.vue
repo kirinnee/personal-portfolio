@@ -71,8 +71,8 @@
 
                 .stack-holder {
                     margin: 10px;
-                    width: 25px;
-                    height: 25px;
+                    width: 35px;
+                    height: 35px;
                     box-sizing: border-box;
                 }
 
