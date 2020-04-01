@@ -38,7 +38,6 @@ let plugins = [...htmlPages, new CleanWebpackPlugin({
         include: [
             /\.(js|css|html|json|png|jpg|jpeg|svg)?$/
         ],
-        navigateFallback: '/index.html',
         runtimeCaching: [
             {
                 urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
