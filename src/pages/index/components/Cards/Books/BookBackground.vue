@@ -1,5 +1,5 @@
 <template>
-    <Pic :src="book" type="h" class="background" uncenter></Pic>
+    <Pic :src="book" type="h" class="background" uncenter/>
 </template>
 
 <style lang='scss' scoped>
@@ -13,18 +13,18 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import {images} from "../../../images";
-	import Pic from "../../Pic.vue";
-	
-	@Component({
-		components: {Pic}
-	})
-	export default class BookBackground extends Vue {
-		data() {
-			return {
-				book: images.book
-			}
-		}
-	}
+    import {Component, Vue} from 'vue-property-decorator';
+    import {images} from "../../../images";
+    import Pic from "../../Pic.vue";
+
+    @Component({
+        components: {Pic}
+    })
+    export default class BookBackground extends Vue {
+        data() {
+            return {
+                book: images.book
+            }
+        }
+    }
 </script>

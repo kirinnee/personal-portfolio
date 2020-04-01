@@ -11,32 +11,32 @@
 
     .mobile {
         .side-holder {
-            margin-right: 20px;
-            margin-left: 20px;
+            margin-right: 5px;
+            margin-left: 0;
         }
 
         .company {
-            font-size: 40px;
+            font-size: 24px;
             font-weight: 500;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
         }
 
         .role {
             text-transform: uppercase;
-            font-size: 25px;
-            margin-bottom: 20px;
+            font-size: 18px;
+            margin-bottom: 10px;
             opacity: 0.8;
         }
 
         .time {
             height: 32px;
-            line-height: 32px;
-            font-size: 32px;
-            margin-bottom: 20px;
+            line-height: 30px;
+            font-size: 20px;
+            margin-bottom: 5px;
         }
 
         .desc {
-            font-size: 20px;
+            font-size: 16px;
         }
 
         .a {
@@ -81,27 +81,27 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import {TimelineData} from "../../../../../classLibrary/TimelineData";
-	import {eleFact} from "../../../init";
+    import {Component, Vue} from 'vue-property-decorator';
+    import {TimelineData} from "../../../../../classLibrary/TimelineData";
+    import {eleFact} from "../../../init";
 
 
-	interface TimelineRefs {
-		company: HTMLElement;
-		time: HTMLElement;
-		role: HTMLElement;
-		desc: HTMLElement;
-	}
+    interface TimelineRefs {
+        company: HTMLElement;
+        time: HTMLElement;
+        role: HTMLElement;
+        desc: HTMLElement;
+    }
 
-	@Component({
-		props: {
-			left: Boolean,
-			mobile: Boolean,
-			company: Boolean,
-			timeline: TimelineData
-		}
+    @Component({
+        props: {
+            left: Boolean,
+            mobile: Boolean,
+            company: Boolean,
+            timeline: TimelineData
+        }
 
-	})
+    })
 	export default class TimelineSide extends Vue {
 		private left?: boolean;
 		private mobile?: boolean;

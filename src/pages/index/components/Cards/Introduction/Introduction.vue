@@ -10,7 +10,7 @@
             <div class="basic" ref="d4">and I am a</div>
             <div class="title" ref="d5">Backend Engineer</div>
         </div>
-        <ScrollForMore ref="scroll" class="scroll-for-more"></ScrollForMore>
+        <ScrollForMore ref="scroll" class="scroll-for-more"/>
     </div>
 </template>
 
@@ -36,16 +36,16 @@
                 width: 100%;
 
                 .basic {
-                    font-size: 60px;
-                    margin: 60px;
+                    font-size: 30px;
+                    margin: 30px;
                 }
 
                 .name {
-                    font-size: 120px;
+                    font-size: 60px;
                 }
 
                 .title {
-                    font-size: 100px;
+                    font-size: 50px;
                 }
             }
 
@@ -110,32 +110,32 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import ScrollForMore from "./ScrollForMore.vue";
-	import {eases, stateManager} from "../../../init";
-	import {images} from "../../../images";
-	import {StateManager} from "../../../../../classLibrary/StateManager";
-	import {EaseStrength} from "@kirinnee/kease";
+    import {Component, Vue} from 'vue-property-decorator';
+    import ScrollForMore from "./ScrollForMore.vue";
+    import {eases, stateManager} from "../../../init";
+    import {images} from "../../../images";
+    import {StateManager} from "../../../../../classLibrary/StateManager";
+    import {EaseStrength} from "@kirinnee/kease";
 
-	@Component({
-		components: {ScrollForMore},
-		props: {
-			index: Number
-		}
-	})
-	export default class Introduction extends Vue {
-		private state: StateManager = stateManager;
-		private index?: number;
+    @Component({
+        components: {ScrollForMore},
+        props: {
+            index: Number
+        }
+    })
+    export default class Introduction extends Vue {
+        private state: StateManager = stateManager;
+        private index?: number;
 
-		async trigger() {
-			if (!this.IsTriggered) {
-				const d1: HTMLElement = this.$refs.d1 as HTMLElement;
-				const d2: HTMLElement = this.$refs.d2 as HTMLElement;
-				const d3: HTMLElement = this.$refs.d3 as HTMLElement;
-				const d4: HTMLElement = this.$refs.d4 as HTMLElement;
-				const d5: HTMLElement = this.$refs.d5 as HTMLElement;
-				const scroll: ScrollForMore = (this.$refs.scroll) as ScrollForMore;
-				this.state!.markTriggered(this.index!);
+        async trigger() {
+            if (!this.IsTriggered) {
+                const d1: HTMLElement = this.$refs.d1 as HTMLElement;
+                const d2: HTMLElement = this.$refs.d2 as HTMLElement;
+                const d3: HTMLElement = this.$refs.d3 as HTMLElement;
+                const d4: HTMLElement = this.$refs.d4 as HTMLElement;
+                const d5: HTMLElement = this.$refs.d5 as HTMLElement;
+                const scroll: ScrollForMore = (this.$refs.scroll) as ScrollForMore;
+                this.state!.markTriggered(this.index!);
 				const out = eases.EaseOut(EaseStrength.Quadratic);
 				await Promise.all([
 					d1.Opacity(0, 1, {duration: 700, ease: out}).Promise,

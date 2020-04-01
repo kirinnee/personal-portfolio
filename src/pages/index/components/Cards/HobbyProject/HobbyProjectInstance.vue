@@ -1,6 +1,6 @@
 <template>
     <div class="hobby-instance">
-        <a :href="Hob.link" class="header" target="_blank">{{Hob.name}}
+        <a rel="noreferrer" :href="Hob.link" class="header" target="_blank">{{Hob.name}}
             <Pic :src="link" type="b" class="l"/>
         </a>
         <div class="detail">
@@ -25,24 +25,24 @@
 
     .mobile {
         .hobby-instance {
-            margin: 30px;
+            margin: 15px;
             width: 95%;
-            padding: 40px 60px;
+            padding: 15px 20px;
 
             .header {
-                font-size: 60px;
-                margin-bottom: 30px;
+                font-size: 30px;
+                margin-bottom: 15px;
 
                 .l {
-                    width: 30px;
-                    height: 30px;
+                    width: 15px;
+                    height: 15px;
                 }
             }
 
             .desc {
                 box-sizing: border-box;
-                padding-right: 20px;
-                font-size: 35px;
+                padding-right: 5px;
+                font-size: 16px;
             }
 
             .detail {
@@ -53,23 +53,25 @@
                 .ss {
                     width: 100%;
                     position: relative;
-                    margin-bottom: 30px;
+                    margin-bottom: 15px;
                 }
 
                 .right {
                     display: flex;
+                    flex-direction: column-reverse;
                     width: 100%;
+                    padding: 0;
                 }
 
                 .stack {
-                    flex-direction: column;
+                    flex-direction: row;
                     justify-content: center;
                 }
 
                 .stack-holder {
-                    margin: 20px;
-                    width: 80px;
-                    height: 80px;
+                    margin: 10px;
+                    width: 25px;
+                    height: 25px;
                     box-sizing: border-box;
                 }
 

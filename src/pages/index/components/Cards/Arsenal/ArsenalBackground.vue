@@ -1,5 +1,5 @@
 <template>
-    <Pic :src="arsenal" class="background" uncenter type="w"></Pic>
+    <Pic :src="arsenal" class="background" uncenter type="w"/>
 </template>
 
 <style lang='scss' scoped>
@@ -20,19 +20,19 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import {images} from "../../../images";
-	import Pic from "../../Pic.vue";
-	
-	@Component({
-		components: {Pic}
-	})
-	export default class ArsenalBackground extends Vue {
+    import {Component, Vue} from 'vue-property-decorator';
+    import {images} from "../../../images";
+    import Pic from "../../Pic.vue";
 
-		data() {
-			return {
-				arsenal: images.arsenal
-			}
-		}
-	}
+    @Component({
+        components: {Pic}
+    })
+    export default class ArsenalBackground extends Vue {
+
+        data() {
+            return {
+                arsenal: images.arsenal
+            }
+        }
+    }
 </script>

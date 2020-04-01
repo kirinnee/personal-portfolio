@@ -12,23 +12,23 @@
         .holder {
             margin: 20px;
             width: 90%;
-            padding: 40px;
+            padding: 20px;
 
             .source {
-                padding: 20px 40px;
-                border-radius: 50px;
+                padding: 10px 20px;
+                border-radius: 25px;
                 margin-top: 10px;
-                font-size: 30px;
+                font-size: 16px;
             }
 
             .desc {
                 padding: 10px;
-                font-size: 30px;
+                font-size: 16px;
             }
 
             .header {
-                margin-bottom: 40px;
-                font-size: 50px;
+                margin-bottom: 5px;
+                font-size: 30px;
             }
         }
     }
@@ -83,29 +83,29 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import {LibraryData} from "../../../../../classLibrary/LibraryData";
-	
-	@Component({
-		props: {lib: LibraryData}
-	})
-	export default class Library extends Vue {
-		private lib?: LibraryData;
-		private hover: boolean = false;
+    import {Component, Vue} from 'vue-property-decorator';
+    import {LibraryData} from "../../../../../classLibrary/LibraryData";
 
-		get Lib(): LibraryData {
-			return this.lib!;
-		}
+    @Component({
+        props: {lib: LibraryData}
+    })
+    export default class Library extends Vue {
+        private lib?: LibraryData;
+        private hover: boolean = false;
 
-		get Style() {
-			return {
-				color: this.hover ? this.Lib.color : "white"
-			};
-		}
+        get Lib(): LibraryData {
+            return this.lib!;
+        }
 
-		get Border() {
-			return {
-				border: this.hover ? `1px solid ${this.Lib.color}` : "1px solid white"
+        get Style() {
+            return {
+                color: this.hover ? this.Lib.color : "white"
+            };
+        }
+
+        get Border() {
+            return {
+                border: this.hover ? `1px solid ${this.Lib.color}` : "1px solid white"
 			}
 		}
 	}

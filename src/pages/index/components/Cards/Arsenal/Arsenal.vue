@@ -1,8 +1,8 @@
 <template>
     <div class="full">
-        <ArsenalBackground></ArsenalBackground>
+        <ArsenalBackground/>
         <div class="main">
-            <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
+            <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"/>
             <div ref="desc" class="desc">
                 My friends and colleagues often ask me how I can create many side-projects and products in a short time
                 despite working full-time. This speed is partly due to the use of CyanPrint, which allows me to template
@@ -10,7 +10,7 @@
                 my personal set of libraries.
             </div>
             <div class="library-holder">
-                <Library v-for="(l, index) in Libraries" :key="index" :lib="l" ref="lib"></Library>
+                <Library v-for="(l, index) in Libraries" :key="index" :lib="l" ref="lib"/>
             </div>
         </div>
     </div>
@@ -20,9 +20,9 @@
 
     .mobile {
         .desc {
-            margin: 80px 0;
-            width: 95%;
-            font-size: 30px;
+            margin: 20px 0;
+            width: 90%;
+            font-size: 16px;
         }
 
         .library-holder {
@@ -63,37 +63,37 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import CardHeader from "../../CardHeader.vue";
-	import {States} from "../../../../../classLibrary/States";
-	import {StateManager} from "../../../../../classLibrary/StateManager";
-	import {stateManager} from "../../../init";
-	import ArsenalBackground from "./ArsenalBackground.vue";
-	import {LibraryData} from "../../../../../classLibrary/LibraryData";
-	import {libraryMap} from "../../../LibraryMap";
-	import Library from "./Library.vue";
-	
-	@Component({
-		components: {Library, ArsenalBackground, CardHeader},
-		props: {index: Number}
-	})
-	export default class Project extends Vue {
-		private state: StateManager = stateManager;
-		private index?: number;
+    import {Component, Vue} from 'vue-property-decorator';
+    import CardHeader from "../../CardHeader.vue";
+    import {States} from "../../../../../classLibrary/States";
+    import {StateManager} from "../../../../../classLibrary/StateManager";
+    import {stateManager} from "../../../init";
+    import ArsenalBackground from "./ArsenalBackground.vue";
+    import {LibraryData} from "../../../../../classLibrary/LibraryData";
+    import {libraryMap} from "../../../LibraryMap";
+    import Library from "./Library.vue";
+
+    @Component({
+        components: {Library, ArsenalBackground, CardHeader},
+        props: {index: Number}
+    })
+    export default class Project extends Vue {
+        private state: StateManager = stateManager;
+        private index?: number;
 
 
-		get IsTriggered(): boolean {
-			return this.state!.checkTriggered(this.index!)
-		}
+        get IsTriggered(): boolean {
+            return this.state!.checkTriggered(this.index!)
+        }
 
-		async trigger() {
-			const header: any = this.$refs.header;
-			if (!this.IsTriggered) {
-				this.state!.markTriggered(this.index!);
-				await header.trigger();
-				const desc: HTMLElement = (this.$refs.desc) as HTMLElement;
-				await Promise.all([
-					desc.Opacity(0, 1, {duration: 400}).Promise,
+        async trigger() {
+            const header: any = this.$refs.header;
+            if (!this.IsTriggered) {
+                this.state!.markTriggered(this.index!);
+                await header.trigger();
+                const desc: HTMLElement = (this.$refs.desc) as HTMLElement;
+                await Promise.all([
+                    desc.Opacity(0, 1, {duration: 400}).Promise,
 					desc.Y(20, 0, {duration: 200}).Promise,
 				]);
 				const libs = this.$refs.lib as Vue[];

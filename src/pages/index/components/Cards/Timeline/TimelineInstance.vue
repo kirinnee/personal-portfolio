@@ -2,14 +2,14 @@
     <div class="timeline-instance">
 
         <div class="holder right" v-if="!Mobile" :style="Style">
-            <TimelineSide ref="left" :left="true" :mobile="Mobile" :company="left" :timeline="Info"></TimelineSide>
+            <TimelineSide ref="left" :left="true" :mobile="Mobile" :company="left" :timeline="Info"/>
         </div>
         <div class="partition">
             <div class="bar" ref="bar"></div>
             <div class="dot" ref="dot"></div>
         </div>
         <div class="holder left">
-            <TimelineSide ref="right" :left="false" :mobile="Mobile" :company="!left" :timeline="Info"></TimelineSide>
+            <TimelineSide ref="right" :left="false" :mobile="Mobile" :company="!left" :timeline="Info"/>
         </div>
     </div>
 </template>
@@ -18,21 +18,25 @@
 
     .mobile {
         .holder {
-            padding-bottom: 80px;
+            padding-bottom: 40px;
             width: 80%;
         }
 
+        .timeline-instance {
+            justify-content: flex-start;
+        }
+
         .partition {
-            width: 60px;
+            width: 45px;
             position: relative;
 
             .dot {
-                width: 40px;
-                height: 40px;
+                width: 16px;
+                height: 16px;
             }
 
             .bar {
-                width: 2px;
+                width: 1px;
             }
         }
     }
@@ -107,31 +111,31 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import {TimelineData} from "../../../../../classLibrary/TimelineData";
-	import TimelineSide from "./TimelineSide.vue";
-	import {$$, eases, isMobile} from "../../../init";
-	import {EaseStrength} from "@kirinnee/kease";
+    import {Component, Vue} from 'vue-property-decorator';
+    import {TimelineData} from "../../../../../classLibrary/TimelineData";
+    import TimelineSide from "./TimelineSide.vue";
+    import {$$, eases, isMobile} from "../../../init";
+    import {EaseStrength} from "@kirinnee/kease";
 
-	class Dud {
-		async play(): Promise<void> {
-			await $$(0);
-		}
-	}
+    class Dud {
+        async play(): Promise<void> {
+            await $$(0);
+        }
+    }
 
-	@Component({
-		components: {TimelineSide},
-		props: {
-			info: TimelineData,
-			left: Boolean,
-			last: Boolean,
-		}
-	})
-	export default class TimelineInstance extends Vue {
-		private info?: TimelineData;
-		private last?: boolean;
+    @Component({
+        components: {TimelineSide},
+        props: {
+            info: TimelineData,
+            left: Boolean,
+            last: Boolean,
+        }
+    })
+    export default class TimelineInstance extends Vue {
+        private info?: TimelineData;
+        private last?: boolean;
 
-		async play(): Promise<void> {
+        async play(): Promise<void> {
 			const left: any = this.$refs.left || new Dud();
 			const right: any = this.$refs.right;
 			const easeOut = eases.EaseOut(EaseStrength.Linear);

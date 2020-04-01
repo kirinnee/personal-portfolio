@@ -1,8 +1,8 @@
 <template>
     <div class="full">
-        <SkillBackground></SkillBackground>
+        <SkillBackground/>
         <div class="main">
-            <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
+            <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"/>
             <div class="desc" ref="desc">
                 Although I specialise mainly in backend and infrastructure development, I have also spent much time
                 exploring frontend tooling and frameworks. Given below are the skillsets I have used in production
@@ -10,16 +10,16 @@
                 relative to the rest of the list.
             </div>
             <div class="nav-bar" ref="nav">
-                <NavTab name="Backend" type="backend" :dark="true"></NavTab>
-                <NavTab name="Devops" type="devops" :dark="true"></NavTab>
-                <NavTab name="Frontend" type="frontend" :dark="true"></NavTab>
-                <NavTab name="Mobile & IoT" type="mobile" :dark="true"></NavTab>
+                <NavTab name="Backend" type="backend" :dark="true"/>
+                <NavTab name="Devops" type="devops" :dark="true"/>
+                <NavTab name="Frontend" type="frontend" :dark="true"/>
+                <NavTab name="Mobile & IoT" type="mobile" :dark="true"/>
             </div>
             <div class="groups">
-                <SkillGroup :skills="BackEnd" v-show="selected['backend']" ref="backend"></SkillGroup>
-                <SkillGroup :skills="FrontEnd" v-show="selected['frontend']" ref="frontend"></SkillGroup>
-                <SkillGroup :skills="DevOps" v-show="selected['devops']" ref="devops"></SkillGroup>
-                <SkillGroup :skills="MobileIot" v-show="selected['mobile']" ref="mobile"></SkillGroup>
+                <SkillGroup :skills="BackEnd" v-show="selected['backend']" ref="backend"/>
+                <SkillGroup :skills="FrontEnd" v-show="selected['frontend']" ref="frontend"/>
+                <SkillGroup :skills="DevOps" v-show="selected['devops']" ref="devops"/>
+                <SkillGroup :skills="MobileIot" v-show="selected['mobile']" ref="mobile"/>
             </div>
 
         </div>
@@ -31,19 +31,19 @@
 
     .mobile {
         .desc {
-            margin-top: 80px;
+            margin-top: 20px;
             width: 90%;
-            font-size: 35px;
+            font-size: 18px;
         }
 
         .nav-bar {
-            margin-top: 80px;
+            margin-top: 20px;
             width: 90%;
 
         }
 
         .groups {
-            margin-top: 40px;
+            margin-top: 20px;
             width: 90%;
         }
     }
@@ -93,38 +93,38 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import CardHeader from "../../CardHeader.vue";
-	import {StateManager} from "../../../../../classLibrary/StateManager";
-	import {stateManager} from "../../../init";
-	import {States} from "../../../../../classLibrary/States";
-	import SkillGroup from "./SkillGroup.vue";
-	import {SkillData} from "../../../../../classLibrary/SkillData";
-	import NavTab from "../../NavTab.vue";
-	import SkillBackground from "./SkillBackground.vue";
-	import {skillMap} from "../../../SkillMap";
-	
-	@Component({
-		components: {SkillBackground, NavTab, SkillGroup, CardHeader},
-		props: {index: Number}
-	})
-	export default class Skill extends Vue {
-		private state: StateManager = stateManager;
-		private index?: number;
-		private selected: { [s: string]: boolean } = {
-			frontend: false,
-			backend: true,
-			devops: false,
-			mobile: false
-		};
+    import {Component, Vue} from 'vue-property-decorator';
+    import CardHeader from "../../CardHeader.vue";
+    import {StateManager} from "../../../../../classLibrary/StateManager";
+    import {stateManager} from "../../../init";
+    import {States} from "../../../../../classLibrary/States";
+    import SkillGroup from "./SkillGroup.vue";
+    import {SkillData} from "../../../../../classLibrary/SkillData";
+    import NavTab from "../../NavTab.vue";
+    import SkillBackground from "./SkillBackground.vue";
+    import {skillMap} from "../../../SkillMap";
 
-		get MobileIot(): SkillData[] {
-			const m = skillMap.mobileIot;
-			return [m.android, m.arduino, m.ble, m.eeprom, m.flutter];
-		}
+    @Component({
+        components: {SkillBackground, NavTab, SkillGroup, CardHeader},
+        props: {index: Number}
+    })
+    export default class Skill extends Vue {
+        private state: StateManager = stateManager;
+        private index?: number;
+        private selected: { [s: string]: boolean } = {
+            frontend: false,
+            backend: true,
+            devops: false,
+            mobile: false
+        };
 
-		get DevOps(): SkillData[] {
-			const d = skillMap.devops;
+        get MobileIot(): SkillData[] {
+            const m = skillMap.mobileIot;
+            return [m.android, m.arduino, m.ble, m.eeprom, m.flutter];
+        }
+
+        get DevOps(): SkillData[] {
+            const d = skillMap.devops;
 			return [d.docker, d.gitlab, d.aws, d.azureDevops,
 				d.azure, d.digitalOcean, d.firebase, d.heroku]
 		}

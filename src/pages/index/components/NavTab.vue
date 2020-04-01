@@ -8,8 +8,9 @@
 
     .mobile {
         .nt {
-            font-size: 30px;
-            margin: 40px 0;
+            font-size: 16px;
+            margin: 8px 2px;
+            padding: 5px;
         }
     }
 
@@ -38,27 +39,27 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	
-	@Component({
-		props: {
-			name: String,
-			type: String,
-			dark: Boolean,
-		}
-	})
-	export default class NavTab extends Vue {
-		private dark?: boolean;
+    import {Component, Vue} from 'vue-property-decorator';
 
-		get Parent(): any {
-			return this.$parent;
-		}
+    @Component({
+        props: {
+            name: String,
+            type: String,
+            dark: Boolean,
+        }
+    })
+    export default class NavTab extends Vue {
+        private dark?: boolean;
 
-		Select(s: string) {
-			const parent = this.Parent;
-			let old = "";
-			for (const v in parent.selected) {
-				if (parent.selected.hasOwnProperty(v)) {
+        get Parent(): any {
+            return this.$parent;
+        }
+
+        Select(s: string) {
+            const parent = this.Parent;
+            let old = "";
+            for (const v in parent.selected) {
+                if (parent.selected.hasOwnProperty(v)) {
 					if (parent.selected[v]) {
 						old = v;
 					}

@@ -1,6 +1,6 @@
 <template>
     <div :id="Id" class="card">
-        <slot></slot>
+        <slot/>
     </div>
 </template>
 
@@ -15,28 +15,28 @@
 </style>
 
 <script lang="ts">
-	import {Component, Vue} from 'vue-property-decorator';
-	import {StateManager} from "../../../classLibrary/StateManager";
+    import {Component, Vue} from 'vue-property-decorator';
+    import {StateManager} from "../../../classLibrary/StateManager";
 
-	@Component({
-		props: {
-			color: String,
-			index: Number,
-			name: String,
-			dotColor: String,
-			state: StateManager
-		}
-	})
-	export default class Card extends Vue {
-		private color?: string;
-		private dotColor?: string;
-		private index?: number;
-		private state?: StateManager;
-		private name?: string;
+    @Component({
+        props: {
+            color: String,
+            index: Number,
+            name: String,
+            dotColor: String,
+            state: StateManager
+        }
+    })
+    export default class Card extends Vue {
+        private color?: string;
+        private dotColor?: string;
+        private index?: number;
+        private state?: StateManager;
+        private name?: string;
 
-		beforeMount() {
-			this.state!.register({
-				index: this.index!,
+        beforeMount() {
+            this.state!.register({
+                index: this.index!,
 				name: this.name!,
 				color: this.color!,
 				circleColor: this.dotColor!

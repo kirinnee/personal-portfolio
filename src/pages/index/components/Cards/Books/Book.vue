@@ -1,22 +1,22 @@
 <template>
     <div class="full">
-        <BookBackground></BookBackground>
+        <BookBackground/>
         <div class="main">
-            <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
+            <CardHeader :dark="false" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"/>
             <div class="description" ref="desc">
                 As an avid reader, I have read many programming and development books mainly about below four topics.
                 Below is the list of books I have read. I highly recommend it to people who are as interested in the
                 development world as I am!
             </div>
             <div class="nav-bar" ref="nav">
-                <NavTab name="Go" type="go"></NavTab>
-                <NavTab name="C#" type="csharp"></NavTab>
-                <NavTab name="Ruby" type="ruby"></NavTab>
-                <NavTab name="Software Design" type="design"></NavTab>
-                <NavTab name="Others" type="others"></NavTab>
+                <NavTab name="Go" type="go"/>
+                <NavTab name="C#" type="csharp"/>
+                <NavTab name="Ruby" type="ruby"/>
+                <NavTab name="Software Design" type="design"/>
+                <NavTab name="Others" type="others"/>
             </div>
             <div class="books">
-                <Pic :src="s" v-for="(s, index) in Books" :key="index" class="rel" ref="books" type="h" uncenter></Pic>
+                <Pic :src="s" v-for="(s, index) in Books" :key="index" class="rel" ref="books" type="h" uncenter/>
             </div>
         </div>
     </div>
@@ -35,25 +35,23 @@
         .description {
             width: 85%;
             font-family: Raleway, sans-serif;
-            font-size: 20px;
+            font-size: 16px;
 
         }
 
         .books {
-            @extend .middle;
             margin-top: 20px;
             display: flex;
             flex-wrap: wrap;
             width: 100%;
-            align-items: center;
-            align-content: center;
-            justify-content: center;
 
             .rel {
-                position: relative;
-                opacity: 0;
-                height: 300px;
-                margin: 20px;
+                height: 120px;
+                margin: 10px;
+            }
+
+            .nav-bar {
+                margin-top: 30px;
             }
         }
 
@@ -108,35 +106,35 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import BookBackground from "./BookBackground.vue";
-	import CardHeader from "../../CardHeader.vue";
-	import {States} from "../../../../../classLibrary/States";
-	import {StateManager} from "../../../../../classLibrary/StateManager";
-	import {$$, stateManager} from "../../../init";
-	import {images} from "../../../images";
-	import NavTab from "../../NavTab.vue";
-	import Pic from "../../Pic.vue";
+    import {Component, Vue} from 'vue-property-decorator';
+    import BookBackground from "./BookBackground.vue";
+    import CardHeader from "../../CardHeader.vue";
+    import {States} from "../../../../../classLibrary/States";
+    import {StateManager} from "../../../../../classLibrary/StateManager";
+    import {$$, stateManager} from "../../../init";
+    import {images} from "../../../images";
+    import NavTab from "../../NavTab.vue";
+    import Pic from "../../Pic.vue";
 
-	@Component({
-		components: {Pic, NavTab, BookBackground, CardHeader},
-		props: {index: Number}
-	})
-	export default class Book extends Vue {
-		private index?: number;
-		private state: StateManager = stateManager;
-		private selected: { [s: string]: boolean } = {
-			go: true,
-			ruby: false,
-			design: false,
-			csharp: false,
-			others: false
-		};
-		private books: string[] = [];
+    @Component({
+        components: {Pic, NavTab, BookBackground, CardHeader},
+        props: {index: Number}
+    })
+    export default class Book extends Vue {
+        private index?: number;
+        private state: StateManager = stateManager;
+        private selected: { [s: string]: boolean } = {
+            go: true,
+            ruby: false,
+            design: false,
+            csharp: false,
+            others: false
+        };
+        private books: string[] = [];
 
-		get Books(): string[] {
-			return this.books;
-		}
+        get Books(): string[] {
+            return this.books;
+        }
 
 		get Selected(): string {
 			for (const x: string in this.selected) {

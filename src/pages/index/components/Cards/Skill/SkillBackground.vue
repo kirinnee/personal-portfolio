@@ -1,5 +1,5 @@
 <template>
-    <Pic class="background" type="w" :src="skills" uncenter></Pic>
+    <Pic class="background" type="w" :src="skills" uncenter/>
 </template>
 
 <style lang='scss' scoped>
@@ -22,18 +22,18 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import {images} from "../../../images";
-	import Pic from "../../Pic.vue";
-	
-	@Component({
-		components: {Pic}
-	})
-	export default class SkillBackground extends Vue {
-		data() {
-			return {
-				skills: images.skill
-			}
-		}
-	}
+    import {Component, Vue} from 'vue-property-decorator';
+    import {images} from "../../../images";
+    import Pic from "../../Pic.vue";
+
+    @Component({
+        components: {Pic}
+    })
+    export default class SkillBackground extends Vue {
+        data() {
+            return {
+                skills: images.skill
+            }
+        }
+    }
 </script>

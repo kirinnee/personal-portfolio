@@ -1,5 +1,5 @@
 <template>
-    <Pic :src="timeline" class="background" uncenter :type="Type"></Pic>
+    <Pic :src="timeline" class="background" uncenter :type="Type"/>
 </template>
 
 <style lang='scss' scoped>
@@ -20,23 +20,23 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import {images} from "../../../images";
-	import Pic from "../../Pic.vue";
-	import {isMobile} from "../../../init";
-	
-	@Component({
-		components: {Pic}
-	})
-	export default class SkillBackground extends Vue {
-		get Type(): "w" | "h" | "b" {
-			return isMobile() ? "w" : "h";
-		}
+    import {Component, Vue} from 'vue-property-decorator';
+    import {images} from "../../../images";
+    import Pic from "../../Pic.vue";
+    import {isMobile} from "../../../init";
 
-		data() {
-			return {
-				timeline: images.timeline
-			}
-		}
-	}
+    @Component({
+        components: {Pic}
+    })
+    export default class SkillBackground extends Vue {
+        get Type(): "w" | "h" | "b" {
+            return isMobile() ? "w" : "h";
+        }
+
+        data() {
+            return {
+                timeline: images.timeline
+            }
+        }
+    }
 </script>

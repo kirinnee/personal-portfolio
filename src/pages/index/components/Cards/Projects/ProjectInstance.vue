@@ -2,12 +2,12 @@
     <div class="holder">
 
         <div class="title">
-            <Pic class='logo' :src='Logo' type="h" uncenter></Pic>
+            <Pic class='logo' :src='Logo' type="h" uncenter/>
             <div class="stack-holder">
                 <template v-for="stack in Stack">
                     <div class="stack">
-                        <Pic class='i' :src="stack[0]" type="b" uncenter></Pic>
-                        <Pic class='i hidden' :src="stack[1]" type="b" uncenter></Pic>
+                        <Pic class='i' :src="stack[0]" type="b" uncenter/>
+                        <Pic class='i hidden' :src="stack[1]" type="b" uncenter/>
                     </div>
                 </template>
             </div>
@@ -24,41 +24,40 @@
 
     .mobile {
         .holder {
-            margin: 10px;
-            width: 90%;
+            margin: 5px;
+            width: 85%;
             position: relative;
             left: 50%;
-            transform: translateX(-50%);
-
+            transform: translateX(-53%);
         }
 
         .description {
             padding: 20px 0;
-            font-size: 32px;
+            font-size: 16px;
 
         }
 
         .screenshots {
-            margin: 40px 0;
-            padding: 20px 40px;
+            margin: 10px 0;
+            padding: 10px 20px;
             width: 50%;
             left: 50%;
-            font-size: 30px;
-            border-radius: 10px;
+            font-size: 16px;
+            border-radius: 5px;
         }
 
         .title {
             .logo {
-                height: 100px;
+                height: 40px;
             }
 
-            padding: 20px 0;
+            padding: 10px 0;
 
             .stack-holder {
                 .stack {
-                    width: 60px;
-                    height: 60px;
-                    margin: 0 10px;
+                    width: 25px;
+                    height: 25px;
+                    margin: 0 5px;
                 }
             }
         }
@@ -140,31 +139,31 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import {ProjectData} from "../../../../../classLibrary/ProjectData";
-	import Pic from "../../Pic.vue";
-	import Project from "./Project.vue";
-	
-	@Component({
-		components: {Pic},
-		props: {
-			projectData: ProjectData
-		}
-	})
-	export default class ProjectInstance extends Vue {
-		private projectData?: ProjectData;
+    import {Component, Vue} from 'vue-property-decorator';
+    import {ProjectData} from "../../../../../classLibrary/ProjectData";
+    import Pic from "../../Pic.vue";
+    import Project from "./Project.vue";
 
-		get Project(): ProjectData {
-			return this.projectData!;
-		}
+    @Component({
+        components: {Pic},
+        props: {
+            projectData: ProjectData
+        }
+    })
+    export default class ProjectInstance extends Vue {
+        private projectData?: ProjectData;
 
-		get Logo(): string {
-			return this.Project.logo;
-		}
+        get Project(): ProjectData {
+            return this.projectData!;
+        }
 
-		get Stack(): [string, string][] {
-			return this.Project.stack;
-		}
+        get Logo(): string {
+            return this.Project.logo;
+        }
+
+        get Stack(): [string, string][] {
+            return this.Project.stack;
+        }
 
 		get Description(): string {
 			return this.Project.description;

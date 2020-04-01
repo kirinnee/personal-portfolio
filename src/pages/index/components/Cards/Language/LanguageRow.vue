@@ -17,7 +17,7 @@
 <style lang='scss' scoped>
     .mobile {
         .row {
-            height: 100px;
+            height: 50px;
         }
 
         .right {
@@ -25,8 +25,8 @@
             border-bottom-left-radius: 80px;
             .carry {
                 img {
-                    width: 60px;
-                    height: 60px;
+                    width: 30px;
+                    height: 30px;
                 }
             }
         }
@@ -34,8 +34,8 @@
         .ticks {
             .tick-holder {
                 img {
-                    height: 60px;
-                    width: 60px;
+                    height: 30px;
+                    width: 30px;
                 }
             }
 
@@ -103,31 +103,31 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import {images} from "../../../images";
-	import {LangData} from "../../../../../classLibrary/LangData";
-	
-	@Component({
-		props: {
-			langData: LangData
-		}
-	})
-	export default class LanguageRow extends Vue {
-		private langData?: LangData;
-		private isHovering: boolean = false;
+    import {Component, Vue} from 'vue-property-decorator';
+    import {images} from "../../../images";
+    import {LangData} from "../../../../../classLibrary/LangData";
 
-		get Style() {
-			return {
-				background: this.langData!.color
-			};
-		}
+    @Component({
+        props: {
+            langData: LangData
+        }
+    })
+    export default class LanguageRow extends Vue {
+        private langData?: LangData;
+        private isHovering: boolean = false;
+
+        get Style() {
+            return {
+                background: this.langData!.color
+            };
+        }
 
 
-		data() {
-			return {
-				tick: images.tick,
-			}
-		}
+        data() {
+            return {
+                tick: images.tick,
+            }
+        }
 
 		get UnderStyle() {
 			return {opacity: this.isHovering ? 1 : 1}

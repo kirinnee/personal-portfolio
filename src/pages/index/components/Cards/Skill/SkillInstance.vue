@@ -3,8 +3,8 @@
     <div class="instance" @mouseover="hover=true" @mouseleave="hover=false">
         <div class="center-align">
             <div class="holder">
-                <Pic :src="Plain" :style="HoverPlain" type="b" uncenter class="i"></Pic>
-                <Pic :src="Original" :style="HoverOriginal" type="b" uncenter class='hover i'></Pic>
+                <Pic :src="Plain" :style="HoverPlain" type="b" uncenter class="i"/>
+                <Pic :src="Original" :style="HoverOriginal" type="b" uncenter class='hover i'/>
             </div>
             <div class="progress-bar" :style="Progress"></div>
             <div class="name" :style="HoverName">{{Name}}</div>
@@ -18,11 +18,12 @@
 
     .mobile {
         .instance {
+            margin: 3vw 1vw;
             width: 28vw;
             height: 28vw;
 
             .name {
-                font-size: 30px;
+                font-size: 18px;
             }
         }
 
@@ -102,30 +103,30 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	import {SkillData} from "../../../../../classLibrary/SkillData";
-	import Pic from "../../Pic.vue";
-	
-	@Component({
-		components: {Pic},
-		props: {
-			sd: SkillData
-		}
-	})
-	export default class SkillInstance extends Vue {
-		private sd?: SkillData;
-		private hover: boolean = false;
-		private progress: any = {};
+    import {Component, Vue} from 'vue-property-decorator';
+    import {SkillData} from "../../../../../classLibrary/SkillData";
+    import Pic from "../../Pic.vue";
 
-		get Plain(): string {
-			return this.sd!.plain;
-		}
+    @Component({
+        components: {Pic},
+        props: {
+            sd: SkillData
+        }
+    })
+    export default class SkillInstance extends Vue {
+        private sd?: SkillData;
+        private hover: boolean = false;
+        private progress: any = {};
 
-		get Original(): string {
-			return this.sd!.ori;
-		}
+        get Plain(): string {
+            return this.sd!.plain;
+        }
 
-		get Name(): string {
+        get Original(): string {
+            return this.sd!.ori;
+        }
+
+        get Name(): string {
 			return this.sd!.name;
 		}
 

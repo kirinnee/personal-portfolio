@@ -17,9 +17,9 @@
 <style lang='scss' scoped>
     .mobile {
         .desc {
-            margin: 80px 0;
+            margin: 20px 0;
             width: 95%;
-            font-size: 30px;
+            font-size: 16px;
         }
     }
 

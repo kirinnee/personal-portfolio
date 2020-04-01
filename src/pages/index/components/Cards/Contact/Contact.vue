@@ -12,8 +12,8 @@
             </div>
             <div ref="resume1" class="subtitle">You can grab a copy of my Résumé too!</div>
             <a ref="resume2" class='resume-dl' href="https://s3-ap-southeast-1.amazonaws.com/kirin.resume/resume.pdf"
-               target="_blank">Résumé</a>
-            <div v-if="!isPWA()" ref="install1" class="subtitle" style="margin-top: 60px;">or add my portfolio to your
+               rel="noreferrer" target="_blank">Résumé</a>
+            <div v-if="!isPWA()" ref="install1" class="subtitle over">or add my portfolio to your
                 Home Screen!
             </div>
             <a v-if="!isPWA()" ref="install2" class='resume-dl' @click="Install">Install</a>
@@ -25,27 +25,35 @@
 
     .mobile {
         .resume-dl {
-            margin-top: 60px;
-            padding: 20px 80px;
-            font-size: 40px;
-            border-radius: 40px;
+            margin-top: 15px;
+            padding: 8px 20px;
+            font-size: 16px;
+            border-radius: 20px;
+        }
+
+        .over {
+            margin-top: 20px;
         }
 
         .social {
-            margin: 100px 0;
+            margin: 20px 0;
 
             .sm {
-                margin: 50px;
-                width: 120px;
-                height: 120px;
+                margin: 10px;
+                width: 40px;
+                height: 40px;
             }
         }
 
         .subtitle {
             width: 90%;
-            margin-top: 120px;
-            font-size: 2.4rem;
+            margin-top: 20px;
+            font-size: 16px;
         }
+    }
+
+    .over {
+        margin-top: 60px;
     }
 
     .resume-dl {

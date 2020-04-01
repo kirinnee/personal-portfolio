@@ -43,7 +43,7 @@
 
         .description {
             width: 120%;
-            font-size: 35px;
+            font-size: 18px;
         }
     }
 
@@ -89,34 +89,34 @@
 </style>
 
 <script lang="ts">
-	import {Component, Vue} from 'vue-property-decorator';
-	import CardHeader from "../../CardHeader.vue";
-	import {eases, stateManager} from "../../../init";
-	import {StateManager} from "../../../../../classLibrary/StateManager";
-	import {States} from "../../../../../classLibrary/States";
-	import {EaseStrength} from "@kirinnee/kease";
-	import {images} from '../../../images';
-	import Pic from "../../Pic.vue";
+    import {Component, Vue} from 'vue-property-decorator';
+    import CardHeader from "../../CardHeader.vue";
+    import {eases, stateManager} from "../../../init";
+    import {StateManager} from "../../../../../classLibrary/StateManager";
+    import {States} from "../../../../../classLibrary/States";
+    import {EaseStrength} from "@kirinnee/kease";
+    import {images} from '../../../images';
+    import Pic from "../../Pic.vue";
 
-	@Component({
-		components: {Pic, CardHeader},
-		props: {
-			index: Number
-		}
-	})
-	export default class AboutMe extends Vue {
-		private state: StateManager = stateManager;
-		private index?: number;
+    @Component({
+        components: {Pic, CardHeader},
+        props: {
+            index: Number
+        }
+    })
+    export default class AboutMe extends Vue {
+        private state: StateManager = stateManager;
+        private index?: number;
 
-		data() {
-			return {
-				aboutme: images.aboutme,
-			}
-		}
+        data() {
+            return {
+                aboutme: images.aboutme,
+            }
+        }
 
-		get IsTriggered(): boolean {
-			return this.state.checkTriggered(this.index!)
-		}
+        get IsTriggered(): boolean {
+            return this.state.checkTriggered(this.index!)
+        }
 
 		async trigger() {
 			const header: any = this.$refs.header;
