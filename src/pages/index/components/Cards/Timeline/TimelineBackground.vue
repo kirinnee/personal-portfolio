@@ -7,6 +7,7 @@
     .mobile {
         .background {
             width: 100%;
+            height: auto;
         }
     }
 

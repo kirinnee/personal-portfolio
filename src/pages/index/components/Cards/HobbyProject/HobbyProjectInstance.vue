@@ -1,10 +1,11 @@
 <template>
     <div class="hobby-instance">
         <a rel="noreferrer" :href="Hob.link" class="header" target="_blank">{{Hob.name}}
-            <Pic :src="link" type="b" class="l"/>
+
+            <Pic :src="link" type="b" uncenter class="l"/>
         </a>
         <div class="detail">
-            <Pic class="ss" type="w" :src="Hob.screenshot" :uncenter="Uncenter"/>
+            <Pic class="ss" type="w" :src="Hob.screenshot" uncenter/>
             <div class="right">
                 <div class="desc" v-html="Hob.description">
 

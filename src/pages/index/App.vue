@@ -44,7 +44,8 @@
             <NavBar class="nav"/>
             <footer>Made with
 
-                <Pic :src="Heart" class="heart" @mouseenter.native="Enter" @mouseleave.native="Leave" type="b"/>
+                <Pic :src="Heart" class="heart" uncenter @mouseenter.native="Enter" @mouseleave.native="Leave"
+                     type="b"/>
                 by kirinnee
                 (Ernest Ng) - Source Code @
                 <a rel="noreferrer" class="gitlab" target="_blank"

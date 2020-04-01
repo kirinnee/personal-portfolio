@@ -5,7 +5,7 @@
     "sizes": {
       "def": 65,
       "med": 55,
-      "small": 45
+      "small": 25
     },
     "target": "../dist/pages/",
     "input": "../dist/pages/",

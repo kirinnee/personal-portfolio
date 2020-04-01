@@ -1,8 +1,12 @@
 <template>
-    <Pic :src="project" class="background" uncenter :type="Type"/>
+        <Pic :src="project" class="background" uncenter :type="Type"/>
 </template>
 
 <style lang='scss' scoped>
+
+    .abs {
+        position: absolute;
+    }
 
     .mobile {
         .background {
@@ -19,7 +23,7 @@
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
-        height: 100%;
+        width: 50%;
         left: 50%;
     }
 </style>
@@ -42,6 +46,6 @@
             return {
                 project: images.project
             }
-		}
-	}
+        }
+    }
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div class="full">
         <div class="main">
-            <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"></CardHeader>
+            <CardHeader :dark="true" :index="Index" :title="Title" :subtitle="Subtitle" ref="header"/>
             <div class="description" ref="desc">
                 <p>
                     Hello! I am <b>Ernest</b> from Singapore.
@@ -29,7 +29,7 @@
                 </p>
             </div>
         </div>
-        <Pic class="background" :src="aboutme" type="w" uncenter></Pic>
+        <Pic class="background" :src="aboutme" type="w" uncenter/>
     </div>
 </template>
 

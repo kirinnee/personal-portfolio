@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <img :class="Base" :src="src" alt="Oops, image could not be found... :<">
-    </div>
+        <img :class="Base" :src="src" :alt="alt">
 </template>
 
 <style lang='scss' scoped>
@@ -31,28 +29,30 @@
 </style>
 
 <script lang='ts'>
-	import {Component, Vue} from 'vue-property-decorator';
-	
-	@Component({
-		props: {
-			src: String,
-			type: String,
-			uncenter: String
-		}
-	})
-	export default class Pic extends Vue {
-		private type?: "w" | "h" | "b";
-		private uncenter?: boolean | null;
+        import {Component, Vue} from 'vue-property-decorator';
 
-		get Base(): string[] {
-			const ret = [];
-			switch (this.type!) {
-				case "w":
-					ret.push("width-based");
-					break;
-				case "h":
-					ret.push("height-based");
-					break;
+        @Component({
+                props: {
+                        src: String,
+                        type: String,
+                        uncenter: String
+                }
+        })
+        export default class Pic extends Vue {
+                private type?: "w" | "h" | "b";
+                private uncenter?: boolean | null;
+
+                alt = "Oops, image could not be found... :<";
+
+                get Base(): string[] {
+                        const ret = [];
+                        switch (this.type!) {
+                                case "w":
+                                        ret.push("width-based");
+                                        break;
+                                case "h":
+                                        ret.push("height-based");
+                                        break;
 				case "b":
 					ret.push("max-based");
 					break;
