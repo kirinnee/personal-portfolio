@@ -12,8 +12,8 @@
                 </div>
                 <div class="stack">
                     <div class="stack-holder" v-for="(s, index) in Hob.stack" :key="index">
-                        <Pic :src="s[0]" uncenter type="b"/>
-                        <Pic :src="s[1]" uncenter type="b" class="over"/>
+                        <Pic :src="s[0]" style="position: absolute" uncenter type="b"/>
+                        <Pic :src="s[1]" style="position: absolute" uncenter type="b" class="over"/>
                     </div>
                 </div>
             </div>
@@ -179,16 +179,16 @@
 
         data() {
             return {
-				link: images.link
-			}
-		}
+                link: images.link
+            }
+        }
 
-		get Hob(): HobbyData {
-			return this.hobby!;
-		}
+        get Hob(): HobbyData {
+            return this.hobby!;
+        }
 
-		get Uncenter(): string | null {
-			return !isMobile() ? null : "";
-		}
-	}
+        get Uncenter(): string | null {
+            return !isMobile() ? null : "";
+        }
+    }
 </script>
