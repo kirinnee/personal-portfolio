@@ -1,6 +1,7 @@
 # Personal Portfolio
 
-My personal portfolio!
+My personal portfolio that I don't feel like managing nor updating.
+
 
 # Getting Started
 
