@@ -11,7 +11,7 @@ const projectMap = [
 	new ProjectData(null, i.onehealth.logo,
 		"OneHealth is a digital platform for post-acute care for Singapore’s Ministry of Health, in an attempt to deal with the issue of Singapore’s aging population. I led the development team to implement an API server and deployed it at Azure. I further provisioned a CI/CD pipeline with branching policy and tested strategies to formalise and automate the deployment workflow for testers, designers and engineers, boosting the overall efficiency of the team. To facilitate error detection and analytics, I configured centralised logging and monitoring service within Azure.",
 		Object.values(i.onehealth.ss),
-		[images.lang.cs, back.dotnet, devops.azure, devops.azureDevops]),
+		[images.lang.cs, back.dotnet, devops.azure, devops.azureDevops, front.react]),
 	new ProjectData(null, i.airbitat.logo,
 		"Airbitat is an outdoor cooler that aims to provide an environment-friendly deep cooling solution for the notoriously hot weather of tropical Singapore. I worked with engineers and technicians to develop firmware and embedded systems for the cooler in order to allow control from the website via WiFi module and from the mobile app via Bluetooth. " +
 		"I only joined the project midway, but my contributions were not insignificant. I improved the original firmware by optimising the transport layer and refactoring to take a more object-oriented approach, allowing for better maintenance. I further revamped the Bluetooth connectivity by changing between the mobile app and the firmware through the introduction of a new routing protocol, and reduced the communication time between the mobile app and the firmware from 7 seconds to 2 seconds by implementing a cache layer.",

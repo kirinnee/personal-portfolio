@@ -20,6 +20,7 @@ const skillMap = {
 	},
 	devops: {
 		docker: new SkillData('Docker', 0.9, iDevops.docker),
+		ansible: new SkillData('Ansible', 0.6, iDevops.ansible),
 		firebase: new SkillData('FireBase', 0.4, iDevops.firebase),
 		gitlab: new SkillData('GitLab', 0.7, iDevops.gitlab),
 		azureDevops: new SkillData('Azure Devops', 0.8, iDevops.azureDevops),
@@ -27,7 +28,7 @@ const skillMap = {
 		aws: new SkillData('AWS', 0.5, iDevops.aws),
 		azure: new SkillData('Azure', 0.5, iDevops.azure),
 		digitalOcean: new SkillData('Digital Ocean', 0.7, iDevops.digitalOcean)
-		
+
 	},
 	backend: {
 		apache: new SkillData('Apache', 0.3, iBackend.apache),

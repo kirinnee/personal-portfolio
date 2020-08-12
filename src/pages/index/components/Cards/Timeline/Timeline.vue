@@ -50,12 +50,22 @@
 
         get WorkInfo(): TimelineData[] {
             return [
+                new TimelineData("Builderlytics", "Project Lead - Solution Architect",
+                    "Builderytics contracted me and my team to build a solution for managing construction sites. This is a large scale project that requires expertise from hardware to network with thousands of live-connections. I was hired to both find a team and lead the team from concept to production. At Builderlytics, I was in-charge of leading the team in all departments (front-end, back-end, operations, designs, testing and hardware), hiring and managing engineers, designing and architecture the infrastructure and stack for the solution.",
+                    {
+                        month: "AUG",
+                        year: 2019
+                    }),
                 new TimelineData("Innosparks, ST Engineering", "Software Developer",
                     "At Innosparks, I was hired as a backend engineer. My role was to design and implement an API server for the OneHealth project, a digital platform for post-acute care for Singapore’s Ministry of Health. The project aimed at solving the hospital overpopulation problem as a result of Singapore’s ageing population. I also worked temporarily on their other project, Airbitat, to help develop a mobile application and firmware for controlling an outdoor cooler.  ",
                     {
                         month: "JUL",
                         year: 2018
-                    }),
+                    }, {
+                        month: "JUL",
+                        year: 2019
+                    }
+                ),
                 new TimelineData("ChatInfinite, Axle", "Architect Consultant",
                     "ChatInfinite is a company that provides conversational AI chatbots for businesses in the finance, insurance, telecommunications and services sectors. I was hired as an architecture consultant to advise and mentor the development team on how to improve server and infrastructure design." +
                     "Within six months, I pushed for a move from JavaScript to TypeScript for the main server application to better implement domain-driven design. I held internal workshops to educate the team on Agile SDLC, SOLID and TDD practices and thus raise the average skill level of the organisation. I worked with the tech lead to set up GitLab Kanban and GitLab CI for automating and formalising the workflow I taught in my internal workshops.",
@@ -64,7 +74,7 @@
                         year: 2018
                     }, {
                         month: "JUN",
-                        year: 2018
+                        year: 2019
                     }),
                 new TimelineData("DAB Technology", "Full-Stack Developer",
                     "DAB Technology is an SME that provides solutions to industrial and factory challenges, such as vacuum and lifting devices. Hired to remodel its static information site into an e-commerce platform, I gathered a team to build the platform by using domain-driven design and an iterative approach to achieving what the DAB desired.",

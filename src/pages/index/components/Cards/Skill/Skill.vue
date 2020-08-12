@@ -126,7 +126,7 @@
         get DevOps(): SkillData[] {
             const d = skillMap.devops;
 			return [d.docker, d.gitlab, d.aws, d.azureDevops,
-				d.azure, d.digitalOcean, d.firebase, d.heroku]
+                d.azure, d.digitalOcean, d.firebase, d.heroku, d.ansible]
 		}
 
 		get BackEnd(): SkillData[] {

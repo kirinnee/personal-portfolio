@@ -132,6 +132,7 @@ let images: any = {
 		cpp: getLan('cpp'),
 		cs: getLan('cs'),
 		java: getLan('java'),
+		rs: getLan('rust'),
 		js: getLan('js'),
 		py: getLan('py'),
 		rb: getLan('rb'),
@@ -141,6 +142,7 @@ let images: any = {
 	black: {
 		cpp: getLanB('cpp'),
 		cs: getLanB('cs'),
+		rs: getLan('rust'),
 		java: getLanB('java'),
 		js: getLanB('js'),
 		py: getLanB('py'),
@@ -228,6 +230,7 @@ let images: any = {
 		devops: {
 			aws: getImage(d, 'amazonwebservices'), //
 			azure: getImage(d, 'azure'),//
+			ansible: getImage(d, 'ansible'),
 			azureDevops: getImage(d, 'azurepipelines'), //
 			digitalOcean: getImage(d, 'digitalocean'),
 			docker: getImage(d, 'docker'), //
