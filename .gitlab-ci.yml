@@ -18,8 +18,7 @@ Build:
 
 Deploy:
   stage: deploy
-  tags:
-    - frontend
+  image: kirinnee/frontend-gitlab-runner
   script:
     - cd config
     - deployimage deploy --accessId=$AWS_ACCESS_ID --accessSecret=$AWS_SECRET --region=$AWS_REGION
