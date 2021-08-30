@@ -3,4 +3,4 @@ interface TimeData {
 	year: number;
 }
 
-export {TimeData}
+export {TimeData};

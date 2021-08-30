@@ -5,4 +5,4 @@ interface States {
 	circleColor: string;
 }
 
-export {States}
+export {States};

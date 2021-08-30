@@ -1,8 +1,8 @@
-let polyfill:string[] = [
+const polyfill:string[] = [
     "@babel/polyfill",
-	"whatwg-fetch",
-	"dom4",
-	"intersection-observer"
+    "whatwg-fetch",
+    "dom4",
+    "intersection-observer"
 ];
 
-export {polyfill}; 
+export {polyfill};

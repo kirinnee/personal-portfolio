@@ -1,9 +1,9 @@
-import {should} from 'chai';
+import {should} from "chai";
 
 should();
 
 describe("Dog", () => {
-	it("should be true", () => {
-		"a".should.equal("a")
-	});
+    it("should be true", () => {
+        "a".should.equal("a");
+    });
 });

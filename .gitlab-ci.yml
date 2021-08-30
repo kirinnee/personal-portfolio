@@ -8,8 +8,7 @@ cache:
 
 Build:
   stage: build
-  tags:
-    - frontend
+  image: kirinnee/frontend-gitlab-runner
   script:
     - yarn install --prefer-offline
     - yarn build
@@ -23,7 +22,7 @@ Deploy:
     - frontend
   script:
     - cd config
-    - deployimage deploy --accessId=$AWS_ACCESS_ID --accessSecret=$AWS_SECRET --region=$AWS_REGION 
+    - deployimage deploy --accessId=$AWS_ACCESS_ID --accessSecret=$AWS_SECRET --region=$AWS_REGION
     - cd ../dist
     - netdeploy -I $SITE_ID -T $NETLIFY_TOKEN
   only:

@@ -1,0 +1,103 @@
+version: "3"
+
+env:
+  tsc: ./node_modules/.bin/tsc
+  eslint: ./node_modules/.bin/eslint
+  wp: ./node_modules/.bin/webpack
+
+tasks:
+  setup:
+    desc: install node modules
+    cmds:
+      - yarn
+      - pre-commit install --install-hooks
+      - pre-commit install -t commit-msg
+      - sd  '^(\s*)<property name="nodejs_interpreter_path" value=".*" />(\s*)$' "$1<property name=\"nodejs_interpreter_path\" value=\"$(which node)\" />$2" .idea/workspace.xml || true
+
+  build:
+    desc: Builds the project
+    cmds:
+      - yarn build
+
+  dev:
+    desc: Watches for changes and constantly rebuild the dist folder
+    cmds:
+      - yarn dev
+
+  test:
+    desc: Runs unit tests
+    cmds:
+      - yarn test
+
+  test:w:
+    desc: Runs and watches unit tests
+    cmds:
+      - yarn test:w
+
+  lint:
+    desc: Lints all important files
+    cmds:
+      - task: lint:node
+      - task: lint:sh
+
+  lint:sh:
+    desc: Lints shell scripts
+    cmds:
+      - shellcheck **/*.sh
+
+  lint:node:
+    desc: Lints Javascript and Typescript files
+    cmds:
+      - $eslint .
+
+  fix:lint:
+    desc: Fix all Typescript and Javascript files
+    cmds:
+      - $eslint --fix .
+
+  fmt:
+    desc: Run all formatting supported.
+    ignore_error: true
+    summary: |
+      Runs all formatting supported.
+      1. Runs fmt:md, which formats all Markdown using prettier
+      2. Runs fmt:yaml, which formats all YAML using prettier
+      3. Runs fmt:json, which formats all JSON using prettier
+      4. Runs fmt:nix, which formats all Nix files with nixpkgs-fmt
+      5. Runs fmt:sh, which format all sh files with shfmt
+    cmds:
+      - task: fmt:md
+      - task: fmt:yaml
+      - task: fmt:json
+      - task: fmt:nix
+      - task: fmt:sh
+
+  fmt:sh:
+    desc: Formats shell scripts with shfmt
+    cmds:
+      - shfmt -w .
+
+  fmt:json:
+    ignore_error: true
+    desc: Format JSON files
+    cmds:
+      - prettier -w "**/*.json"
+
+  fmt:md:
+    ignore_error: true
+    desc: Formats Markdown with prettier
+    cmds:
+      - prettier -w "**/*.MD"
+
+  fmt:yaml:
+    ignore_error: true
+    desc: Formats YAML with prettier
+    cmds:
+      - prettier -w "**/*.yaml"
+      - prettier -w "**/*.yml"
+
+  fmt:nix:
+    ignore_error: true
+    desc: Formats Nix files
+    cmds:
+      - nixpkgs-fmt .

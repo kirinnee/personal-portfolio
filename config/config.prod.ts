@@ -1,11 +1,11 @@
 import {RuleSetQuery} from "webpack";
 
-let prodFileOpts: RuleSetQuery = {
-	name: '[path][name].[hash].[ext]',
-	publicPath: '/',
-	context: './src'
+const prodFileOpts: RuleSetQuery = {
+    name: "[path][name].[hash].[ext]",
+    publicPath: "/",
+    context: "./src"
 };
 
 export {
-	prodFileOpts
-}
+    prodFileOpts
+};

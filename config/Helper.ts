@@ -14,13 +14,13 @@ interface Page{
 }
 
 export function ConvertToOption(p:Page) : HtmlWebpackPlugin.Options{
-	let opts: HtmlWebpackPlugin.Options = {
-		title: p.title || "Index",
-		filename: p.output || "index.html",
-		chunks: p.chunks || ["index"]
-	};
-	if (p.template) opts.template = path.join("./public", p.template);
-	return opts;
+    const opts: HtmlWebpackPlugin.Options = {
+        title: p.title || "Index",
+        filename: p.output || "index.html",
+        chunks: p.chunks || ["index"]
+    };
+    if (p.template) opts.template = path.join("./public", p.template);
+    return opts;
 }
 
 export {IPage, Page};

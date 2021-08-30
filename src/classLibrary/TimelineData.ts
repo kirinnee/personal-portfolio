@@ -6,37 +6,37 @@ class TimelineData {
 	private readonly start: TimeData;
 	private readonly end?: TimeData;
 	private readonly description: string;
-	
+
 	constructor(company: string, role: string, description: string, start: TimeData, end?: TimeData) {
-		this.company = company;
-		this.role = role;
-		this.start = start;
-		this.end = end;
-		this.description = description;
+	    this.company = company;
+	    this.role = role;
+	    this.start = start;
+	    this.end = end;
+	    this.description = description;
 	}
-	
+
 	private DateToString(sd: TimeData): string {
-		return `${sd.month.toUpperCase()} ${sd.year}`;
+	    return `${sd.month.toUpperCase()} ${sd.year}`;
 	}
-	
+
 	get Company(): string {
-		return this.company;
+	    return this.company;
 	}
-	
+
 	get Role(): string {
-		return this.role;
+	    return this.role;
 	}
-	
+
 	get Date(): string {
-		const end = this.end == null ? "PRESENT" : this.DateToString(this.end);
-		return `${this.DateToString(this.start)} - ${end}`
+	    const end = this.end == null ? "PRESENT" : this.DateToString(this.end);
+	    return `${this.DateToString(this.start)} - ${end}`;
 	}
-	
+
 	get Description(): string {
-		return this.description;
+	    return this.description;
 	}
-	
+
 }
 
 
-export {TimelineData}
+export {TimelineData};

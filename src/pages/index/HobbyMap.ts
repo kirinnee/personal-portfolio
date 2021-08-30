@@ -57,4 +57,4 @@ const hobbyMap = [
 
 export {
     hobbyMap
-}
+};
