@@ -69,7 +69,7 @@
     "jsdom": "^12.2.0",
     "jsdom-global": "^3.0.2",
     "mocha": "^5.2.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.2.0",
     "sass-loader": "^7.1.0",
